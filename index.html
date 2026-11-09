@@ -199,6 +199,53 @@ p{margin:0}
 .ccard .acts a:hover,.ccard .acts button:hover{background:var(--ink);color:var(--cream)}
 .foot{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:0 28px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,252,243,.85)}
 
+/* ===== bloqueio criativo (making of) ===== */
+.bc{background:radial-gradient(80% 60% at 70% 20%,#1d1630 0%,var(--night) 70%);color:#E9EAF6;overflow:hidden;padding-block:96px}
+.bc-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end}
+.bc-head .mono{color:var(--pink)}
+.bc h2{font-size:clamp(52px,8.5vw,118px);color:var(--cream);text-shadow:5px 6px 0 rgba(255,79,147,.45);margin-top:14px}
+.bc-text{display:flex;flex-direction:column;gap:14px;color:#B9BCD8;max-width:52ch}
+.bc-text strong{color:#fff;font-weight:600}
+.bc .roles li{color:var(--pink);border-color:var(--pink)}
+.bc-stats{display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;margin-top:6px}
+.bc-stats div{display:flex;flex-direction:column}
+.bc-stats b{font-family:var(--f-mono);font-weight:500;font-size:26px;color:#fff;font-variant-numeric:tabular-nums}
+.bc-stats span{font-size:13px;color:#9EA3D6}
+.bc-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:48px}
+.bc-filters button{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1.5px solid rgba(233,234,246,.45);background:transparent;color:#E9EAF6;cursor:pointer;transition:background .15s,color .15s}
+.bc-filters button:hover{border-color:#fff}
+.bc-filters button[aria-pressed="true"]{background:var(--cream);color:var(--night);border-color:var(--cream)}
+.flow{position:relative;height:clamp(340px,52vw,560px);margin-top:28px;perspective:1300px;touch-action:pan-y;user-select:none;outline:none}
+.flow:focus-visible{outline:2px dashed var(--pink);outline-offset:6px}
+.flow-card{position:absolute;left:50%;top:50%;padding:8px 8px 34px;background:var(--cream);border-radius:3px;cursor:pointer;transform-style:preserve-3d;
+  transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s;box-shadow:0 30px 60px -25px rgba(0,0,0,.8)}
+.flow-card img{display:block;height:100%;width:100%;object-fit:cover;pointer-events:none}
+.flow-card .tag{position:absolute;left:10px;right:10px;bottom:9px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:flex;justify-content:space-between;gap:8px;white-space:nowrap;overflow:hidden}
+.flow-card.is-active{cursor:zoom-in}
+.flow-card[hidden]{display:none}
+.flow-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:200;width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(7,8,14,.55);color:#fff;font-size:22px;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px);transition:background .2s}
+.flow-nav:hover{background:var(--violet)}
+.flow-nav.prev{left:0}.flow-nav.next{right:0}
+.bc-info{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:baseline;margin-top:22px;border-top:1px solid rgba(255,255,255,.12);padding-top:16px}
+.bc-info .cap{font-size:clamp(18px,2.2vw,24px);font-weight:500;color:#fff}
+.bc-info .exif{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#9EA3D6;font-variant-numeric:tabular-nums}
+.bc-info .count{font-family:var(--f-mono);font-size:22px;color:var(--pink);font-variant-numeric:tabular-nums;grid-row:1/3;grid-column:2}
+.strip{display:flex;gap:8px;margin-top:22px;overflow-x:auto;padding:10px 4px 14px;scrollbar-width:thin;scrollbar-color:#3a3d55 transparent;background:repeating-linear-gradient(90deg,#000 0 10px,transparent 10px 22px) top/100% 6px no-repeat,repeating-linear-gradient(90deg,#000 0 10px,transparent 10px 22px) bottom/100% 6px no-repeat;background-color:#15172a;border-radius:4px}
+.strip button{flex:none;height:64px;padding:0;border:2px solid transparent;border-radius:2px;background:none;cursor:pointer;opacity:.55;transition:opacity .2s,border-color .2s}
+.strip button img{height:100%;width:auto;display:block}
+.strip button:hover{opacity:.9}
+.strip button.on{opacity:1;border-color:var(--pink)}
+.strip button[hidden]{display:none}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(5,6,12,.94);display:flex;align-items:center;justify-content:center;padding:max(56px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(72px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox .lb-cap{position:absolute;left:0;right:0;bottom:max(20px,env(safe-area-inset-bottom,0px));text-align:center;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#C9CBE0;padding-inline:16px}
+.lightbox button{position:absolute;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(7,8,14,.6);color:#fff;font-size:20px;cursor:pointer}
+.lightbox .lb-x{top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px))}
+.lightbox .lb-p{left:max(14px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lightbox .lb-n{right:max(14px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+@media (max-width:900px){.bc-head{grid-template-columns:minmax(0,1fr)}.bc{padding-block:72px}}
+@media (max-width:560px){.flow-nav{width:42px;height:42px;font-size:18px}.bc-info{grid-template-columns:minmax(0,1fr)}.bc-info .count{grid-row:auto;grid-column:auto}}
+
 /* ===== responsivo ===== */
 @media (max-width:900px){
   .sala-grid,.sobre,.atuacao,.exp-grid,.contato-in{grid-template-columns:minmax(0,1fr)}
@@ -328,7 +375,7 @@ p{margin:0}
       <p>Filmes, documentário, videoclipe e still. Trabalho na pós-produção e no set, do primeiro take à capa do projeto.</p>
       <a class="cta" href="#projetos">Ver projetos <i></i></a>
       <div class="sala-stats">
-        <div><b>7</b><span>projetos no portfólio</span></div>
+        <div><b>8</b><span>projetos no portfólio</span></div>
         <div><b>180h</b><span>Audiovisual KondZilla</span></div>
         <div><b>24h</b><span>filme na Noite de Kino</span></div>
       </div>
@@ -379,6 +426,60 @@ p{margin:0}
     <p class="empty-note" id="empty" hidden>Nenhum projeto com essa função.</p>
   </div>
 </section>
+
+<!-- ============ BLOQUEIO CRIATIVO (making of) ============ -->
+<section class="bc" id="p-bloqueio-criativo" aria-labelledby="bc-t">
+  <div class="wrap">
+    <div class="bc-head">
+      <div>
+        <span class="mono">08 / 08 · Making of · 30 e 31 out 2025</span>
+        <h2 class="cut" id="bc-t" data-cut>Bloqueio Criativo</h2>
+      </div>
+      <div class="bc-text">
+        <p>Um filme com nome de pesadelo de todo criador. Bloqueio Criativo acompanha uma artista que trava diante da própria obra: a ideia não vem, a página continua em branco. O set foi um quarto cheio de post-its, pôsteres, luz neon e uma caneca que jura estar <strong>“so f*cking zen”</strong>.</p>
+        <p>Neste projeto, atuei como <strong>fotógrafo de making of</strong> e fiz o <strong>tratamento das imagens</strong>: em duas diárias, registrei a equipe, o elenco e os detalhes do set, do boom à claquete, nos intervalos e no meio dos takes.</p>
+        <ul class="roles" aria-label="Funções">
+          <li>Fotografia de making of</li>
+          <li>Tratamento de imagem</li>
+        </ul>
+        <div class="bc-stats">
+          <div><b>2</b><span>diárias</span></div>
+          <div><b>20</b><span>fotos selecionadas</span></div>
+          <div><b>12h57</b><span>primeiro clique, 30/10</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bc-filters" role="group" aria-label="Filtrar fotos do making of">
+      <button type="button" id="bcf-todas" data-f="todas" aria-pressed="true">Todas</button>
+      <button type="button" id="bcf-d1" data-f="d1" aria-pressed="false">Dia 1 · 30/10</button>
+      <button type="button" id="bcf-d2" data-f="d2" aria-pressed="false">Dia 2 · 31/10</button>
+      <button type="button" id="bcf-equipe" data-f="equipe" aria-pressed="false">Equipe</button>
+      <button type="button" id="bcf-elenco" data-f="elenco" aria-pressed="false">Elenco</button>
+      <button type="button" id="bcf-detalhe" data-f="detalhe" aria-pressed="false">Detalhes</button>
+    </div>
+
+    <div class="flow" id="flow" tabindex="0" aria-roledescription="carrossel" aria-label="Fotos do making of de Bloqueio Criativo. Use as setas do teclado para navegar e Enter para ampliar.">
+      <button type="button" class="flow-nav prev" id="flow-prev" aria-label="Foto anterior">←</button>
+      <button type="button" class="flow-nav next" id="flow-next" aria-label="Próxima foto">→</button>
+    </div>
+
+    <div class="bc-info" aria-live="polite">
+      <span class="cap" id="bc-cap"></span>
+      <span class="count" id="bc-count"></span>
+      <span class="exif" id="bc-exif"></span>
+    </div>
+    <div class="strip" id="strip" aria-label="Todas as fotos"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+  <img id="lb-img" alt="">
+  <button type="button" class="lb-x" id="lb-x" aria-label="Fechar">✕</button>
+  <button type="button" class="lb-p" id="lb-p" aria-label="Foto anterior">←</button>
+  <button type="button" class="lb-n" id="lb-n" aria-label="Próxima foto">→</button>
+  <p class="lb-cap" id="lb-cap"></p>
+</div>
 
 <!-- ============ ÁREAS / COMPETÊNCIAS ============ -->
 <section class="band-blue section" aria-label="Áreas de atuação e competências">
@@ -559,7 +660,7 @@ p{margin:0}
         '<img src="img/'+p.img+'" alt="'+p.alt+'" width="'+p.w+'" height="'+p.h+'" loading="lazy"></div>'+
         (p.extra ? '<figure class="print extra" style="margin:0"><img src="img/'+p.extra.img+'" alt="'+p.extra.alt+'" loading="lazy"></figure>' : '')+
       '</div>'+
-      '<div class="p-text"><span class="mono p-meta">'+String(i+1).padStart(2,'0')+' / 07 · '+p.meta+'</span>'+
+      '<div class="p-text"><span class="mono p-meta">'+String(i+1).padStart(2,'0')+' / 08 · '+p.meta+'</span>'+
         '<h3 class="cut" data-cut>'+p.title+'</h3><p>'+p.text+'</p>'+
         '<ul class="roles" aria-label="Funções">'+p.roles.map(r=>'<li>'+r+'</li>').join('')+'</ul></div>';
     list.appendChild(art);
@@ -637,10 +738,10 @@ p{margin:0}
   /* ---------- rolos 3D da sala escura ---------- */
   const stage=document.getElementById('stage');
   const ringsDef=[
-    {el:document.getElementById('ringA'), imgs:['cidade-errante','existe-moda','cidade-vertical-logo','toni-bastidor','serta-bastidor','cidade-vertical'], n:12, ratio:.6, dir:1, y:-.2, tilt:-14, z:-7},
-    {el:document.getElementById('ringB'), imgs:['as-margens','la-aura','toni-venturi','existe-moda-logo','serta','cidade-vertical-foto'], n:12, ratio:1.3, dir:-1, y:.22, tilt:-14, z:-7}
+    {el:document.getElementById('ringA'), imgs:['cidade-errante','bloqueio/bc-19','existe-moda','cidade-vertical-logo','bloqueio/bc-04','toni-bastidor','serta-bastidor','bloqueio/bc-18'], n:16, ratio:.6, dir:1, y:-.2, tilt:-14, z:-7},
+    {el:document.getElementById('ringB'), imgs:['as-margens','bloqueio/bc-05','la-aura','toni-venturi','bloqueio/bc-17','existe-moda-logo','serta','bloqueio/bc-11'], n:16, ratio:1.3, dir:-1, y:.22, tilt:-14, z:-7}
   ];
-  const projOf={'cidade-errante':'cidade-errante','existe-moda':'existe-moda','existe-moda-logo':'existe-moda','cidade-vertical-logo':'cidade-vertical','cidade-vertical':'cidade-vertical','cidade-vertical-foto':'cidade-vertical','toni-bastidor':'toni-venturi','toni-venturi':'toni-venturi','serta-bastidor':'serta','serta':'serta','as-margens':'as-margens','la-aura':'la-aura'};
+  const projOf={'cidade-errante':'cidade-errante','existe-moda':'existe-moda','existe-moda-logo':'existe-moda','cidade-vertical-logo':'cidade-vertical','cidade-vertical':'cidade-vertical','cidade-vertical-foto':'cidade-vertical','toni-bastidor':'toni-venturi','toni-venturi':'toni-venturi','serta-bastidor':'serta','serta':'serta','as-margens':'as-margens','la-aura':'la-aura','bloqueio/bc-19':'bloqueio-criativo','bloqueio/bc-04':'bloqueio-criativo','bloqueio/bc-18':'bloqueio-criativo','bloqueio/bc-05':'bloqueio-criativo','bloqueio/bc-17':'bloqueio-criativo','bloqueio/bc-11':'bloqueio-criativo'};
   ringsDef.forEach(R=>{
     R.panels=[];
     for(let i=0;i<R.n;i++){
@@ -692,6 +793,119 @@ p{margin:0}
   stage.addEventListener('pointercancel',()=>{dragging=false;});
   layout(); window.addEventListener('resize',layout);
   requestAnimationFrame(frame);
+
+  /* ---------- Bloqueio Criativo: coverflow 3D ---------- */
+  (function(){
+    const F=[
+      ['bc-01','IMG_1016','2025-10-30','12:57','detalhe','A caneca que dá o tom do set.',1400,933],
+      ['bc-02','IMG_1369','2025-10-31','13:04','elenco','A mesma caneca, agora sob luz neon.',933,1400],
+      ['bc-03','IMG_1040','2025-10-30','13:09','equipe','Ajuste de foco antes do take.',1400,933],
+      ['bc-04','IMG_1085','2025-10-30','14:56','equipe','O monitor da câmera mostra o quadro.',1400,933],
+      ['bc-05','IMG_1493','2025-10-31','15:00','equipe','Câmera no gimbal, mirando de volta.',933,1400],
+      ['bc-06','IMG_1060','2025-10-30','13:33','elenco','Joinha liberado entre um take e outro.',1400,933],
+      ['bc-07','IMG_1096','2025-10-30','15:04','equipe','Boom no alto para captar o som.',1400,934],
+      ['bc-08','IMG_1277','2025-10-31','10:38','equipe','Equipe de som, de fone e sorriso.',933,1400],
+      ['bc-09','IMG_1141','2025-10-30','15:23','equipe','Concentração atrás do microfone.',933,1400],
+      ['bc-10','IMG_1173','2025-10-30','15:44','elenco','Olhar pra cima, claquete passando.',933,1400],
+      ['bc-11','IMG_1580','2025-10-31','16:46','detalhe','Claquete pronta para marcar a cena.',933,1400],
+      ['bc-12','IMG_1552','2025-10-31','16:32','equipe','Roteiro numa mão, claquete na outra.',933,1400],
+      ['bc-13','IMG_1123','2025-10-30','15:16','elenco','Entrada em cena com toalha e café.',933,1400],
+      ['bc-14','IMG_1264','2025-10-31','10:30','elenco','Cena na cama, câmera bem perto.',933,1400],
+      ['bc-15','IMG_1153','2025-10-30','15:26','elenco','A atriz enquadrada por entre o set.',933,1400],
+      ['bc-16','IMG_1162','2025-10-30','15:34','elenco','Perfil sob luz baixa.',1400,933],
+      ['bc-17','IMG_1295','2025-10-31','10:45','elenco','Retrato no meio da diária.',933,1400],
+      ['bc-18','IMG_1382','2025-10-31','13:10','elenco','Sorriso na luz roxa do quarto.',1400,933],
+      ['bc-19','IMG_1505','2025-10-31','15:06','equipe','Equipe inteira em volta da câmera.',1400,933],
+      ['bc-20','IMG_1210','2025-10-30','16:11','detalhe','Case de equipamento: INST. CRIAR #01.',1400,933]
+    ].map(a=>({f:a[0],img:a[1],date:a[2],time:a[3],cat:a[4],cap:a[5],w:a[6],h:a[7],day:a[2].endsWith('30')?'d1':'d2'}));
+    const flow=document.getElementById('flow'), strip=document.getElementById('strip');
+    const capEl=document.getElementById('bc-cap'), exifEl=document.getElementById('bc-exif'), cntEl=document.getElementById('bc-count');
+    const catName={equipe:'Equipe',elenco:'Elenco',detalhe:'Detalhe'};
+    const fmt=d=>{const [y,m,dd]=d.split('-');return dd+' out '+y;};
+    F.forEach((p,i)=>{
+      const c=document.createElement('div'); c.className='flow-card'; c.dataset.i=i;
+      c.innerHTML='<img src="img/bloqueio/'+p.f+'.jpg" alt="'+p.cap+'" width="'+p.w+'" height="'+p.h+'" loading="lazy" draggable="false"><span class="tag"><span>'+p.img+'</span><span>'+p.date.split('-').reverse().slice(0,2).join('/')+' · '+p.time+'</span></span>';
+      flow.appendChild(c); p.card=c;
+      const t=document.createElement('button'); t.type='button'; t.setAttribute('aria-label','Ver foto '+(i+1)+': '+p.cap);
+      t.innerHTML='<img src="img/bloqueio/'+p.f+'.jpg" alt="" loading="lazy" width="'+Math.round(p.w/p.h*60)+'" height="60">';
+      t.addEventListener('click',()=>go(vis.indexOf(i)));
+      strip.appendChild(t); p.thumb=t;
+    });
+    let vis=F.map((_,i)=>i), cur=0, tiltX=0, tiltY=0;
+    function sizes(){ const H=flow.clientHeight; return {h:H*.78, step:Math.max(90,Math.min(flow.clientWidth*.2,220))}; }
+    function render(){
+      const {h,step}=sizes();
+      F.forEach((p,i)=>{
+        const k=vis.indexOf(i);
+        if(k<0){ p.card.hidden=true; p.thumb.hidden=true; return; }
+        p.card.hidden=false; p.thumb.hidden=false;
+        const off=k-cur, a=Math.abs(off);
+        const ch=h-42, cw=ch*p.w/p.h;
+        p.card.style.width=(cw+16)+'px'; p.card.style.height=(ch+42)+'px';
+        p.card.style.marginLeft=(-(cw+16)/2)+'px'; p.card.style.marginTop=(-(ch+42)/2)+'px';
+        const x=off===0?0:Math.sign(off)*(step*.9+ (a-1)*step*.55);
+        const rot=off===0?0:-Math.sign(off)*48;
+        const z=off===0?60:-140-a*60;
+        let t='translateX('+x+'px) translateZ('+z+'px) rotateY('+rot+'deg)';
+        if(off===0) t+=' rotateX('+tiltX+'deg) rotateY('+tiltY+'deg)';
+        p.card.style.transform=t;
+        p.card.style.zIndex=100-a;
+        p.card.style.opacity=a>4?0:1;
+        p.card.style.filter=off===0?'none':'brightness('+Math.max(.35,.75-a*.1)+')';
+        p.card.classList.toggle('is-active',off===0);
+        p.card.style.pointerEvents=a>4?'none':'auto';
+        p.thumb.classList.toggle('on',off===0);
+      });
+      const p=F[vis[cur]];
+      if(p){
+        capEl.textContent=p.cap;
+        exifEl.textContent=p.img+' · '+fmt(p.date)+' · '+p.time+' · '+catName[p.cat]+' · Dia '+(p.day==='d1'?'1':'2');
+        cntEl.textContent=String(cur+1).padStart(2,'0')+' / '+String(vis.length).padStart(2,'0');
+      }
+    }
+    function go(k){ if(!vis.length) return; cur=(k+vis.length)%vis.length; tiltX=tiltY=0; render();
+      const th=F[vis[cur]].thumb; strip.scrollTo({left:th.offsetLeft-strip.clientWidth/2+th.clientWidth/2,behavior:reduce?'auto':'smooth'}); }
+    document.getElementById('flow-prev').addEventListener('click',e=>{e.stopPropagation();go(cur-1);});
+    document.getElementById('flow-next').addEventListener('click',e=>{e.stopPropagation();go(cur+1);});
+    flow.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'){go(cur-1);e.preventDefault();} else if(e.key==='ArrowRight'){go(cur+1);e.preventDefault();} else if(e.key==='Enter'){openLB();} });
+    // arrastar / swipe
+    let sx=null, moved=0;
+    flow.addEventListener('pointerdown',e=>{ if(e.target.closest('.flow-nav')) return; sx=e.clientX; moved=0; });
+    flow.addEventListener('pointermove',e=>{
+      if(sx!==null){ moved=e.clientX-sx; return; }
+      const act=F[vis[cur]]&&F[vis[cur]].card; if(!act||reduce) return;
+      const r=act.getBoundingClientRect(); const dx=(e.clientX-(r.left+r.width/2))/r.width, dy=(e.clientY-(r.top+r.height/2))/r.height;
+      if(Math.abs(dx)<.8&&Math.abs(dy)<.8){ tiltY=dx*14; tiltX=-dy*10; } else { tiltX=tiltY=0; }
+      render();
+    });
+    flow.addEventListener('pointerleave',()=>{ tiltX=tiltY=0; render(); });
+    window.addEventListener('pointerup',e=>{
+      if(sx===null) return; const d=moved; sx=null;
+      if(Math.abs(d)>40){ go(cur+(d<0?1:-1)); return; }
+      const card=e.target.closest&&e.target.closest('.flow-card'); if(!card) return;
+      const k=vis.indexOf(+card.dataset.i); if(k===cur) openLB(); else go(k);
+    });
+    // filtros
+    const fb=[...document.querySelectorAll('.bc-filters button')];
+    fb.forEach(b=>b.addEventListener('click',()=>{
+      fb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+      const f=b.dataset.f;
+      vis=F.map((p,i)=>({p,i})).filter(({p})=>f==='todas'||p.day===f||p.cat===f).map(o=>o.i);
+      cur=0; render(); strip.scrollTo({left:0});
+    }));
+    // lightbox
+    const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lb-img'), lbCap=document.getElementById('lb-cap');
+    function lbShow(){ const p=F[vis[cur]]; lbImg.src='img/bloqueio/'+p.f+'.jpg'; lbImg.alt=p.cap; lbCap.textContent=p.cap+' · '+p.img+' · '+fmt(p.date)+' · '+p.time; }
+    function openLB(){ if(!vis.length) return; lbShow(); lb.hidden=false; document.body.style.overflow='hidden'; document.getElementById('lb-x').focus(); }
+    function closeLB(){ lb.hidden=true; document.body.style.overflow=''; flow.focus({preventScroll:true}); }
+    document.getElementById('lb-x').addEventListener('click',closeLB);
+    document.getElementById('lb-p').addEventListener('click',()=>{go(cur-1);lbShow();});
+    document.getElementById('lb-n').addEventListener('click',()=>{go(cur+1);lbShow();});
+    lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
+    document.addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape') closeLB(); else if(e.key==='ArrowLeft'){go(cur-1);lbShow();} else if(e.key==='ArrowRight'){go(cur+1);lbShow();} });
+    window.addEventListener('resize',render);
+    render();
+  })();
 
   /* ---------- copiar contato ---------- */
   document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{

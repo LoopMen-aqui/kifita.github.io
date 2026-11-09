@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>João Vitor · Kifita</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfólio de João Vitor Alves (Kifita): pós-produção, color grading, operação de câmera, fotografia e ilustração. Extremo sul de São Paulo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Mono:wght@400;500&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Layout: mesa de corte turquesa (abertura) → sala escura com rolos 3D → páginas de papel recortado (projetos) → mesa de corte de novo (contato) */
+:root{
+  --paper:#F3F1EC;
+  --paper-2:#E9E6DE;
+  --ink:#1A1B26;
+  --ink-soft:#4A4B57;
+  --cobalt:#1442C0;
+  --red:#D0262C;
+  --mat:#1C9C95;
+  --mat-deep:#137670;
+  --cream:#FFFCF3;
+  --night:#07080E;
+  --night-2:#12141F;
+  --violet:#5B5CF2;
+  --pink:#FF4F93;
+  --f-display:"Bagel Fat One","Arial Black",Impact,sans-serif;
+  --f-body:"Poppins",system-ui,"Segoe UI",sans-serif;
+  --f-mono:"DM Mono",ui-monospace,Consolas,monospace;
+  --gut-l:max(16px, env(safe-area-inset-left, 0px));
+  --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.mono{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:.95;margin:0;text-wrap:balance}
+p{margin:0}
+
+/* letras recortadas */
+.cut{display:inline-flex;flex-wrap:wrap;column-gap:.28em;row-gap:.06em}
+.cut .w{display:inline-flex;white-space:nowrap}
+.cut .l{display:inline-block;transform:rotate(var(--r,0deg)) translateY(var(--y,0px));transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.cut:hover .l{transform:rotate(calc(var(--r,0deg) * -1)) translateY(calc(var(--y,0px) * -1))}
+
+/* papel */
+.paper{background-color:var(--paper);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ===== mesa de corte ===== */
+.mat{position:relative;overflow:hidden;color:var(--cream);background-color:var(--mat);
+  background-image:
+    linear-gradient(rgba(255,255,255,.62) 1.5px,transparent 1.5px),
+    linear-gradient(90deg,rgba(255,255,255,.62) 1.5px,transparent 1.5px),
+    linear-gradient(rgba(255,255,255,.26) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.26) 1px,transparent 1px),
+    radial-gradient(120% 90% at 50% 30%,transparent 40%,rgba(0,40,38,.35));
+  background-size:160px 160px,160px 160px,32px 32px,32px 32px,100% 100%;
+  background-position:-1px -1px,-1px -1px,-1px -1px,-1px -1px,0 0}
+.mat .diag{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.35}
+.ruler{position:absolute;pointer-events:none;font-family:var(--f-mono);font-size:10px;color:rgba(255,255,255,.75)}
+.ruler.top{top:4px;left:0;right:0;height:14px}
+.ruler.left{top:0;bottom:0;left:4px;width:20px}
+.ruler span{position:absolute}
+
+.nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:28px 0;flex-wrap:wrap}
+.brand{font-family:var(--f-display);font-size:26px;letter-spacing:.02em;text-decoration:none;color:var(--cream);text-shadow:3px 3px 0 var(--mat-deep)}
+.nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav a.pill{display:inline-block;text-decoration:none;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:999px;background:rgba(7,40,38,.28);border:1px solid rgba(255,255,255,.35);transition:background .2s}
+.nav a.pill:hover{background:var(--cream);color:var(--mat-deep)}
+
+.hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding-block:28px 150px}
+.avatar-btn{background:none;border:0;padding:0;cursor:pointer;width:clamp(170px,26vw,240px);aspect-ratio:200/230;max-width:100%;-webkit-tap-highlight-color:transparent}
+.avatar-btn svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(6px 8px 0 rgba(6,60,57,.45))}
+#av-head{transform-origin:100px 190px;transition:transform .12s linear}
+#av-face{transition:transform .12s linear}
+#av-shades{transition:transform .45s cubic-bezier(.3,1.5,.5,1)}
+.shades-up #av-shades{transform:translateY(-38px) rotate(-4deg)}
+#av-brows{opacity:0;transition:opacity .3s}
+.shades-up #av-brows{opacity:1}
+.avatar-tip{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.hero-name{font-size:clamp(52px,11vw,138px);color:var(--cream);text-shadow:4px 5px 0 rgba(8,70,66,.55)}
+.hero-roles{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:680px}
+.hero-roles span{background:var(--cream);color:var(--ink);font-weight:500;font-size:14px;padding:6px 14px;border-radius:3px;transform:rotate(var(--r));box-shadow:2px 3px 0 rgba(8,70,66,.4)}
+.hero-loc{font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.watermark{position:absolute;left:50%;bottom:-0.16em;transform:translateX(-50%);z-index:1;font-family:var(--f-display);font-size:clamp(90px,22vw,300px);line-height:1;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.45);pointer-events:none;user-select:none}
+
+/* ===== sala escura ===== */
+.sala{background:radial-gradient(90% 70% at 30% 50%,#151a33 0%,var(--night) 70%);color:#E9EAF6;position:relative;overflow:hidden}
+.sala-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:center;padding-block:80px}
+.stage{position:relative;height:560px;perspective:1100px;perspective-origin:50% 40%;cursor:grab;touch-action:pan-y;user-select:none}
+.stage:active{cursor:grabbing}
+.ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
+.panel{position:absolute;overflow:hidden;border-radius:6px;background:#000;backface-visibility:visible;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.panel img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);pointer-events:none}
+.panel .shade{position:absolute;inset:0;background:#05060c;pointer-events:none}
+.stage-hint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(233,234,246,.55);white-space:nowrap}
+.sala-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.sala-copy .mono{color:#9EA3D6}
+.sala-copy h2{font-family:var(--f-body);font-weight:600;font-size:clamp(34px,4.4vw,56px);line-height:1.04;letter-spacing:-.02em}
+.sala-copy h2 em{font-style:normal;color:var(--pink)}
+.sala-copy p{color:#B9BCD8;max-width:42ch}
+.cta{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;background:var(--violet);color:#fff;text-decoration:none;font-weight:500;padding:12px 14px 12px 22px;border-radius:999px;transition:transform .2s,background .2s}
+.cta i{width:12px;height:12px;border-radius:50%;background:var(--pink);box-shadow:0 0 14px var(--pink)}
+.cta:hover{transform:translateY(-2px);background:#6c6dff}
+.sala-stats{display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:18px}
+.sala-stats div{display:flex;flex-direction:column}
+.sala-stats b{font-family:var(--f-mono);font-weight:500;font-size:28px;color:#fff;font-variant-numeric:tabular-nums}
+.sala-stats span{font-size:13px;color:#9EA3D6}
+
+/* ===== sobre ===== */
+.section{padding-block:96px}
+.sobre{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center}
+.polaroid{position:relative;background:var(--cream);padding:14px 14px 56px;box-shadow:0 18px 40px -18px rgba(26,27,38,.45),0 2px 6px rgba(26,27,38,.12);transform:rotate(var(--rot,-3deg))}
+.polaroid img{width:100%;aspect-ratio:var(--ar,4/3);object-fit:cover}
+.polaroid figcaption{position:absolute;left:16px;right:16px;bottom:16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--ink-soft);text-transform:uppercase}
+.tape{position:absolute;width:110px;height:30px;top:-14px;left:50%;transform:translateX(-50%) rotate(-4deg);background:rgba(255,236,170,.72);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.sobre h2{font-size:clamp(48px,7vw,92px);color:var(--cobalt)}
+.sobre .eyebrow{color:var(--red);margin-bottom:14px}
+.sobre .bio{display:flex;flex-direction:column;gap:14px;margin-top:28px;max-width:58ch;color:var(--ink-soft)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px;border-top:2px solid var(--ink);padding-top:16px}
+.facts dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.facts dd{margin:4px 0 0;font-weight:600;font-size:15px;line-height:1.35}
+
+/* ===== projetos ===== */
+.proj-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:56px}
+.proj-head h2{font-size:clamp(56px,9vw,120px);color:var(--cobalt)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;max-width:560px}
+.filters button{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
+.filters button:hover{background:var(--paper-2)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.projects{display:flex;flex-direction:column;gap:120px}
+.project{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center;scroll-margin-top:40px}
+.project:nth-child(even) .p-media{order:2}
+.p-media{position:relative;padding:10px}
+.print{position:relative;background:var(--cream);padding:10px;box-shadow:0 22px 44px -20px rgba(26,27,38,.5),0 2px 6px rgba(26,27,38,.12);transform:rotate(var(--rot));transition:transform .4s cubic-bezier(.3,1.4,.5,1)}
+.print:hover{transform:rotate(0deg) scale(1.01)}
+.print img{width:100%;height:auto;max-height:640px;object-fit:cover}
+.p-media .extra{position:absolute;width:42%;right:-4%;bottom:-10%;z-index:2;--rot:5deg}
+.project:nth-child(even) .p-media .extra{right:auto;left:-4%;--rot:-5deg}
+.p-media .extra img{aspect-ratio:4/3;object-fit:cover}
+.p-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.p-meta{color:var(--red)}
+.p-text h3{font-size:clamp(40px,5vw,66px);color:var(--cobalt)}
+.p-text p{color:var(--ink-soft);max-width:48ch}
+.roles{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:4px 0 0;padding:0}
+.roles li{font-size:13.5px;font-weight:500;color:var(--red);border:1.5px solid var(--red);padding:4px 12px;border-radius:999px}
+.project[hidden]{display:none}
+.empty-note{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+
+/* ===== atuação (faixa azul) ===== */
+.band-blue{background:var(--cobalt);color:var(--cream)}
+.atuacao{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px}
+.atuacao h2{font-size:clamp(40px,5.4vw,70px);margin-bottom:30px}
+.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.ticks li{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(255,252,243,.28);font-size:17px;line-height:1.45}
+.ticks li::before{content:"";flex:none;width:12px;height:12px;background:var(--red);transform:rotate(12deg) translateY(1px);box-shadow:2px 2px 0 rgba(0,0,0,.25)}
+
+/* ===== experiência ===== */
+.exp-grid{display:flex;flex-direction:column;gap:40px}
+.exp-grid h2{font-size:clamp(44px,6vw,80px);color:var(--cobalt)}
+.jobs{display:flex;flex-direction:column}
+.job{display:grid;grid-template-columns:110px minmax(0,1fr);gap:24px;padding:28px 0;border-top:2px solid var(--ink)}
+.job:last-child{border-bottom:2px solid var(--ink)}
+.job .yr{font-family:var(--f-mono);font-size:22px;font-weight:500;color:var(--red);font-variant-numeric:tabular-nums}
+.job h3{font-family:var(--f-body);font-weight:600;font-size:22px;line-height:1.2;margin-bottom:4px}
+.job .role{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.job p{color:var(--ink-soft);max-width:62ch}
+
+/* ===== formação ===== */
+.form-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:40px}
+.course{background:var(--cream);border:2px solid var(--ink);border-radius:4px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:5px 5px 0 var(--ink)}
+.course .when{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.course h3{font-family:var(--f-body);font-weight:600;font-size:19px;line-height:1.25}
+.course .where{color:var(--ink-soft)}
+.hours{margin-top:10px}
+.hours-bar{display:flex;height:22px;border:2px solid var(--ink);border-radius:3px;overflow:hidden}
+.hours-bar span{display:block;height:100%}
+.hours-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:12.5px;color:var(--ink-soft)}
+.hours-legend i{display:inline-block;width:10px;height:10px;border:1.5px solid var(--ink);margin-right:6px;vertical-align:-1px}
+.c1{background:var(--red)}.c2{background:#F2B33D}.c3{background:var(--cobalt)}.c4{background:var(--mat)}
+
+/* ===== contato ===== */
+.contato-in{position:relative;z-index:2;padding-block:96px 200px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.contato-in h2{font-size:clamp(56px,9vw,124px);color:var(--cream);text-shadow:4px 5px 0 rgba(8,70,66,.55)}
+.contato-in .lead{margin-top:22px;max-width:36ch;font-size:18px}
+.cards{display:flex;flex-direction:column;gap:14px}
+.ccard{background:var(--cream);color:var(--ink);border-radius:6px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;box-shadow:5px 6px 0 rgba(8,70,66,.5)}
+.ccard dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.ccard dd{margin:2px 0 0;font-weight:600;font-size:clamp(17px,2.2vw,21px);user-select:all;overflow-wrap:anywhere}
+.ccard .acts{display:flex;gap:8px}
+.ccard .acts a,.ccard .acts button{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;white-space:nowrap}
+.ccard .acts a:hover,.ccard .acts button:hover{background:var(--ink);color:var(--cream)}
+.foot{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:0 28px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,252,243,.85)}
+
+/* ===== responsivo ===== */
+@media (max-width:900px){
+  .sala-grid,.sobre,.atuacao,.exp-grid,.contato-in{grid-template-columns:minmax(0,1fr)}
+  .sala-grid{padding-block:56px}
+  .stage{height:440px}
+  .project{grid-template-columns:minmax(0,1fr);gap:40px}
+  .project:nth-child(even) .p-media{order:0}
+  .projects{gap:96px}
+  .sobre .polaroid{max-width:420px;margin:0 auto}
+  .section{padding-block:72px}
+}
+@media (max-width:560px){
+  .form-list{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .job{grid-template-columns:minmax(0,1fr);gap:8px}
+  .stage{height:380px}
+  .hero-in{padding-block:20px 110px}
+  .nav ul{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cut .l,.print,#av-head,#av-face,#av-shades{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ ABERTURA: mesa de corte ============ -->
+<header class="mat" id="topo">
+  <svg class="diag" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100">
+    <line x1="0" y1="100" x2="100" y2="0" stroke="#fff" stroke-width=".12" vector-effect="non-scaling-stroke"/>
+    <line x1="0" y1="100" x2="58" y2="0" stroke="#fff" stroke-width=".12" vector-effect="non-scaling-stroke" stroke-dasharray="6 6"/>
+    <line x1="0" y1="100" x2="100" y2="42" stroke="#fff" stroke-width=".12" vector-effect="non-scaling-stroke" stroke-dasharray="6 6"/>
+  </svg>
+  <div class="ruler top" aria-hidden="true"></div>
+  <div class="ruler left" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <nav class="nav" aria-label="Seções">
+      <a class="brand" href="#topo">KIFITA</a>
+      <ul>
+        <li><a class="pill" href="#projetos">Projetos</a></li>
+        <li><a class="pill" href="#sobre">Sobre</a></li>
+        <li><a class="pill" href="#experiencia">Experiência</a></li>
+        <li><a class="pill" href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-in">
+      <button class="avatar-btn" id="avatar" type="button" aria-label="Avatar do João Vitor. Clique para tirar os óculos.">
+        <svg viewBox="0 0 200 230" aria-hidden="true">
+          <g id="av-body">
+            <path d="M28 230 C30 196 58 182 100 182 C142 182 170 196 172 230 Z" fill="#4B2E83" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M70 186 L100 214 L130 186 L120 180 L100 198 L80 180 Z" fill="#E8692B" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M44 214 L60 200 M156 214 L140 200" stroke="#141414" stroke-width="3" stroke-linecap="round"/>
+            <rect x="86" y="160" width="28" height="26" fill="#9A6340" stroke="#141414" stroke-width="4"/>
+          </g>
+          <g id="av-head">
+            <!-- cabelo cacheado atrás -->
+            <g fill="#161616" stroke="#141414" stroke-width="3">
+              <circle cx="52" cy="92" r="12"/><circle cx="46" cy="112" r="12"/><circle cx="52" cy="132" r="11"/>
+              <circle cx="148" cy="92" r="12"/><circle cx="154" cy="112" r="12"/><circle cx="148" cy="132" r="11"/>
+            </g>
+            <!-- orelhas -->
+            <ellipse cx="54" cy="120" rx="8" ry="11" fill="#9A6340" stroke="#141414" stroke-width="4"/>
+            <ellipse cx="146" cy="120" rx="8" ry="11" fill="#9A6340" stroke="#141414" stroke-width="4"/>
+            <!-- rosto -->
+            <path d="M58 96 C58 70 76 62 100 62 C124 62 142 70 142 96 L142 124 C142 152 124 172 100 172 C76 172 58 152 58 124 Z" fill="#A86C46" stroke="#141414" stroke-width="4"/>
+            <g id="av-face">
+              <g id="av-brows" stroke="#141414" stroke-width="4" stroke-linecap="round" fill="none">
+                <path d="M72 100 Q81 95 90 99"/><path d="M110 99 Q119 95 128 100"/>
+              </g>
+              <g id="av-eyes">
+                <ellipse cx="81" cy="113" rx="8" ry="8.5" fill="#FFFCF3" stroke="#141414" stroke-width="3"/>
+                <ellipse cx="119" cy="113" rx="8" ry="8.5" fill="#FFFCF3" stroke="#141414" stroke-width="3"/>
+                <circle class="pupil" cx="81" cy="113" r="3.6" fill="#141414"/>
+                <circle class="pupil" cx="119" cy="113" r="3.6" fill="#141414"/>
+              </g>
+              <path d="M100 118 C97 128 95 132 100 134 C103 135 105 134 106 132" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round"/>
+              <path d="M88 143 C94 140 106 140 112 143" fill="none" stroke="#141414" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M90 153 Q100 160 110 153" fill="none" stroke="#141414" stroke-width="3.5" stroke-linecap="round"/>
+              <g id="av-shades">
+                <path d="M62 104 L138 104" stroke="#141414" stroke-width="4" stroke-linecap="round"/>
+                <rect x="65" y="103" width="31" height="20" rx="8" fill="#101010" stroke="#141414" stroke-width="3"/>
+                <rect x="104" y="103" width="31" height="20" rx="8" fill="#101010" stroke="#141414" stroke-width="3"/>
+                <path d="M72 116 L80 107 M111 116 L119 107" stroke="#FFFCF3" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
+                <path d="M62 106 L55 112 M138 106 L145 112" stroke="#141414" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </g>
+            <!-- boné -->
+            <path d="M52 94 C50 56 72 34 100 34 C128 34 150 56 148 94 Z" fill="#C4282E" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M100 34 L100 92" stroke="#141414" stroke-width="2.5" opacity=".5"/>
+            <path d="M44 96 C64 84 136 84 156 96 C158 100 154 104 150 103 C130 94 70 94 50 103 C46 104 42 100 44 96 Z" fill="#9E1E24" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="100" cy="64" r="11" fill="#FFFCF3" stroke="#141414" stroke-width="3"/>
+            <text x="100" y="69.5" text-anchor="middle" font-family="Bagel Fat One, Arial Black, sans-serif" font-size="14" fill="#C4282E">K</text>
+            <circle cx="100" cy="34" r="4" fill="#C4282E" stroke="#141414" stroke-width="3"/>
+          </g>
+        </svg>
+      </button>
+      <span class="avatar-tip" id="avatar-tip">Clique no avatar</span>
+
+      <h1 class="cut hero-name" data-cut>João Vitor</h1>
+      <div class="hero-roles">
+        <span style="--r:-2deg">Pós-produção</span>
+        <span style="--r:1.5deg">Color grading</span>
+        <span style="--r:-1deg">Operação de câmera</span>
+        <span style="--r:2deg">Fotografia</span>
+        <span style="--r:-1.5deg">Ilustração cartoon</span>
+      </div>
+      <p class="hero-loc">Audiovisual · Extremo sul de São Paulo · 2026</p>
+    </div>
+  </div>
+  <div class="watermark" aria-hidden="true">KIFITA</div>
+</header>
+
+<!-- ============ SALA ESCURA: rolos 3D ============ -->
+<section class="sala" aria-labelledby="sala-t">
+  <div class="wrap sala-grid">
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="ring" id="ringA"></div>
+      <div class="ring" id="ringB"></div>
+      <span class="stage-hint">Arraste para girar · clique numa imagem</span>
+    </div>
+    <div class="sala-copy">
+      <span class="mono">Sala de projeção · Portfólio 2026</span>
+      <h2 id="sala-t">Cor, corte e câmera para histórias <em>da quebrada</em> à tela grande.</h2>
+      <p>Filmes, documentário, videoclipe e still. Trabalho na pós-produção e no set, do primeiro take à capa do projeto.</p>
+      <a class="cta" href="#projetos">Ver projetos <i></i></a>
+      <div class="sala-stats">
+        <div><b>7</b><span>projetos no portfólio</span></div>
+        <div><b>180h</b><span>Audiovisual KondZilla</span></div>
+        <div><b>24h</b><span>filme na Noite de Kino</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="paper section" id="sobre" aria-labelledby="sobre-t">
+  <div class="wrap sobre">
+    <figure class="polaroid" style="--rot:-3.5deg;--ar:600/516;margin:0">
+      <span class="tape" aria-hidden="true"></span>
+      <img src="img/retrato.jpg" alt="João Vitor de boné vermelho e óculos escuros, sentado na plateia de uma sessão de cinema" width="600" height="516">
+      <figcaption>João Vitor · @loopim._</figcaption>
+    </figure>
+    <div>
+      <p class="mono eyebrow">Sobre</p>
+      <h2 class="cut" id="sobre-t" data-cut>Opa, me chamo João Vítor</h2>
+      <div class="bio">
+        <p>Sou profissional de audiovisual do extremo sul de São Paulo, com atuação em pós-produção, operação de câmera e fotografia.</p>
+        <p>Me formei em Pós-produção pelo Instituto Criar e em Fotografia pela Casa Locomotiva, e concluí o curso de Audiovisual do Instituto KondZilla. Já atuei como freelancer na RapBox e, em 2026, trabalhei na produtora Olhar Imaginário como colorista, assistente de montagem, montador e assistente de fotografia.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Base</dt><dd>Extremo sul de São Paulo</dd></div>
+        <div><dt>Assinatura</dt><dd>Kifita</dd></div>
+        <div><dt>Instagram</dt><dd>@loopim._</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJETOS ============ -->
+<section class="paper section" id="projetos" aria-labelledby="proj-t" style="padding-top:24px">
+  <div class="wrap">
+    <div class="proj-head">
+      <h2 class="cut" id="proj-t" data-cut>Projetos</h2>
+      <div class="filters" role="group" aria-label="Filtrar projetos por função">
+        <button type="button" id="f-todos" data-f="todos" aria-pressed="true">Todos</button>
+        <button type="button" id="f-cor" data-f="cor" aria-pressed="false">Cor</button>
+        <button type="button" id="f-montagem" data-f="montagem" aria-pressed="false">Montagem</button>
+        <button type="button" id="f-camera" data-f="camera" aria-pressed="false">Câmera</button>
+        <button type="button" id="f-foto" data-f="foto" aria-pressed="false">Fotografia</button>
+        <button type="button" id="f-design" data-f="design" aria-pressed="false">Design</button>
+        <button type="button" id="f-anim" data-f="anim" aria-pressed="false">Animação / IA</button>
+      </div>
+    </div>
+    <div class="projects" id="projects"></div>
+    <p class="empty-note" id="empty" hidden>Nenhum projeto com essa função.</p>
+  </div>
+</section>
+
+<!-- ============ ÁREAS / COMPETÊNCIAS ============ -->
+<section class="band-blue section" aria-label="Áreas de atuação e competências">
+  <div class="wrap atuacao">
+    <div>
+      <h2 class="cut" data-cut>Áreas de atuação</h2>
+      <ul class="ticks">
+        <li>Ilustração digital em estilo cartoon, criação de personagens e cenários</li>
+        <li>Design e materiais visuais para projetos audiovisuais</li>
+        <li>Edição e montagem de vídeo</li>
+        <li>Correção de cor e color grading</li>
+        <li>Animação com IA</li>
+        <li>Fotografia still e tratamento de imagem</li>
+        <li>Operação de câmera e iluminação</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="cut" data-cut>Competências</h2>
+      <ul class="ticks">
+        <li>Narrativa visual, ritmo de edição e organização de material audiovisual</li>
+        <li>Correção de cor, color grading e ajustes de luz</li>
+        <li>Criação de thumbnails, pôsteres e capas musicais</li>
+        <li>Ilustração cartoon, desenho de personagens e cenários</li>
+        <li>Experiência prática com câmera, iluminação e fotografia</li>
+        <li>Trabalho colaborativo, curiosidade e disposição para aprender</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIÊNCIA ============ -->
+<section class="paper section" id="experiencia" aria-labelledby="exp-t">
+  <div class="wrap exp-grid">
+    <h2 class="cut" id="exp-t" data-cut>Experiência</h2>
+    <div class="jobs">
+      <article class="job">
+        <span class="yr">2026</span>
+        <div>
+          <h3>Olhar Imaginário</h3>
+          <p class="role">Editor</p>
+          <p>Produtora de cinema e televisão fundada em 1996 por Toni Venturi. Fiz a correção de cor do filme do jornalista Luís Nassif, a assistência de captação em escolas dos Institutos Federais e a fotografia de "A Mostra de Cinema de Toni Venturi".</p>
+        </div>
+      </article>
+      <article class="job">
+        <span class="yr">2025</span>
+        <div>
+          <h3>RapBox</h3>
+          <p class="role">Editor · freelancer</p>
+          <p>Produção de videoclipes animados para o público infantil: montagem, motion design, criação de thumbnails e capas de músicas. Também acompanhei e monitorei o canal do YouTube onde os vídeos eram publicados.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top:96px">
+    <h2 class="cut" data-cut style="font-size:clamp(44px,6vw,80px);color:var(--cobalt)">Formação</h2>
+    <div class="form-list">
+      <article class="course">
+        <span class="when">Out 2025 – Jan 2026 · 180 h</span>
+        <h3>Audiovisual</h3>
+        <span class="where">Instituto KondZilla</span>
+        <div class="hours" aria-label="Carga horária: aula inaugural 4 horas, oficina de projeto de vida 4 horas, produção de vídeo 168 horas, formatura e celebração 4 horas">
+          <div class="hours-bar">
+            <span class="c1" style="width:calc(4/180*100%)"></span>
+            <span class="c2" style="width:calc(4/180*100%)"></span>
+            <span class="c3" style="width:calc(168/180*100%)"></span>
+            <span class="c4" style="width:calc(4/180*100%)"></span>
+          </div>
+          <div class="hours-legend">
+            <span><i class="c1"></i>Aula inaugural 4h</span>
+            <span><i class="c2"></i>Projeto de vida 4h</span>
+            <span><i class="c3"></i>Produção de vídeo 168h</span>
+            <span><i class="c4"></i>Formatura 4h</span>
+          </div>
+        </div>
+      </article>
+      <article class="course">
+        <span class="when">Mar 2025 – Mar 2026</span>
+        <h3>Fotografia</h3>
+        <span class="where">Casa Locomotiva</span>
+      </article>
+      <article class="course">
+        <span class="when">2024 – 2025</span>
+        <h3>Técnico em Pós-produção</h3>
+        <span class="where">Instituto Criar</span>
+      </article>
+      <article class="course">
+        <span class="when">2024 – 2025</span>
+        <h3>Ensino Médio completo</h3>
+        <span class="where">Concluído</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<footer class="mat" id="contato" aria-labelledby="contato-t">
+  <div class="wrap contato-in">
+    <div>
+      <h2 class="cut" id="contato-t" data-cut>Meu contato</h2>
+      <p class="lead">Tem um filme, clipe ou campanha precisando de cor, corte ou câmera? Me chama.</p>
+    </div>
+    <dl class="cards">
+      <div class="ccard">
+        <div><dt>Telefone / WhatsApp</dt><dd id="c-tel">11 96738-8424</dd></div>
+        <div class="acts">
+          <a href="https://wa.me/5511967388424" target="_blank" rel="noopener">WhatsApp</a>
+          <button type="button" data-copy="c-tel" data-val="+55 11 96738-8424">Copiar</button>
+        </div>
+      </div>
+      <div class="ccard">
+        <div><dt>Instagram</dt><dd id="c-ig">@loopim._</dd></div>
+        <div class="acts">
+          <a href="https://www.instagram.com/loopim._/" target="_blank" rel="noopener">Abrir</a>
+        </div>
+      </div>
+      <div class="ccard">
+        <div><dt>E-mail</dt><dd id="c-mail">kifita.prod@gmail.com</dd></div>
+        <div class="acts">
+          <button type="button" data-copy="c-mail" data-val="kifita.prod@gmail.com">Copiar</button>
+        </div>
+      </div>
+    </dl>
+  </div>
+  <div class="wrap foot"><span>© 2026 João Vitor Alves</span><span>Kifita · Portfólio criativo</span></div>
+  <div class="watermark" aria-hidden="true">LOOPIM</div>
+</footer>
+
+<script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- dados dos projetos (do Portfólio Criativo 2026) ---------- */
+  const P = [
+    {id:'cidade-errante', title:'Cidade Errante', meta:'Noite de Kino · filme em 24 horas',
+     text:'Filme produzido para a Noite de Kino, projeto em que o filme precisa ser feito em 24 horas.',
+     roles:['Colorista','Assistente de montagem','Designer da capa'], tags:['cor','montagem','design'],
+     img:'cidade-errante.jpg', w:1400, h:455, alt:'Capa de Cidade Errante: rosto com pintura facial e o título em letras de tijolo'},
+    {id:'as-margens', title:'Às Margens', meta:'Instituto KondZilla · emergência climática',
+     text:'Filme realizado durante a formação no Instituto KondZilla. Retrata São Miguel Paulista, bairro da zona leste de São Paulo que sofre com enchentes e alagamentos, onde as casas têm comportas para se proteger da água.',
+     roles:['Operador de câmera','Colorista','Montador'], tags:['camera','cor','montagem'],
+     img:'as-margens.jpg', w:1140, h:1349, alt:'Cartaz de Às Margens: jovem sentada numa escadaria de viela', tall:true},
+    {id:'serta', title:'Cerveja Serta', meta:'Cervejaria de Sertãozinho · still',
+     text:'Imagens da cervejaria de Sertãozinho, que possui seu próprio laboratório de produção de cerveja.',
+     roles:['Assistente de fotografia'], tags:['foto'],
+     img:'serta.jpg', w:864, h:1349, alt:'Garrafa e embalagem da cerveja Serta em fundo verde', tall:true,
+     extra:{img:'serta-bastidor.jpg', alt:'Bastidor da sessão de fotos no laboratório da cervejaria'}},
+    {id:'toni-venturi', title:'Mostra Toni Venturi', meta:'Olhar Imaginário · mostra de cinema',
+     text:'A Mostra de Cinema de Toni Venturi foi realizada na Olhar Imaginário. O projeto também contou com animação feita com inteligência artificial.',
+     roles:['Assistente de fotografia','Montador','Colorista'], tags:['foto','montagem','cor'],
+     img:'toni-venturi.jpg', w:720, h:979, alt:'Cartaz laranja da Mostra de Cinema Toni Venturi', tall:true,
+     extra:{img:'toni-bastidor.jpg', alt:'Bastidor de gravação em uma sala com escada e plantas'}},
+    {id:'existe-moda', title:'Existe Moda em SP?', meta:'Documentário · 2026',
+     text:'Documentário sobre moda com artistas periféricos da região de São Paulo.',
+     roles:['Logo','Operação de câmera','Colorização','Motion com IA','Montagem'], tags:['design','camera','cor','anim','montagem'],
+     img:'existe-moda.jpg', w:1400, h:535, alt:'Frame em preto e branco de Existe Moda em SP com artista tatuado',
+     extra:{img:'existe-moda-logo.jpg', alt:'Logo grafitado de Existe Moda em SP?'}},
+    {id:'cidade-vertical', title:'Cidade Vertical', meta:'Instituto KondZilla · livro de Anne Almeida',
+     text:'Vídeo de pré-lançamento do livro homônimo da autora Anne Almeida, do Instituto KondZilla, construído a partir de poesias da própria obra.',
+     roles:['Operador de câmera','Montador'], tags:['camera','montagem'],
+     img:'cidade-vertical-logo.jpg', w:941, h:312, alt:'Título Cidade, com janelas acesas dentro das letras',
+     extra:{img:'cidade-vertical-foto.jpg', alt:'Mulher de costas olhando uma multidão'}},
+    {id:'la-aura', title:'La Aura', meta:'Videoclipe',
+     text:'Videoclipe da artista La Aura: color grading, cartaz de divulgação e uma animação para a cena dos créditos.',
+     roles:['Colorista','Cartaz de divulgação','Animação dos créditos'], tags:['cor','design','anim'],
+     img:'la-aura.jpg', w:552, h:715, alt:'La Aura de boina e gravata posando em frente a grafite neon roxo e laranja', tall:true}
+  ];
+
+  /* ---------- render dos projetos ---------- */
+  const list = document.getElementById('projects');
+  P.forEach((p,i)=>{
+    const rot = [-1.6,1.4,-1.1,1.8,-1.4,1.2,-1.8][i];
+    const art = document.createElement('article');
+    art.className='project'; art.id='p-'+p.id; art.dataset.tags=p.tags.join(' ');
+    const maxw = p.tall ? 'max-width:440px;margin-inline:auto' : '';
+    art.innerHTML =
+      '<div class="p-media"><div class="print" style="--rot:'+rot+'deg;'+maxw+'">'+
+        '<img src="img/'+p.img+'" alt="'+p.alt+'" width="'+p.w+'" height="'+p.h+'" loading="lazy"></div>'+
+        (p.extra ? '<figure class="print extra" style="margin:0"><img src="img/'+p.extra.img+'" alt="'+p.extra.alt+'" loading="lazy"></figure>' : '')+
+      '</div>'+
+      '<div class="p-text"><span class="mono p-meta">'+String(i+1).padStart(2,'0')+' / 07 · '+p.meta+'</span>'+
+        '<h3 class="cut" data-cut>'+p.title+'</h3><p>'+p.text+'</p>'+
+        '<ul class="roles" aria-label="Funções">'+p.roles.map(r=>'<li>'+r+'</li>').join('')+'</ul></div>';
+    list.appendChild(art);
+  });
+
+  /* ---------- letras recortadas ---------- */
+  let seed = 7;
+  const rnd = ()=>{ seed = (seed*9301+49297)%233280; return seed/233280; };
+  document.querySelectorAll('[data-cut]').forEach(el=>{
+    const txt = el.textContent.trim();
+    el.setAttribute('aria-label', txt);
+    el.textContent='';
+    txt.split(' ').forEach(word=>{
+      const w=document.createElement('span'); w.className='w'; w.setAttribute('aria-hidden','true');
+      [...word].forEach(ch=>{
+        const s=document.createElement('span'); s.className='l'; s.textContent=ch;
+        s.style.setProperty('--r',((rnd()-.5)*12).toFixed(1)+'deg');
+        s.style.setProperty('--y',((rnd()-.5)*6).toFixed(1)+'px');
+        w.appendChild(s);
+      });
+      el.appendChild(w);
+    });
+  });
+
+  /* ---------- filtros ---------- */
+  const btns=[...document.querySelectorAll('.filters button')];
+  const empty=document.getElementById('empty');
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    btns.forEach(x=>x.setAttribute('aria-pressed', x===b?'true':'false'));
+    const f=b.dataset.f; let n=0;
+    list.querySelectorAll('.project').forEach(a=>{
+      const show = f==='todos' || a.dataset.tags.split(' ').includes(f);
+      a.hidden=!show; if(show) n++;
+    });
+    empty.hidden = n>0;
+  }));
+
+  /* ---------- réguas da mesa de corte ---------- */
+  function rulers(){
+    document.querySelectorAll('.mat').forEach(m=>{
+      const top=m.querySelector('.ruler.top'), left=m.querySelector('.ruler.left');
+      if(!top) return;
+      top.innerHTML=''; left.innerHTML='';
+      const W=m.clientWidth, H=m.clientHeight;
+      for(let x=160,k=5;x<W;x+=160,k+=5){ const s=document.createElement('span'); s.style.left=(x+4)+'px'; s.textContent=k; top.appendChild(s); }
+      for(let y=160,k=5;y<H;y+=160,k+=5){ const s=document.createElement('span'); s.style.top=(y+3)+'px'; s.textContent=k; left.appendChild(s); }
+    });
+  }
+  rulers(); window.addEventListener('resize', rulers);
+
+  /* ---------- avatar que segue o cursor ---------- */
+  const av=document.getElementById('avatar'), head=document.getElementById('av-head'), face=document.getElementById('av-face');
+  const pupils=[...document.querySelectorAll('#av-eyes .pupil')];
+  const tip=document.getElementById('avatar-tip');
+  let tx=0, ty=0;
+  function look(cx,cy){
+    const r=av.getBoundingClientRect();
+    const dx=cx-(r.left+r.width/2), dy=cy-(r.top+r.height*.45);
+    const d=Math.hypot(dx,dy)||1, k=Math.min(1,d/500);
+    tx=dx/d*k; ty=dy/d*k;
+    head.style.transform='translate('+(tx*6).toFixed(2)+'px,'+(ty*4).toFixed(2)+'px) rotate('+(tx*6).toFixed(2)+'deg)';
+    face.style.transform='translate('+(tx*5).toFixed(2)+'px,'+(ty*4).toFixed(2)+'px)';
+    pupils.forEach(p=>p.setAttribute('transform','translate('+(tx*3.4).toFixed(2)+' '+(ty*3.4).toFixed(2)+')'));
+  }
+  if(!reduce){
+    window.addEventListener('pointermove',e=>look(e.clientX,e.clientY),{passive:true});
+    window.addEventListener('pointerdown',e=>look(e.clientX,e.clientY),{passive:true});
+  }
+  av.addEventListener('click',()=>{
+    const up=av.classList.toggle('shades-up');
+    tip.textContent = up ? 'Óculos na testa' : 'Clique no avatar';
+    av.setAttribute('aria-label', up ? 'Avatar do João Vitor sem óculos. Clique para colocar os óculos.' : 'Avatar do João Vitor. Clique para tirar os óculos.');
+  });
+
+  /* ---------- rolos 3D da sala escura ---------- */
+  const stage=document.getElementById('stage');
+  const ringsDef=[
+    {el:document.getElementById('ringA'), imgs:['cidade-errante','existe-moda','cidade-vertical-logo','toni-bastidor','serta-bastidor','cidade-vertical'], n:12, ratio:.6, dir:1, y:-.2, tilt:-14, z:-7},
+    {el:document.getElementById('ringB'), imgs:['as-margens','la-aura','toni-venturi','existe-moda-logo','serta','cidade-vertical-foto'], n:12, ratio:1.3, dir:-1, y:.22, tilt:-14, z:-7}
+  ];
+  const projOf={'cidade-errante':'cidade-errante','existe-moda':'existe-moda','existe-moda-logo':'existe-moda','cidade-vertical-logo':'cidade-vertical','cidade-vertical':'cidade-vertical','cidade-vertical-foto':'cidade-vertical','toni-bastidor':'toni-venturi','toni-venturi':'toni-venturi','serta-bastidor':'serta','serta':'serta','as-margens':'as-margens','la-aura':'la-aura'};
+  ringsDef.forEach(R=>{
+    R.panels=[];
+    for(let i=0;i<R.n;i++){
+      const name=R.imgs[i%R.imgs.length];
+      const d=document.createElement('div'); d.className='panel'; d.dataset.p=projOf[name];
+      d.innerHTML='<img src="img/'+name+'.jpg" alt="" draggable="false"><span class="shade"></span>';
+      R.el.appendChild(d); R.panels.push({el:d, shade:d.lastChild});
+    }
+  });
+  let angle=0, vel=0, base=reduce?0:0.12, dragging=false, lastX=0, moved=0;
+  function layout(){
+    const W=stage.clientWidth, H=stage.clientHeight;
+    const r=Math.min(W*.4, 270);
+    ringsDef.forEach(R=>{
+      R.r=r;
+      const pw=2*r*Math.tan(Math.PI/R.n)*1.02;
+      const ph=Math.min(pw*R.ratio, H*.42);
+      R.panels.forEach(p=>{ p.el.style.width=pw+'px'; p.el.style.height=ph+'px'; p.el.style.left=(-pw/2)+'px'; p.el.style.top=(-ph/2)+'px'; });
+      R.el.style.top=(50+R.y*100)+'%';
+    });
+  }
+  function frame(){
+    if(!dragging){ vel += (base - vel)*0.04; }
+    angle += vel;
+    ringsDef.forEach(R=>{
+      const a=angle*R.dir;
+      R.el.style.transform='rotateX('+R.tilt+'deg) rotateZ('+R.z+'deg) rotateY('+a.toFixed(3)+'deg)';
+      const step=360/R.n;
+      R.panels.forEach((p,i)=>{
+        const th=(i*step+a)*Math.PI/180;
+        p.el.style.transform='rotateY('+(i*step)+'deg) translateZ('+R.r+'px)';
+        const c=Math.cos(th);
+        p.shade.style.opacity=(c>0 ? (1-c)*.55 : .62+(-c)*.2).toFixed(3);
+        p.el.style.zIndex = Math.round((c+1)*50);
+      });
+    });
+    requestAnimationFrame(frame);
+  }
+  stage.addEventListener('pointerdown',e=>{ dragging=true; lastX=e.clientX; moved=0; stage.setPointerCapture(e.pointerId); });
+  stage.addEventListener('pointermove',e=>{ if(!dragging) return; const dx=e.clientX-lastX; lastX=e.clientX; moved+=Math.abs(dx); vel=dx*0.25; angle+=0; });
+  stage.addEventListener('pointerup',e=>{
+    dragging=false;
+    if(moved<5){
+      stage.releasePointerCapture(e.pointerId);
+      const hit=document.elementsFromPoint(e.clientX,e.clientY).find(n=>n.classList&&n.classList.contains('panel'));
+      if(hit){ const t=document.getElementById('p-'+hit.dataset.p); if(t) t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); }
+    }
+  });
+  stage.addEventListener('pointercancel',()=>{dragging=false;});
+  layout(); window.addEventListener('resize',layout);
+  requestAnimationFrame(frame);
+
+  /* ---------- copiar contato ---------- */
+  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+    const val=b.dataset.val, label=b.textContent;
+    const done=()=>{ b.textContent='Copiado'; setTimeout(()=>b.textContent=label,1600); };
+    const fallback=()=>{ const el=document.getElementById(b.dataset.copy); const sel=getSelection(); const rg=document.createRange(); rg.selectNodeContents(el); sel.removeAllRanges(); sel.addRange(rg); b.textContent='Selecionado'; setTimeout(()=>b.textContent=label,1600); };
+    try{ navigator.clipboard.writeText(val).then(done,fallback); }catch(err){ fallback(); }
+  }));
+})();
+</script>
+
+</body>
+</html>

@@ -246,6 +246,80 @@ p{margin:0}
 @media (max-width:900px){.bc-head{grid-template-columns:minmax(0,1fr)}.bc{padding-block:72px}}
 @media (max-width:560px){.flow-nav{width:42px;height:42px;font-size:18px}.bc-info{grid-template-columns:minmax(0,1fr)}.bc-info .count{grid-row:auto;grid-column:auto}}
 
+/* ===== Existe Moda em SP?: arara 3D, lookbook, doc ===== */
+.em{--emr:#E3262B;--denim:#3B5C9E;margin-top:-56px;position:relative;color:#EDEDED;border-radius:18px;padding:clamp(22px,4vw,48px);overflow:hidden;
+  background-color:#0D0D0F;background-image:radial-gradient(70% 60% at 85% 10%,rgba(59,92,158,.28),transparent 70%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  box-shadow:0 30px 60px -30px rgba(26,27,38,.6)}
+.em[hidden]{display:none}
+.em-head{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(20px,4vw,48px);align-items:center}
+.em-logo-wrap{perspective:900px;justify-self:center;width:min(100%,340px)}
+.em-logo{position:relative;transform-style:preserve-3d;transition:transform .2s ease-out;animation:em-bob 6s ease-in-out infinite}
+.em-logo img{display:block;width:100%;height:auto;position:relative;transform:translateZ(30px);filter:drop-shadow(0 0 0 #fff)}
+.em-logo img.sh{position:absolute;inset:0;transform:translateZ(-10px) translate(10px,12px);filter:brightness(0) drop-shadow(0 0 0 var(--emr));opacity:.9}
+.em-logo img.sh{filter:brightness(0) saturate(100%) invert(19%) sepia(93%) saturate(4800%) hue-rotate(352deg) brightness(95%)}
+@keyframes em-bob{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.em-eye{color:var(--emr)}
+.em h3{font-size:clamp(40px,6vw,78px);color:#fff;text-shadow:4px 5px 0 rgba(227,38,43,.55);margin-top:12px}
+.em-copy{display:flex;flex-direction:column;gap:14px;min-width:0}
+.em-copy p{color:#BDBDC2;max-width:56ch}
+.em-roles li{color:#fff;border-color:rgba(255,255,255,.55)}
+.em-roles li:nth-child(n+5){background:var(--emr);border-color:var(--emr)}
+.em-tabs{display:inline-flex;flex-wrap:wrap;gap:4px;margin-top:30px;padding:5px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18)}
+.em-tabs button{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:9px 18px;border-radius:999px;border:0;background:transparent;color:#EDEDED;cursor:pointer}
+.em-tabs button[aria-selected="true"]{background:#fff;color:#0D0D0F}
+/* arara */
+.rack{position:relative;height:clamp(380px,46vw,560px);margin-top:22px;perspective:1300px;perspective-origin:50% 0%;cursor:grab;touch-action:pan-y;user-select:none;outline:none}
+.rack:active{cursor:grabbing}
+.rack:focus-visible{outline:2px dashed var(--emr);outline-offset:6px;border-radius:8px}
+.rail{position:absolute;left:-4%;right:-4%;top:34px;height:10px;border-radius:5px;background:linear-gradient(#f2f2f2,#8b8d94 45%,#3a3b40);box-shadow:0 6px 10px rgba(0,0,0,.6)}
+.rail i{position:absolute;top:8px;width:8px;height:200%;background:linear-gradient(90deg,#9a9ca3,#4a4b51)}
+.rail i:first-child{left:6%}.rail i:last-child{right:6%}
+.rack-row{position:absolute;left:50%;top:30px;width:0;height:0;transform-style:preserve-3d}
+.hang{position:absolute;left:0;top:0;transform-style:preserve-3d;transform-origin:50% 0;will-change:transform}
+.hang .hook{position:absolute;left:50%;top:0;width:60px;height:58px;margin-left:-30px;pointer-events:none}
+.hang .hook svg{width:100%;height:100%;overflow:visible}
+.hang .garm{position:absolute;left:0;top:52px;width:100%;background:#fff;padding:7px 7px 7px;box-shadow:0 26px 40px -18px rgba(0,0,0,.9);transition:filter .3s}
+.hang .garm img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.hang .ptag{position:absolute;right:-10px;top:70px;transform-origin:50% 0;transform:rotate(8deg);background:#F3EBD9;color:#141414;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;line-height:1.35;padding:6px 8px 7px;border-radius:2px 2px 6px 6px;box-shadow:2px 3px 0 rgba(0,0,0,.45);white-space:nowrap}
+.hang .ptag::before{content:"";position:absolute;left:50%;top:-12px;width:1px;height:12px;background:#d9d2c1}
+.hang .ptag b{display:block;color:var(--emr);font-weight:500}
+.rack-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px}
+.rack-foot .mono{color:#9a9aa1}
+#rack-tag{color:#fff;font-size:14px}
+/* lookbook */
+.lookbook{columns:3 240px;column-gap:22px;margin-top:26px}
+.lb-item{break-inside:avoid;margin:0 0 26px;position:relative;cursor:zoom-in;border:0;padding:0;background:none;display:block;width:100%;transform:rotate(var(--rot,0deg));transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.lb-item .paper-cut{display:block;background:#f4f1ea;padding:10px;clip-path:polygon(0 2%,6% 0,14% 1.5%,23% 0,33% 1.8%,44% .3%,56% 1.6%,67% 0,78% 1.4%,89% .2%,100% 1.5%,99% 18%,100% 37%,98.6% 58%,100% 79%,99% 100%,88% 98.5%,76% 100%,63% 98.4%,51% 100%,38% 98.6%,26% 100%,13% 98.4%,0 100%,1.3% 80%,0 58%,1.5% 37%,0 18%)}
+.lb-item img{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.08);transition:filter .45s}
+.lb-item:hover,.lb-item:focus-visible{transform:rotate(0deg) translateY(-6px) scale(1.02);z-index:2}
+.lb-item:hover img,.lb-item:focus-visible img{filter:none}
+.lb-item .tape{position:absolute;top:-10px;left:50%;width:84px;height:24px;margin-left:-42px;transform:rotate(var(--tr,-4deg));background:rgba(240,232,210,.78);z-index:2}
+.lb-item .stamp{position:absolute;right:10px;bottom:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--emr);color:#fff;padding:4px 8px;transform:rotate(-3deg);z-index:2}
+.lb-item .star{position:absolute;left:-14px;top:30%;width:46px;height:46px;z-index:2;pointer-events:none;opacity:0;transform:scale(.6) rotate(-20deg);transition:opacity .3s,transform .4s cubic-bezier(.3,1.6,.5,1)}
+.lb-item:hover .star,.lb-item:focus-visible .star{opacity:1;transform:scale(1) rotate(0)}
+/* doc */
+.em-doc{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;margin-top:26px;align-items:start}
+.em-video{margin:0;display:flex;flex-direction:column;gap:10px}
+.em-video figcaption{color:#9a9aa1;font-size:12px}
+.em-screen{position:relative;aspect-ratio:16/9;max-width:100%;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 0 0 2px #2a2a2e}
+.em-screen video{width:100%;height:100%;object-fit:cover;display:block}
+.em-rec{position:absolute;left:14px;top:12px;display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12.5px;color:#fff;letter-spacing:.06em;text-shadow:0 1px 3px #000}
+.em-rec i{width:10px;height:10px;border-radius:50%;background:var(--emr);animation:em-blink 1s steps(1) infinite}
+.em-rec b{font-weight:500;font-variant-numeric:tabular-nums}
+@keyframes em-blink{50%{opacity:0}}
+.em-safe{position:absolute;inset:8% 6%;border:1px solid rgba(255,255,255,.28);pointer-events:none;
+  background:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.35)) 50% 50%/22px 1px no-repeat,linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.35)) 50% 50%/1px 22px no-repeat}
+.em-play{position:absolute;right:12px;bottom:12px;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:rgba(0,0,0,.55);color:#fff;font-size:14px;cursor:pointer}
+.em-covers{display:flex;flex-direction:column;gap:22px}
+.torn{margin:0;background:#f4f1ea;padding:9px 9px 30px;position:relative;box-shadow:0 18px 30px -16px rgba(0,0,0,.9);transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.torn img{display:block;width:100%;height:auto}
+.torn figcaption{position:absolute;left:10px;bottom:8px;font-size:11px;color:#333;letter-spacing:.06em;text-transform:uppercase}
+.tilt-a{transform:rotate(-2deg)}.tilt-b{transform:rotate(1.8deg)}
+.torn:hover{transform:rotate(0) scale(1.03)}
+.em-lb .em-lb-cap{color:#ddd;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+@media (max-width:900px){.em-head,.em-doc{grid-template-columns:minmax(0,1fr)}.em{margin-top:-40px}.em-logo-wrap{width:min(70%,260px)}}
+@media (prefers-reduced-motion:reduce){.em-logo{animation:none}.em-rec i{animation:none}}
+
 /* ===== certificados ===== */
 .certs{margin-top:96px}
 .certs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
@@ -635,6 +709,60 @@ p{margin:0}
       </div>
     </div>
     <div class="projects" id="projects"></div>
+    <template id="em-tpl">
+      <div class="em" id="em-block" aria-labelledby="em-t">
+        <div class="em-head">
+          <div class="em-logo-wrap" id="em-logo" aria-hidden="true">
+            <div class="em-logo"><img src="img/moda/em-logo.webp" alt="" width="1052" height="1052" draggable="false"><img src="img/moda/em-logo.webp" alt="" class="sh" draggable="false"></div>
+          </div>
+          <div class="em-copy">
+            <span class="mono em-eye">05 · Existe Moda em SP? · foto, câmera e identidade</span>
+            <h3 class="cut" id="em-t" data-cut>Moda que nasce na rua</h3>
+            <p>Jeans desfiado colado na parede de cartazes da Virada Cultural, touca de crochê no rooftop, dente de ouro pintado na pelúcia. Fotografei e filmei artistas que fazem moda com o que a cidade dá, e dei ao projeto a cara dele: logo, capa e thumb.</p>
+            <ul class="roles em-roles" aria-label="Funções"><li>Fotografia</li><li>Operação de câmera</li><li>Colorização</li><li>Motion com IA</li><li>Logo</li><li>Identidade visual</li><li>Capa do documentário</li></ul>
+          </div>
+        </div>
+        <div class="em-tabs" role="tablist" aria-label="Como ver o projeto">
+          <button type="button" role="tab" id="emtab-rack" aria-selected="true" aria-controls="empan-rack">Arara 3D</button>
+          <button type="button" role="tab" id="emtab-look" aria-selected="false" aria-controls="empan-look" tabindex="-1">Lookbook</button>
+          <button type="button" role="tab" id="emtab-doc" aria-selected="false" aria-controls="empan-doc" tabindex="-1">Doc e capas</button>
+        </div>
+        <div id="empan-rack" role="tabpanel" aria-labelledby="emtab-rack">
+          <div class="rack" id="rack" tabindex="0" aria-label="Arara de fotos. Arraste para os lados ou use as setas; Enter amplia a foto da frente.">
+            <div class="rail" aria-hidden="true"><i></i><i></i></div>
+            <div class="rack-row" id="rack-row"></div>
+          </div>
+          <div class="rack-foot"><span class="mono" id="rack-tag">Look 01 / 09</span><span class="mono rack-hint">Arraste a arara · clique na peça da frente para ampliar</span></div>
+        </div>
+        <div id="empan-look" role="tabpanel" aria-labelledby="emtab-look" hidden>
+          <div class="lookbook" id="lookbook"></div>
+        </div>
+        <div id="empan-doc" role="tabpanel" aria-labelledby="emtab-doc" hidden>
+          <div class="em-doc">
+            <figure class="em-video">
+              <div class="em-screen">
+                <video id="em-vid" src="img/moda/moda-teaser.webm" poster="img/moda/em-capa-doc.webp" muted loop playsinline preload="none"></video>
+                <span class="em-rec" aria-hidden="true"><i></i>REC <b id="em-tc">00:00:00:00</b></span>
+                <span class="em-safe" aria-hidden="true"></span>
+                <button type="button" class="em-play" id="em-play" aria-label="Pausar prévia">❚❚</button>
+              </div>
+              <figcaption class="mono">Prévia do corte · 36 s sem áudio · captação e cor</figcaption>
+            </figure>
+            <div class="em-covers">
+              <figure class="torn tilt-a"><img src="img/moda/em-capa-doc.webp" alt="Capa do documentário: retrato em preto e branco recortado em faixas, com o título Existe Moda em SP" width="1600" height="893" loading="lazy"><figcaption class="mono">Capa do documentário</figcaption></figure>
+              <figure class="torn tilt-b"><img src="img/moda/em-capa-thumb.webp" alt="Thumb SP Edition: dupla de jeans desfiado ao lado do título com ponto de interrogação vermelho" width="1600" height="893" loading="lazy"><figcaption class="mono">Thumb · SP Edition</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <div class="vf em-lb" id="em-lb" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+      <div class="vf-frame"><img id="em-lb-img" alt=""></div>
+      <div class="em-lb-cap mono" id="em-lb-cap"></div>
+      <button type="button" class="vf-x" id="em-lb-x" aria-label="Fechar">✕</button>
+      <button type="button" class="vf-p" id="em-lb-p" aria-label="Foto anterior">←</button>
+      <button type="button" class="vf-n" id="em-lb-n" aria-label="Próxima foto">→</button>
+    </div>
     <template id="tv-tpl">
       <div class="tv" id="tv-event" aria-labelledby="tv-t">
         <div class="tv-head">
@@ -1051,11 +1179,11 @@ p{margin:0}
      roles:['Assistente de fotografia','Montador','Colorista','Fotografia do evento','Tratamento de imagem'], tags:['foto','montagem','cor'],
      img:'toni-venturi.jpg', w:720, h:979, alt:'Cartaz laranja da Mostra de Cinema Toni Venturi', tall:true,
      extra:{img:'toni-bastidor.jpg', alt:'Bastidor de gravação em uma sala com escada e plantas'}},
-    {id:'existe-moda', title:'Existe Moda em SP?', meta:'Documentário · 2026',
-     text:'Documentário sobre moda com artistas periféricos da região de São Paulo.',
-     roles:['Logo','Operação de câmera','Colorização','Motion com IA','Montagem'], tags:['design','camera','cor','anim','montagem'],
-     img:'existe-moda.jpg', w:1400, h:535, alt:'Frame em preto e branco de Existe Moda em SP com artista tatuado',
-     extra:{img:'existe-moda-logo.jpg', alt:'Logo grafitado de Existe Moda em SP?'}},
+    {id:'existe-moda', title:'Existe Moda em SP?', meta:'Documentário · ModaLab+ · 2026',
+     text:'Documentário sobre moda com artistas periféricos da região de São Paulo, realizado no ModaLab+ com o Instituto Ecotece. Além de fotografar e operar a câmera, criei a identidade do projeto: o logo grafitado, a capa do documentário e a thumb.',
+     roles:['Fotografia','Operação de câmera','Colorização','Motion com IA','Montagem','Logo','Identidade visual','Capa do documentário'], tags:['foto','design','camera','cor','anim','montagem'],
+     img:'moda/em-capa-doc.webp', w:1600, h:893, alt:'Capa do documentário Existe Moda em SP, com retrato em preto e branco recortado em faixas',
+     extra:{img:'moda/em-01.webp', alt:'Retrato de perfil em preto e branco de artista tatuado'}},
     {id:'cidade-vertical', title:'Cidade Vertical', meta:'Instituto KondZilla · livro de Anne Almeida',
      text:'Vídeo de pré-lançamento do livro homônimo da autora Anne Almeida, do Instituto KondZilla, construído a partir de poesias da própria obra.',
      roles:['Operador de câmera','Montador'], tags:['camera','montagem'],
@@ -1085,7 +1213,7 @@ p{margin:0}
     list.appendChild(art);
   });
   /* bloco de fotos do evento logo após o projeto Toni Venturi */
-  (function(){ const tpl=document.getElementById('tv-tpl'), after=document.getElementById('p-toni-venturi'); if(tpl&&after) after.after(tpl.content.cloneNode(true)); })();
+  (function(){ [['tv-tpl','p-toni-venturi'],['em-tpl','p-existe-moda']].forEach(([t,a])=>{ const tpl=document.getElementById(t), after=document.getElementById(a); if(tpl&&after) after.after(tpl.content.cloneNode(true)); }); })();
 
   /* ---------- letras recortadas ---------- */
   let seed = 7;
@@ -1117,7 +1245,7 @@ p{margin:0}
       a.hidden=!show; if(show) n++;
     });
     empty.hidden = n>0;
-    const tvb=document.getElementById('tv-event'), tvp=document.getElementById('p-toni-venturi'); if(tvb&&tvp) tvb.hidden=tvp.hidden;
+    [['tv-event','p-toni-venturi'],['em-block','p-existe-moda']].forEach(([b,p])=>{ const be=document.getElementById(b), pe=document.getElementById(p); if(be&&pe) be.hidden=pe.hidden; });
   }));
 
   /* ---------- réguas da mesa de corte ---------- */
@@ -1327,6 +1455,101 @@ p{margin:0}
     document.addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape') closeLB(); else if(e.key==='ArrowLeft'){go(cur-1);lbShow();} else if(e.key==='ArrowRight'){go(cur+1);lbShow();} });
     window.addEventListener('resize',render);
     render();
+  })();
+
+  /* ---------- Existe Moda em SP?: arara 3D, lookbook, doc ---------- */
+  (function(){
+    const root=document.getElementById('em-block'); if(!root) return;
+    const D='img/moda/';
+    const PH=[
+      ['em-01',1400,1399,'Retrato de perfil em preto e branco de artista tatuado','Retrato','Centro de SP'],
+      ['em-03',974,1400,'Dupla de jeans desfiado diante dos cartazes da Virada Cultural CCSP','Look','Virada Cultural CCSP'],
+      ['em-02',1120,1400,'Artista olha o celular, mão tatuada e costura aparente na manga','Detalhe','Costura à mão'],
+      ['em-04',933,1400,'Peça de pelúcia verde com rosto pintado de dentes dourados','Peça','Pelúcia pintada'],
+      ['em-08',933,1400,'Dupla em jeans desconstruído vista de baixo','Look','Jeans desfiado'],
+      ['em-05',1400,933,'Entrevista no rooftop com artista de touca de crochê','Bastidor','Rooftop'],
+      ['em-07',1120,1400,'Perfil de artista de capuz preto com ilhoses vermelhos','Retrato','Ilhós vermelho'],
+      ['em-06',1400,933,'Dupla posa diante da parede de cartazes da Virada Cultural','Look','Parede de cartazes'],
+      ['em-09',933,1400,'Dupla de jeans em contra-plongée','Look','Contra-plongée']
+    ].map((a,i)=>({f:a[0],w:a[1],h:a[2],alt:a[3],kind:a[4],place:a[5],n:String(i+1).padStart(2,'0')}));
+    const N=PH.length;
+
+    /* abas */
+    const tabs=[['rack','emtab-rack','empan-rack'],['look','emtab-look','empan-look'],['doc','emtab-doc','empan-doc']].map(([k,t,p])=>({k,t:document.getElementById(t),p:document.getElementById(p)}));
+    const vid=document.getElementById('em-vid');
+    function setTab(k){ tabs.forEach(o=>{ const on=o.k===k; o.t.setAttribute('aria-selected',on); o.t.tabIndex=on?0:-1; o.p.hidden=!on; });
+      if(k==='rack') layout(); if(k==='doc'){ vid.preload='auto'; if(!reduce&&!userPaused) vid.play().catch(()=>{}); } else vid.pause(); }
+    tabs.forEach((o,i)=>{ o.t.addEventListener('click',()=>setTab(o.k)); o.t.addEventListener('keydown',e=>{ const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(d){ const n=tabs[(i+d+tabs.length)%tabs.length]; n.t.focus(); n.t.click(); } }); });
+
+    /* logo 3D seguindo o cursor */
+    const logo=root.querySelector('.em-logo');
+    root.querySelector('.em-head').addEventListener('pointermove',e=>{ if(reduce) return; const r=logo.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; logo.style.transform='rotateY('+(x*28).toFixed(1)+'deg) rotateX('+(-y*22).toFixed(1)+'deg)'; });
+    root.querySelector('.em-head').addEventListener('pointerleave',()=>{ logo.style.transform=''; });
+
+    /* arara 3D */
+    const rack=document.getElementById('rack'), row=document.getElementById('rack-row'), tag=document.getElementById('rack-tag');
+    const hookSVG='<svg viewBox="0 0 60 58"><path d="M30 20 C30 12 38 12 38 6 C38 1 33 -1 30 1 C27 3 27 6 27 7" fill="none" stroke="#c9cbd1" stroke-width="3" stroke-linecap="round"/><path d="M30 20 L3 50 Q0 54 5 54 L55 54 Q60 54 57 50 Z" fill="none" stroke="#c9cbd1" stroke-width="3.2" stroke-linejoin="round"/></svg>';
+    PH.forEach((p,i)=>{ const h=document.createElement('div'); h.className='hang'; h.dataset.i=i;
+      h.innerHTML='<span class="hook">'+hookSVG+'</span><span class="garm"><img src="'+D+p.f+'.webp" alt="'+p.alt+'" draggable="false" loading="lazy"></span><span class="ptag"><b>Nº '+p.n+'</b>'+p.kind+'<br>'+p.place+'</span>';
+      row.appendChild(h); p.el=h; p.garm=h.querySelector('.garm'); p.swing=0; p.sv=0; });
+    let pos=3, target=3, vel=0, drag=false, lx=0, moved=0, step=200, gw=180;
+    function layout(){ if(document.getElementById('empan-rack').hidden) return;
+      const W=rack.clientWidth, H=rack.clientHeight; gw=Math.max(150,Math.min(W*.3,320)); step=gw*0.72;
+      PH.forEach(p=>{ const gh=Math.min(gw*p.h/p.w, H-110); const ww=gh*p.w/p.h; p.el.style.width=ww+'px'; p.el.style.marginLeft=(-ww/2)+'px'; p.garm.style.height=gh+'px'; }); }
+    function frame(){
+      requestAnimationFrame(frame);
+      if(root.hidden||document.getElementById('empan-rack').hidden) return;
+      const prev=pos;
+      if(!drag){ pos+=(target-pos)*0.12; }
+      vel=pos-prev;
+      const cur=Math.round(pos);
+      PH.forEach((p,i)=>{ const off=i-pos, a=Math.abs(off);
+        // pêndulo: o tranco da arara empurra a peça
+        p.sv+=(-vel*0.9 - p.swing*0.06); p.sv*=0.9; p.swing+=p.sv; const sw=Math.max(-22,Math.min(22,p.swing*14));
+        const x=off*step, z=-Math.min(a,4)*120, ry=Math.max(-62,Math.min(62,off*-26));
+        p.el.style.transform='translateX('+x.toFixed(1)+'px) translateZ('+z.toFixed(1)+'px) rotateY('+ry.toFixed(1)+'deg) rotateZ('+sw.toFixed(2)+'deg)';
+        p.el.style.zIndex=100-Math.round(a*10);
+        p.el.style.opacity=a>4.5?0:1;
+        p.garm.style.filter=a<0.5?'none':'grayscale(.85) brightness('+Math.max(.35,.8-a*.12).toFixed(2)+')';
+      });
+      const c=Math.max(0,Math.min(N-1,cur)); tag.textContent='Look '+PH[c].n+' / '+String(N).padStart(2,'0')+' · '+PH[c].kind+' · '+PH[c].place;
+    }
+    function go(i){ target=Math.max(0,Math.min(N-1,i)); }
+    rack.addEventListener('pointerdown',e=>{ drag=true; moved=0; lx=e.clientX; rack.setPointerCapture(e.pointerId); });
+    rack.addEventListener('pointermove',e=>{ if(!drag) return; const dx=e.clientX-lx; lx=e.clientX; moved+=Math.abs(dx); pos=Math.max(-.6,Math.min(N-.4,pos-dx/step)); });
+    rack.addEventListener('pointerup',e=>{ if(!drag) return; drag=false; if(moved<6){ const h=document.elementsFromPoint(e.clientX,e.clientY).find(n=>n.classList&&n.classList.contains('hang')); if(h){ const i=+h.dataset.i; if(i===Math.round(pos)) openLB(i); else go(i); } else go(Math.round(pos)); } else go(Math.round(pos-vel*6)); });
+    rack.addEventListener('pointercancel',()=>{ drag=false; go(Math.round(pos)); });
+    rack.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){ go(Math.round(target)+1); e.preventDefault(); } else if(e.key==='ArrowLeft'){ go(Math.round(target)-1); e.preventDefault(); } else if(e.key==='Enter'){ openLB(Math.round(target)); } });
+    window.addEventListener('resize',layout); layout(); requestAnimationFrame(frame);
+
+    /* lookbook (papel rasgado) */
+    const lb=document.getElementById('lookbook');
+    const starSVG='<svg class="star" viewBox="0 0 50 50" aria-hidden="true"><path d="M25 3 L31 19 L48 19 L34 29 L39 46 L25 36 L11 46 L16 29 L2 19 L19 19 Z" fill="none" stroke="#E3262B" stroke-width="3.5" stroke-linejoin="round"/></svg>';
+    PH.forEach((p,i)=>{ const b=document.createElement('button'); b.type='button'; b.className='lb-item'; b.style.setProperty('--rot',(i%2?1:-1)*(0.8+(i%3)*0.7)+'deg'); b.style.setProperty('--tr',(i%2?5:-4)+'deg');
+      b.setAttribute('aria-label','Ampliar foto '+(i+1)+': '+p.alt);
+      b.innerHTML='<span class="tape" aria-hidden="true"></span><span class="paper-cut"><img src="'+D+p.f+'.webp" alt="" width="'+p.w+'" height="'+p.h+'" loading="lazy"></span>'+(i%3===1?'<span class="stamp">'+p.kind+'</span>':'')+starSVG;
+      b.addEventListener('click',()=>openLB(i)); lb.appendChild(b); });
+
+    /* vídeo: timecode e play/pause */
+    const tc=document.getElementById('em-tc'), play=document.getElementById('em-play'); let userPaused=false;
+    const pad=n=>String(n).padStart(2,'0');
+    vid.addEventListener('timeupdate',()=>{ const t=vid.currentTime; tc.textContent='00:'+pad(Math.floor(t/60))+':'+pad(Math.floor(t%60))+':'+pad(Math.floor((t%1)*24)); });
+    vid.addEventListener('play',()=>{ play.textContent='❚❚'; play.setAttribute('aria-label','Pausar prévia'); });
+    vid.addEventListener('pause',()=>{ play.textContent='▶'; play.setAttribute('aria-label','Tocar prévia'); });
+    play.addEventListener('click',()=>{ if(vid.paused){ userPaused=false; vid.play().catch(()=>{}); } else { userPaused=true; vid.pause(); } });
+    if(reduce){ play.textContent='▶'; play.setAttribute('aria-label','Tocar prévia'); }
+
+    /* ampliar */
+    const box=document.getElementById('em-lb'), img=document.getElementById('em-lb-img'), cap=document.getElementById('em-lb-cap');
+    let li=0, opener=null;
+    function show(){ const p=PH[li]; img.src=D+p.f+'.webp'; img.alt=p.alt; cap.textContent='Nº '+p.n+' · '+p.kind+' · '+p.place; }
+    function openLB(i){ opener=document.activeElement; li=i; show(); box.hidden=false; document.body.style.overflow='hidden'; document.getElementById('em-lb-x').focus(); }
+    function closeLB(){ box.hidden=true; document.body.style.overflow=''; if(opener&&opener.focus) opener.focus({preventScroll:true}); }
+    document.getElementById('em-lb-x').addEventListener('click',closeLB);
+    document.getElementById('em-lb-p').addEventListener('click',()=>{ li=(li-1+N)%N; show(); });
+    document.getElementById('em-lb-n').addEventListener('click',()=>{ li=(li+1)%N; show(); });
+    box.addEventListener('click',e=>{ if(e.target===box) closeLB(); });
+    document.addEventListener('keydown',e=>{ if(box.hidden) return; if(e.key==='Escape') closeLB(); else if(e.key==='ArrowLeft'){ li=(li-1+N)%N; show(); } else if(e.key==='ArrowRight'){ li=(li+1)%N; show(); } });
   })();
 
   /* ---------- Certificados: virar cartões + contador de horas ---------- */

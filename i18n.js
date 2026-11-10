@@ -1,0 +1,306 @@
+/* Tradução PT → EN do portfólio Kifita.
+   Para mudar um texto em inglês, edite o valor à direita (depois dos dois-pontos). */
+(function(){
+  const EN = {
+    /* menu e abertura */
+    'Projetos':'Projects','Ilustrações':'Illustrations','Sobre':'About','Experiência':'Experience','Contato':'Contact','Seções':'Sections',
+    'Clique no avatar':'Click the avatar','Óculos na testa':'Shades up',
+    'Avatar do João Vitor. Clique para tirar os óculos.':"João Vitor's avatar. Click to take off the sunglasses.",
+    'Avatar do João Vitor sem óculos. Clique para colocar os óculos.':"João Vitor's avatar without sunglasses. Click to put them back on.",
+    'Pós-produção':'Post-production','Operação de câmera':'Camera operation','Fotografia':'Photography','Ilustração cartoon':'Cartoon illustration',
+    'Extremo sul de São Paulo':'Far south of São Paulo',
+    /* sala de projeção */
+    'Arraste para girar':'Drag to spin','clique numa imagem':'click an image',
+    'Sala de projeção':'Screening room','Portfólio 2026':'Portfolio 2026',
+    'Cor, corte e câmera para histórias':'Color, cut and camera for stories','da quebrada':'from the hood','à tela grande.':'to the big screen.',
+    'Filmes, documentário, videoclipe e still. Trabalho na pós-produção e no set, do primeiro take à capa do projeto.':'Films, documentary, music videos and stills. I work in post-production and on set, from the first take to the project cover.',
+    'Ver projetos':'See projects','projetos no portfólio':'projects in the portfolio','Audiovisual KondZilla':'KondZilla Audiovisual','filme na Noite de Kino':'film at Noite de Kino',
+    /* sobre */
+    'João Vitor de boné vermelho e óculos escuros, sentado na plateia de uma sessão de cinema':'João Vitor in a red cap and sunglasses, sitting in a movie theater audience',
+    'Sou profissional de audiovisual do extremo sul de São Paulo, com atuação em pós-produção, operação de câmera e fotografia.':"I'm an audiovisual professional from the far south of São Paulo, working in post-production, camera operation and photography.",
+    'Me formei em Pós-produção pelo Instituto Criar e em Fotografia pela Casa Locomotiva, e concluí o curso de Audiovisual do Instituto KondZilla. Já atuei como freelancer na RapBox e, em 2026, trabalhei na produtora Olhar Imaginário como colorista, assistente de montagem, montador e assistente de fotografia.':'I studied Post-production at Instituto Criar and Photography at Casa Locomotiva, and completed the Audiovisual course at Instituto KondZilla. I have freelanced for RapBox and, in 2026, worked at the production company Olhar Imaginário as colorist, assistant editor, editor and photography assistant.',
+    'Base':'Based in','Assinatura':'Signature',
+    /* filtros e projetos */
+    'Filtrar projetos por função':'Filter projects by role','Todos':'All','Cor':'Color','Montagem':'Editing','Câmera':'Camera','Animação / IA':'Animation / AI',
+    'Nenhum projeto com essa função.':'No projects with this role.','Funções':'Roles',
+    'filme em 24 horas':'24-hour film',
+    'Filme produzido para a Noite de Kino, projeto em que o filme precisa ser feito em 24 horas.':'A film made for Noite de Kino, a project where each film has to be made in 24 hours.',
+    'Colorista':'Colorist','Assistente de montagem':'Assistant editor','Designer da capa':'Cover designer',
+    'Capa de Cidade Errante: rosto com pintura facial e o título em letras de tijolo':'Cidade Errante cover: a painted face and the title in brick lettering',
+    'emergência climática':'climate emergency',
+    'Filme realizado durante a formação no Instituto KondZilla. Retrata São Miguel Paulista, bairro da zona leste de São Paulo que sofre com enchentes e alagamentos, onde as casas têm comportas para se proteger da água.':'A film made during my training at Instituto KondZilla. It portrays São Miguel Paulista, a neighborhood in east São Paulo hit by floods, where houses have floodgates to keep the water out.',
+    'Operador de câmera':'Camera operator','Montador':'Editor',
+    'Cartaz de Às Margens: jovem sentada numa escadaria de viela':'Às Margens poster: a young woman sitting on alley stairs',
+    'Cervejaria de Sertãozinho':'Sertãozinho brewery','Cerveja Serta':'Serta Beer',
+    'Imagens da cervejaria de Sertãozinho, que possui seu próprio laboratório de produção de cerveja.':'Images of the Sertãozinho brewery, which has its own beer production lab.',
+    'Assistente de fotografia':'Photography assistant',
+    'Garrafa e embalagem da cerveja Serta em fundo verde':'Serta beer bottle and packaging on a green background',
+    'Bastidor da sessão de fotos no laboratório da cervejaria':'Behind the scenes of the photo shoot in the brewery lab',
+    'mostra de cinema':'film showcase','Mostra Toni Venturi':'Toni Venturi Showcase',
+    'A Mostra de Cinema de Toni Venturi foi realizada na Olhar Imaginário. O projeto também contou com animação feita com inteligência artificial. No evento, fiquei do outro lado da lente: fotografei o público, os convidados e a equipe, e tratei todas as imagens.':"The Toni Venturi Film Showcase was produced at Olhar Imaginário. The project also featured AI-made animation. At the event I stepped to the other side of the lens: I photographed the audience, guests and crew, and edited every image.",
+    'Fotografia do evento':'Event photography','Tratamento de imagem':'Image retouching',
+    'Cartaz laranja da Mostra de Cinema Toni Venturi':'Orange poster of the Toni Venturi Film Showcase',
+    'Bastidor de gravação em uma sala com escada e plantas':'Behind the scenes of a shoot in a room with stairs and plants',
+    /* Toni: câmera 3D */
+    'fotografia do evento':'event photography','Do outro lado da lente':'The other side of the lens',
+    'Entre uma sessão e outra, a mostra virou set. Fotografei quem passou pela parede de cartazes laranja e pela exposição em preto e branco: público, convidados, equipe, abraços e sacolas da Mostra no ombro. Depois, tratei uma a uma.':'Between screenings, the showcase became a set. I photographed everyone who passed the orange poster wall and the black-and-white exhibition: audience, guests, crew, hugs and Showcase tote bags on shoulders. Then I edited each one.',
+    'Como ver as fotos':'How to view the photos','Câmera 3D':'3D Camera','Folha de contato':'Contact sheet',
+    'Câmera em 3D. Arraste para girar, espaço para disparar.':'3D camera. Drag to rotate, press space to shoot.',
+    'Gire a câmera, aperte o disparador e veja a foto sair no visor de trás. Cada disparo revela um quadro do evento.':'Spin the camera, press the shutter and watch the photo appear on the back screen. Each shot reveals a frame from the event.',
+    'Disparar: próxima foto':'Shoot: next photo','← Voltar':'← Back','Olhar pelo visor':'Look through the viewfinder','Virar câmera':'Turn camera',
+    'Últimas fotos disparadas':'Latest shots','Visor da câmera':'Camera viewfinder','Fechar visor':'Close viewfinder',
+    'Duas pessoas abraçadas diante da exposição em preto e branco':'Two people hugging in front of the black-and-white exhibition',
+    'Convidado sorri diante da parede de cartazes laranja':'Guest smiling in front of the orange poster wall',
+    'Convidado faz joinha diante dos cartazes da Mostra':'Guest giving a thumbs-up in front of the Showcase posters',
+    'Três convidadas diante dos cartazes laranja':'Three guests in front of the orange posters',
+    'Convidado conversa diante dos cartazes da Mostra':'Guest talking in front of the Showcase posters',
+    'Convidada segura a sacola da Mostra':'Guest holding the Showcase tote bag',
+    'Público circula pelo espaço da exposição':'Audience walking through the exhibition space',
+    'Entrega das sacolas da Mostra ao público':'Showcase tote bags being handed out',
+    'Grupo segura o catálogo e as sacolas da Mostra':'Group holding the catalog and Showcase tote bags',
+    'Três convidadas diante da exposição de fotos':'Three guests in front of the photo exhibition',
+    'Dois convidados abraçados no evento':'Two guests hugging at the event',
+    'Trio com catálogos diante de cartazes de filmes':'Trio with catalogs in front of film posters',
+    'Casal abraçado sorri para a câmera':'Couple hugging and smiling at the camera',
+    'Duas convidadas diante da exposição':'Two guests in front of the exhibition',
+    'Dois convidados lado a lado no evento':'Two guests side by side at the event',
+    'Dupla sorri sob a luz vermelha':'Duo smiling under red light',
+    'Casal no meio do público':'Couple in the middle of the crowd',
+    'Grupo grande diante dos cartazes laranja':'Large group in front of the orange posters',
+    'Grupo de jovens com as sacolas da Mostra':'Group of young people with Showcase tote bags',
+    'Duas convidadas brindam diante da exposição':'Two guests toasting in front of the exhibition',
+    /* Existe Moda em SP? */
+    'Documentário':'Documentary',
+    'Documentário sobre moda com artistas periféricos da região de São Paulo, realizado no ModaLab+ com o Instituto Ecotece. Além de fotografar e operar a câmera, criei a identidade do projeto: o logo grafitado, a capa do documentário e a thumb.':"A documentary about fashion with artists from São Paulo's outskirts, made at ModaLab+ with Instituto Ecotece. Besides shooting photos and operating the camera, I created the project's identity: the graffiti logo, the documentary cover and the thumbnail.",
+    'Colorização':'Color grading','Motion com IA':'AI motion','Identidade visual':'Visual identity','Capa do documentário':'Documentary cover',
+    'Capa do documentário Existe Moda em SP, com retrato em preto e branco recortado em faixas':'Existe Moda em SP documentary cover, with a black-and-white portrait cut into strips',
+    'foto, câmera e identidade':'photo, camera and identity','Moda que nasce na rua':'Fashion born on the street',
+    'Jeans desfiado colado na parede de cartazes da Virada Cultural, touca de crochê no rooftop, dente de ouro pintado na pelúcia. Fotografei e filmei artistas que fazem moda com o que a cidade dá, e dei ao projeto a cara dele: logo, capa e thumb.':'Frayed denim against the Virada Cultural poster wall, a crochet hood on the rooftop, gold teeth painted on plush. I photographed and filmed artists who make fashion out of whatever the city gives them, and gave the project its look: logo, cover and thumbnail.',
+    'Como ver o projeto':'How to view the project','Arara 3D':'3D Clothes Rack','Doc e capas':'Doc & covers',
+    'Arara de fotos. Arraste para os lados ou use as setas; Enter amplia a foto da frente.':'Photo clothes rack. Drag sideways or use the arrow keys; Enter enlarges the front photo.',
+    'Retrato':'Portrait','Detalhe':'Detail','Peça':'Piece','Bastidor':'Behind the scenes',
+    'Centro de SP':'Downtown SP','Costura à mão':'Hand stitching','Pelúcia pintada':'Painted plush','Jeans desfiado':'Frayed denim',
+    'Ilhós vermelho':'Red eyelets','Parede de cartazes':'Poster wall','Contra-plongée':'Low angle',
+    'Arraste a arara':'Drag the rack','clique na peça da frente para ampliar':'click the front piece to enlarge',
+    'Prévia do corte':'Cut preview','36 s sem áudio':'36 s, no audio','captação e cor':'camera and color',
+    'Pausar prévia':'Pause preview','Tocar prévia':'Play preview',
+    'Retrato de perfil em preto e branco de artista tatuado':'Black-and-white profile portrait of a tattooed artist',
+    'Dupla de jeans desfiado diante dos cartazes da Virada Cultural CCSP':'Duo in frayed denim in front of the Virada Cultural CCSP posters',
+    'Artista olha o celular, mão tatuada e costura aparente na manga':'Artist looking at a phone, tattooed hand and visible stitching on the sleeve',
+    'Peça de pelúcia verde com rosto pintado de dentes dourados':'Green plush piece with a painted face and gold teeth',
+    'Dupla em jeans desconstruído vista de baixo':'Duo in deconstructed denim seen from below',
+    'Entrevista no rooftop com artista de touca de crochê':'Rooftop interview with an artist in a crochet hood',
+    'Perfil de artista de capuz preto com ilhoses vermelhos':'Profile of an artist in a black hood with red eyelets',
+    'Dupla posa diante da parede de cartazes da Virada Cultural':'Duo posing in front of the Virada Cultural poster wall',
+    'Dupla de jeans em contra-plongée':'Denim duo shot from a low angle',
+    'Capa do documentário: retrato em preto e branco recortado em faixas, com o título Existe Moda em SP':'Documentary cover: black-and-white portrait cut into strips, with the title Existe Moda em SP',
+    'Thumb SP Edition: dupla de jeans desfiado ao lado do título com ponto de interrogação vermelho':'SP Edition thumbnail: frayed-denim duo next to the title with a red question mark',
+    'Frame em preto e branco de Existe Moda em SP com artista tatuado':'Black-and-white frame from Existe Moda em SP with a tattooed artist',
+    'Logo grafitado de Existe Moda em SP?':'Graffiti logo of Existe Moda em SP?',
+    /* Cidade Vertical e La Aura */
+    'livro de Anne Almeida':"Anne Almeida's book",
+    'Vídeo de pré-lançamento do livro homônimo da autora Anne Almeida, do Instituto KondZilla, construído a partir de poesias da própria obra.':"Pre-launch video for author Anne Almeida's book of the same name, from Instituto KondZilla, built from poems in the book itself.",
+    'Título Cidade, com janelas acesas dentro das letras':'The title Cidade, with lit windows inside the letters',
+    'Mulher de costas olhando uma multidão':'Woman seen from behind looking at a crowd',
+    'Videoclipe':'Music video',
+    'Videoclipe da artista La Aura: color grading, cartaz de divulgação e uma animação para a cena dos créditos.':'Music video for the artist La Aura: color grading, the promo poster and an animation for the credits scene.',
+    'Cartaz de divulgação':'Promo poster','Animação dos créditos':'Credits animation',
+    'La Aura de boina e gravata posando em frente a grafite neon roxo e laranja':'La Aura in a beret and tie posing in front of purple and orange neon graffiti',
+    'Foto ampliada':'Enlarged photo','Fechar':'Close','Foto anterior':'Previous photo','Próxima foto':'Next photo',
+    /* Bloqueio Criativo */
+    '30 e 31 out 2025':'Oct 30 & 31, 2025',
+    'Um filme com nome de pesadelo de todo criador. Bloqueio Criativo acompanha uma artista que trava diante da própria obra: a ideia não vem, a página continua em branco. O set foi um quarto cheio de post-its, pôsteres, luz neon e uma caneca que jura estar':"A film named after every creator's nightmare. Bloqueio Criativo (Creative Block) follows an artist who freezes in front of her own work: the idea won't come, the page stays blank. The set was a room full of sticky notes, posters, neon light and a mug that swears it's",
+    'Neste projeto, atuei como':'On this project, I was the','fotógrafo de making of':'making-of photographer','e fiz o':'and did the','tratamento das imagens':'image retouching',
+    ': em duas diárias, registrei a equipe, o elenco e os detalhes do set, do boom à claquete, nos intervalos e no meio dos takes.':': over two shoot days, I captured the crew, the cast and the set details, from the boom to the clapperboard, between and during takes.',
+    'Fotografia de making of':'Making-of photography','diárias':'shoot days','fotos selecionadas':'selected photos','primeiro clique, 30/10':'first shot, Oct 30',
+    'Filtrar fotos do making of':'Filter making-of photos','Todas':'All','Dia 1 · 30/10':'Day 1 · Oct 30','Dia 2 · 31/10':'Day 2 · Oct 31',
+    'Equipe':'Crew','Elenco':'Cast','Detalhes':'Details','Todas as fotos':'All photos',
+    'Fotos do making of de Bloqueio Criativo. Use as setas do teclado para navegar e Enter para ampliar.':'Making-of photos from Bloqueio Criativo. Use the arrow keys to browse and Enter to enlarge.',
+    'A caneca que dá o tom do set.':'The mug that sets the tone on set.',
+    'A mesma caneca, agora sob luz neon.':'The same mug, now under neon light.',
+    'Ajuste de foco antes do take.':'Focus check before the take.',
+    'O monitor da câmera mostra o quadro.':'The camera monitor shows the frame.',
+    'Câmera no gimbal, mirando de volta.':'Camera on the gimbal, aiming right back.',
+    'Joinha liberado entre um take e outro.':'A thumbs-up between takes.',
+    'Boom no alto para captar o som.':'Boom up high to capture sound.',
+    'Equipe de som, de fone e sorriso.':'Sound crew, headphones and smiles.',
+    'Concentração atrás do microfone.':'Focus behind the microphone.',
+    'Olhar pra cima, claquete passando.':'Looking up as the clapperboard passes.',
+    'Claquete pronta para marcar a cena.':'Clapperboard ready to mark the scene.',
+    'Roteiro numa mão, claquete na outra.':'Script in one hand, clapperboard in the other.',
+    'Entrada em cena com toalha e café.':'Entering the scene with a towel and coffee.',
+    'Cena na cama, câmera bem perto.':'Bed scene, camera up close.',
+    'A atriz enquadrada por entre o set.':'The actress framed through the set.',
+    'Perfil sob luz baixa.':'Profile in low light.',
+    'Retrato no meio da diária.':'Portrait in the middle of the shoot day.',
+    'Sorriso na luz roxa do quarto.':"A smile in the room's purple light.",
+    'Equipe inteira em volta da câmera.':'The whole crew around the camera.',
+    'Case de equipamento: INST. CRIAR #01.':'Gear case: INST. CRIAR #01.',
+    'Dia 1':'Day 1','Dia 2':'Day 2',
+    /* Ilustrações */
+    'Ilustração digital':'Digital illustration','cartoon, graffiti e sticker':'cartoon, graffiti and stickers',
+    'Fora do set, eu desenho. Personagens de olhar torto, letras de graffiti que parecem bexiga prestes a estourar e stickers cheios de cor. Acompanhe os desenhos novos no Instagram':'Off set, I draw. Side-eyed characters, graffiti letters that look like balloons about to pop and stickers full of color. Follow new drawings on Instagram',
+    'Cada peça nasce no traço e ganha textura, brilho e movimento na tela. Passe o mouse para ver de perto, ou abra o':'Every piece starts as a line and gains texture, shine and motion on screen. Hover to look closer, or open',
+    'Modo 3D':'3D Mode','e gire o adesivo na mão.':'and spin the sticker in your hand.',
+    'Modo de visualização':'View mode','Galeria':'Gallery','Ver em 3D':'View in 3D',
+    'Tridente':'Trident','Personagem':'Character','Lettering · 3 paletas':'Lettering · 3 palettes','3 paletas':'3 palettes',
+    'LM Cromado':'LM Chrome','holográfico':'holographic','Óculos Vermelhos':'Red Glasses','Trio, lettering em três paletas':'Trio, lettering in three palettes',
+    'Paleta':'Palette','Laranja':'Orange','Verde':'Green','Turquesa':'Turquoise',
+    'Girar sozinho':'Auto-spin','Brilho holográfico':'Holographic shine','Endireitar':'Straighten',
+    'setas do teclado também funcionam':'arrow keys work too',
+    'Ilustração em 3D. Arraste ou use as setas do teclado para girar.':'3D illustration. Drag or use the arrow keys to spin.',
+    'Escolher ilustração':'Choose illustration',
+    /* Áreas e competências */
+    'Áreas de atuação e competências':'What I do and skills','Áreas de atuação':'What I do','Competências':'Skills',
+    'Ilustração digital em estilo cartoon, criação de personagens e cenários':'Cartoon-style digital illustration, character and background design',
+    'Design e materiais visuais para projetos audiovisuais':'Design and visual materials for audiovisual projects',
+    'Edição e montagem de vídeo':'Video editing','Correção de cor e color grading':'Color correction and color grading',
+    'Animação com IA':'AI animation','Fotografia still e tratamento de imagem':'Still photography and image retouching',
+    'Operação de câmera e iluminação':'Camera operation and lighting',
+    'Narrativa visual, ritmo de edição e organização de material audiovisual':'Visual storytelling, editing rhythm and footage organization',
+    'Correção de cor, color grading e ajustes de luz':'Color correction, color grading and light adjustments',
+    'Criação de thumbnails, pôsteres e capas musicais':'Thumbnails, posters and music covers',
+    'Ilustração cartoon, desenho de personagens e cenários':'Cartoon illustration, character and background drawing',
+    'Experiência prática com câmera, iluminação e fotografia':'Hands-on experience with camera, lighting and photography',
+    'Trabalho colaborativo, curiosidade e disposição para aprender':'Teamwork, curiosity and eagerness to learn',
+    /* Experiência e formação */
+    'Produtora de cinema e televisão fundada em 1996 por Toni Venturi. Fiz a correção de cor do filme do jornalista Luís Nassif, a assistência de captação em escolas dos Institutos Federais e a fotografia de "A Mostra de Cinema de Toni Venturi".':'A film and TV production company founded in 1996 by Toni Venturi. I color-corrected journalist Luís Nassif\'s film, assisted on shoots at Federal Institute schools and photographed "A Mostra de Cinema de Toni Venturi".',
+    'Produção de videoclipes animados para o público infantil: montagem, motion design, criação de thumbnails e capas de músicas. Também acompanhei e monitorei o canal do YouTube onde os vídeos eram publicados.':"Animated music videos for children: editing, motion design, thumbnails and song covers. I also tracked and monitored the YouTube channel where the videos were published.",
+    'Formação':'Education',
+    'Carga horária: aula inaugural 4 horas, oficina de projeto de vida 4 horas, produção de vídeo 168 horas, formatura e celebração 4 horas':'Course hours: opening class 4 hours, life-project workshop 4 hours, video production 168 hours, graduation and celebration 4 hours',
+    'Aula inaugural 4h':'Opening class 4h','Projeto de vida 4h':'Life project 4h','Produção de vídeo 168h':'Video production 168h','Formatura 4h':'Graduation 4h',
+    'Audiovisual e Tecnologia':'Audiovisual and Technology','Turma 20':'Class 20',
+    'Orientações de Audiovisual':'Audiovisual mentoring','Programa Vocacional':'Vocational Program','Centro Cultural Grajaú':'Grajaú Cultural Center',
+    'Ensino Médio completo':'High school diploma','Concluído':'Completed',
+    /* certificados */
+    'Certificados':'Certificates','Horas de voo':'Flight hours',
+    'horas de formação certificada':'hours of certified training','entre 2023 e 2026':'between 2023 and 2026',
+    '1.723 horas de formação certificada':'1,723 hours of certified training','1.723':'1,723','1.462 h':'1,462 h','1.462':'1,462',
+    'Horas por formação':'Hours per program','Vocacional':'Vocational',
+    'Certificado':'Certificate',
+    'Programa de Formação em Audiovisual e Tecnologia, com habilitação em':'Audiovisual and Technology Training Program, specializing in',
+    'Pós-Produção':'Post-Production',
+    '. Fevereiro a novembro de 2024, curso cumprido em sua totalidade.':'. February to November 2024, course fully completed.',
+    'horas':'hours','Virar ↻':'Flip ↻','Voltar ↺':'Back ↺','Grade curricular':'Curriculum',
+    'Exercícios práticos':'Practical exercises','Técnicos específicos':'Specific technical','Socioculturais':'Sociocultural','Conhecimentos básicos':'Core fundamentals',
+    'Efeitos visuais':'Visual effects','Animação 2D':'2D animation','Fluxos de trabalho':'Workflows','História do cinema':'Film history',
+    'Escola de Criadores':'Creators School','Edição SP':'São Paulo edition','Conclusão':'Completion',
+    'Formação presencial em':'In-person training in','produção de vídeo':'video production',
+    'para campanhas de conscientização: roteiro, fotografia e iluminação de estúdio, IA, direitos autorais e economia criativa. Mais três trilhas online.':'for awareness campaigns: script, photography and studio lighting, AI, copyright and the creative economy. Plus three online tracks.',
+    '4 certificados':'4 certificates','Formação presencial SP':'In-person training, SP',
+    'Aula inaugural, projeto de vida, produção de vídeo e formatura':'Opening class, life project, video production and graduation',
+    'Linguagem, roteiro, fotografia, som e edição':'Film language, script, photography, sound and editing',
+    'Marca, redes, design e monetização':'Branding, social media, design and monetization',
+    'Trilha Bônus':'Bonus track','Indústria da música, carreira e streaming':'Music industry, career and streaming',
+    'Declaração':'Declaration','Secretaria Municipal de Cultura':'São Paulo Municipal Culture Department','Prefeitura de São Paulo':'City of São Paulo',
+    'Participou como':'Took part as a','artista vocacionado':'vocational artist','das orientações de Audiovisual no Centro Cultural Grajaú.':'in the Audiovisual mentoring at the Grajaú Cultural Center.',
+    'O começo de tudo':'Where it all began','Linguagem':'Field','Orientação':'Mentor','Onde':'Where','Carga':'Hours',
+    'Centro Cultural Grajaú, zona sul de SP':'Grajaú Cultural Center, south São Paulo','48 horas em 2023':'48 hours in 2023',
+    'Foi aqui, no extremo sul, que a câmera entrou na história, ainda assinando como Loop Men.':'This is where, in the far south, the camera came into the story, back when I signed as Loop Men.',
+    'Toque num certificado para virar':'Tap a certificate to flip it',
+    'Virar certificado do Instituto Criar para ver a grade curricular':'Flip the Instituto Criar certificate to see the curriculum',
+    'Virar certificados do Instituto KondZilla para ver as trilhas':'Flip the Instituto KondZilla certificates to see the tracks',
+    'Virar declaração do Programa Vocacional para ver os detalhes':'Flip the Vocational Program declaration to see the details',
+    /* contato */
+    'Meu contato':'Get in touch',
+    'Tem um filme, clipe ou campanha precisando de cor, corte ou câmera? Me chama.':'Got a film, music video or campaign that needs color, editing or camera work? Get in touch.',
+    'Telefone / WhatsApp':'Phone / WhatsApp','Copiar':'Copy','Abrir':'Open','Copiado':'Copied','Selecionado':'Selected',
+    'Portfólio criativo':'Creative portfolio',
+    /* títulos recortados */
+    'Opa, me chamo João Vítor':"Hey, I'm João Vítor"
+  };
+  const MONTHS={jan:'Jan',fev:'Feb',mar:'Mar',abr:'Apr',mai:'May',jun:'Jun',jul:'Jul',ago:'Aug',set:'Sep',out:'Oct',nov:'Nov',dez:'Dec'};
+  const PATTERNS=[
+    [/^Ampliar foto (\d+): (.+)$/, (m)=>'Enlarge photo '+m[1]+': '+tr(m[2])],
+    [/^Ampliar foto (\d+)$/, (m)=>'Enlarge photo '+m[1]],
+    [/^Ver foto (\d+): (.+)$/, (m)=>'View photo '+m[1]+': '+tr(m[2])],
+    [/^Ver (.+) em 3D$/, (m)=>'View '+tr(m[1])+' in 3D'],
+    [/^Paleta (.+)$/, (m)=>tr(m[1])+' palette']
+  ];
+  function months(s){
+    if(!/\d|–/.test(s)) return s;
+    return s.replace(/(^|[\s–(])(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)(?=$|[\s–)])/gi,(a,p,mo)=>p+MONTHS[mo.toLowerCase()]);
+  }
+  function tr(s){
+    if(Object.prototype.hasOwnProperty.call(EN,s)) return EN[s];
+    for(const [re,fn] of PATTERNS){ const m=s.match(re); if(m) return fn(m); }
+    if(s.includes(' · ')) return s.split(' · ').map(tr).join(' · ');
+    return months(s);
+  }
+  function trKeep(raw){ const m=raw.match(/^(\s*)([\s\S]*?)(\s*)$/); const core=m[2].replace(/\s+/g,' '); if(!core) return raw; const t=tr(core); return t===core?raw:m[1]+t+m[3]; }
+
+  let lang='pt';
+  const origText=new WeakMap(), lastText=new WeakMap();
+  const origAttr=new WeakMap();
+  const ATTRS=['aria-label','alt'];
+  const skip=n=>{ const p=n.parentElement; return !p||p.closest('script,style,[data-cut],.lang-switch'); };
+
+  function doText(n){
+    if(skip(n)) return;
+    if(lastText.get(n)!==n.nodeValue) origText.set(n,n.nodeValue);
+    const o=origText.get(n); if(o==null) return;
+    const v= lang==='en'? trKeep(o) : o;
+    if(n.nodeValue!==v) n.nodeValue=v;
+    lastText.set(n,n.nodeValue);
+  }
+  function doAttrs(el){
+    if(el.closest('.lang-switch')||el.hasAttribute('data-cut')) return;
+    let rec=origAttr.get(el); if(!rec){ rec={}; origAttr.set(el,rec); }
+    ATTRS.forEach(a=>{ if(!el.hasAttribute(a)) return; const cur=el.getAttribute(a);
+      if(!rec[a]||cur!==rec[a].last) rec[a]={orig:cur};
+      const v= lang==='en'? tr(cur===rec[a].last?rec[a].orig:rec[a].orig) : rec[a].orig;
+      if(cur!==v) el.setAttribute(a,v); rec[a].last=el.getAttribute(a); });
+  }
+  function walk(root){
+    if(root.nodeType===3){ doText(root); return; }
+    if(root.nodeType!==1) return;
+    doAttrs(root);
+    const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT);
+    let n; while(n=w.nextNode()){ if(n.nodeType===3) doText(n); else doAttrs(n); }
+  }
+  /* títulos de letras recortadas */
+  let seed=11; const rnd=()=>{ seed=(seed*9301+49297)%233280; return seed/233280; };
+  function recut(el){
+    if(!el.dataset.pt) el.dataset.pt=el.getAttribute('aria-label')||el.textContent.trim();
+    const txt= lang==='en'? tr(el.dataset.pt) : el.dataset.pt;
+    if(el.getAttribute('aria-label')===txt && el.dataset.cutLang===lang) return;
+    el.setAttribute('aria-label',txt); el.dataset.cutLang=lang; el.textContent='';
+    txt.split(' ').forEach(word=>{ const w=document.createElement('span'); w.className='w'; w.setAttribute('aria-hidden','true');
+      [...word].forEach(ch=>{ const s=document.createElement('span'); s.className='l'; s.textContent=ch;
+        s.style.setProperty('--r',((rnd()-.5)*12).toFixed(1)+'deg'); s.style.setProperty('--y',((rnd()-.5)*6).toFixed(1)+'px'); w.appendChild(s); });
+      el.appendChild(w); });
+  }
+  const META={pt:{title:document.title, desc:(document.querySelector('meta[name=description]')||{}).content}, en:{title:'João Vitor · Kifita', desc:'Portfolio of João Vitor Alves (Kifita): post-production, color grading, camera operation, photography and illustration. Far south of São Paulo, Brazil.'}};
+  function apply(l){
+    lang=l; document.documentElement.lang= l==='en'?'en':'pt-BR';
+    document.querySelectorAll('[data-cut]').forEach(recut);
+    walk(document.body);
+    document.title=META[l].title; const md=document.querySelector('meta[name=description]'); if(md&&META[l].desc) md.content=META[l].desc;
+    document.querySelectorAll('.lang-switch button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l?'true':'false'));
+    try{ localStorage.setItem('kifita-lang',l); }catch(e){}
+    window.dispatchEvent(new Event('resize'));
+  }
+  new MutationObserver(ms=>{
+    if(lang!=='en') return;
+    for(const m of ms){
+      if(m.type==='characterData'){ if(lastText.get(m.target)!==m.target.nodeValue) doText(m.target); }
+      else if(m.type==='attributes'){ if(ATTRS.includes(m.attributeName)&&m.target.nodeType===1&&!m.target.hasAttribute('data-cut')){ const rec=origAttr.get(m.target); const cur=m.target.getAttribute(m.attributeName); if(!rec||!rec[m.attributeName]||rec[m.attributeName].last!==cur) doAttrs(m.target); } }
+      else m.addedNodes.forEach(n=>{ if(n.nodeType===1&&n.matches&&n.matches('[data-cut]')) recut(n); else walk(n); });
+    }
+  }).observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:ATTRS});
+
+  /* botão PT | EN */
+  const nav=document.querySelector('.nav');
+  if(nav){
+    const sw=document.createElement('div'); sw.className='lang-switch'; sw.setAttribute('role','group'); sw.setAttribute('aria-label','Idioma / Language');
+    sw.innerHTML='<button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR" title="Português">PT</button><button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>';
+    sw.addEventListener('click',e=>{ const b=e.target.closest('button'); if(b&&b.dataset.lang!==lang) apply(b.dataset.lang); });
+    nav.appendChild(sw);
+  }
+  let start='pt';
+  const q=new URLSearchParams(location.search).get('lang');
+  if(q==='en'||q==='pt') start=q;
+  else { let saved=null; try{ saved=localStorage.getItem('kifita-lang'); }catch(e){}
+    if(saved==='en'||saved==='pt') start=saved; else if(!/^pt/i.test(navigator.language||'pt')) start='en'; }
+  if(start==='en') apply('en');
+})();

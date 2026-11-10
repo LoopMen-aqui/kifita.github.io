@@ -260,10 +260,21 @@ p{margin:0}
 .hl span{font-size:12px;opacity:.9;white-space:nowrap}
 .hl:hover,.hl:focus-visible{transform:translateY(-3px);box-shadow:3px 4px 0 var(--ink)}
 .c-criar{background:var(--cobalt)}.c-kz{background:var(--red)}.c-voc{background:var(--mat)}
-.cert-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:40px}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:28px;margin-top:40px}
+.cert-front.kz::before{border-color:var(--violet)}
+.kz .c-name{color:var(--violet)}
+.kz .seal{background:var(--violet)}
+.cert-back.kz{background:#2b1f6e}
+.tracks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tracks li{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:9px 0;border-top:1px solid rgba(255,252,243,.22)}
+.tracks .tn{font-family:var(--f-mono);font-size:12px;color:#F2B33D}
+.tracks .tt{font-weight:600;font-size:14.5px;line-height:1.3}
+.tracks .tt small{display:block;font-weight:400;font-size:12.5px;opacity:.8;margin-top:2px}
+.tracks b{font-family:var(--f-mono);font-weight:500;font-size:14px;font-variant-numeric:tabular-nums}
 .cert-card{perspective:1400px;transition:transform .3s}
 .cert-card.ping{animation:ping .6s}
 @keyframes ping{0%,100%{transform:none}40%{transform:translateY(-10px) rotate(-1deg)}}
+.cert-flip,.cert-in{height:100%}
 .cert-flip{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;font:inherit;color:inherit;text-align:left}
 .cert-in{position:relative;display:grid;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.25,.5,1)}
 .cert-flip[aria-pressed="true"] .cert-in{transform:rotateY(180deg)}
@@ -888,15 +899,15 @@ p{margin:0}
           <span class="mono cert-eye">Certificados</span>
           <h2 class="cut" id="cert-t" data-cut>Horas de voo</h2>
         </div>
-        <div class="odo" aria-label="1.690 horas de formação certificada">
-          <div class="odo-num" id="odo" aria-hidden="true">1.690</div>
+        <div class="odo" aria-label="1.723 horas de formação certificada">
+          <div class="odo-num" id="odo" aria-hidden="true">1.723</div>
           <span>horas de formação certificada<br>entre 2023 e 2026</span>
         </div>
       </div>
 
       <div class="hours-line" aria-label="Horas por formação">
         <button type="button" class="hl c-criar" style="--w:1462" data-cert="criar"><b>1.462 h</b><span>Instituto Criar</span></button>
-        <button type="button" class="hl c-kz" style="--w:180" data-cert="kz"><b>180 h</b><span>KondZilla</span></button>
+        <button type="button" class="hl c-kz" style="--w:213" data-cert="kz"><b>213 h</b><span>KondZilla</span></button>
         <button type="button" class="hl c-voc" style="--w:48" data-cert="voc"><b>48 h</b><span>Vocacional</span></button>
       </div>
 
@@ -921,6 +932,31 @@ p{margin:0}
                   <span class="g-row"><span class="g-lbl">Conhecimentos básicos</span><span class="g-bar"><i style="--p:184"></i></span><b>184 h</b></span>
                 </span>
                 <span class="c-tags">Montagem · Colorização · Tratamento de imagem · Motion design · Efeitos visuais · Animação 2D · Storyboard · Fluxos de trabalho · História do cinema</span>
+                <span class="c-turn">Voltar ↺</span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <div class="cert-card" id="cc-kz" data-cert="kz">
+          <button type="button" class="cert-flip" aria-pressed="false" aria-label="Virar certificados do Instituto KondZilla para ver as trilhas">
+            <span class="cert-in">
+              <span class="cert-face cert-front kz">
+                <span class="c-top"><span class="c-turma">Escola de Criadores · Edição SP</span><span class="c-year">2025</span></span>
+                <span class="c-word">Conclusão</span>
+                <span class="c-org">Instituto KondZilla · Multiverso de Quebrada</span>
+                <span class="c-name">João Vitor <small>/ Kifita</small></span>
+                <span class="c-desc">Formação presencial em <b>produção de vídeo</b> para campanhas de conscientização: roteiro, fotografia e iluminação de estúdio, IA, direitos autorais e economia criativa. Mais três trilhas online.</span>
+                <span class="c-foot"><span class="seal" aria-hidden="true">213<small>horas</small></span><span class="c-turn">Virar ↻</span></span>
+              </span>
+              <span class="cert-face cert-back kz">
+                <span class="c-back-t">Tracklist · 4 certificados</span>
+                <ol class="tracks">
+                  <li><span class="tn">01</span><span class="tt">Formação presencial SP<small>Aula inaugural, projeto de vida, produção de vídeo e formatura</small></span><b>180 h</b></li>
+                  <li><span class="tn">02</span><span class="tt">Pega essa Visão<small>Linguagem, roteiro, fotografia, som e edição · jun–jul</small></span><b>15 h</b></li>
+                  <li><span class="tn">03</span><span class="tt">Bonde do Digital<small>Marca, redes, design e monetização · ago–set</small></span><b>15 h</b></li>
+                  <li><span class="tn">04</span><span class="tt">Trilha Bônus · Konrad Dantas<small>Indústria da música, carreira e streaming</small></span><b>3 h</b></li>
+                </ol>
                 <span class="c-turn">Voltar ↺</span>
               </span>
             </span>
@@ -1300,7 +1336,6 @@ p{margin:0}
     }));
     document.querySelectorAll('.hl').forEach(h=>h.addEventListener('click',()=>{
       const k=h.dataset.cert;
-      if(k==='kz'){ const c=[...document.querySelectorAll('.course')].find(x=>x.textContent.includes('KondZilla')); if(c){ c.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'}); c.classList.remove('ping'); void c.offsetWidth; c.classList.add('ping'); } return; }
       const card=document.getElementById('cc-'+k); if(!card) return;
       card.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
       card.classList.remove('ping'); void card.offsetWidth; card.classList.add('ping');
@@ -1310,7 +1345,7 @@ p{margin:0}
     const fmt=n=>n.toLocaleString('pt-BR');
     let done=false;
     new IntersectionObserver((es,o)=>{ if(done||!es[0].isIntersecting) return; done=true; o.disconnect();
-      const t0=performance.now(), D=1400, T=1690;
+      const t0=performance.now(), D=1400, T=1723;
       (function step(now){ const p=Math.min(1,(now-t0)/D), e=1-Math.pow(1-p,3); odo.textContent=fmt(Math.round(T*e)); if(p<1) requestAnimationFrame(step); })(t0);
     },{threshold:.6}).observe(odo);
   })();

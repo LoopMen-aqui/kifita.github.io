@@ -630,6 +630,55 @@ p{margin:0}
 }
 @media (prefers-reduced-motion:reduce){.ce__card{transition:none}}
 
+/* ===== CENÁRIO DE FUNDO QUE ACOMPANHA O PROJETO ===== */
+#projetos{position:relative;isolation:isolate}
+.scene{position:absolute;inset:0;z-index:-1;clip-path:inset(0);pointer-events:none}
+.scene__fix{position:fixed;inset:0}
+.sc{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;overflow:hidden}
+.sc.on{opacity:1}
+.sc i{position:absolute;inset:0;display:block}
+/* Cidade Errante: fim de tarde, laranja e azul-petróleo do filme, tijolo ao fundo */
+.sc[data-s="cidade-errante"]{background:radial-gradient(60% 55% at 12% 18%,rgba(255,138,76,.55),transparent 70%),radial-gradient(55% 55% at 90% 80%,rgba(40,160,170,.45),transparent 70%),linear-gradient(160deg,#2B1C24,#14262A)}
+.sc-brick{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='3'%3E%3Cpath d='M0 2h160M0 42h160M2 2v40M82 42v40'/%3E%3C/g%3E%3C/svg%3E");-webkit-mask:linear-gradient(180deg,#000,transparent 85%);mask:linear-gradient(180deg,#000,transparent 85%)}
+/* Às Margens: concreto claro e úmido, água no rodapé da tela */
+.sc[data-s="as-margens"]{background:linear-gradient(180deg,#DADDD4,#C3C9C0)}
+.sc-stain{background:radial-gradient(30% 40% at 8% 30%,rgba(70,85,70,.18),transparent 70%),radial-gradient(25% 35% at 92% 55%,rgba(70,85,70,.16),transparent 70%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.sc .sc-water{top:auto;height:18vh;background:linear-gradient(180deg,rgba(96,140,140,.28),rgba(60,100,105,.5))}
+.sc-water::before{content:"";position:absolute;left:0;right:0;top:-14px;height:15px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='15' viewBox='0 0 300 15'%3E%3Cpath d='M0 8 Q37 0 75 8 T150 8 T225 8 T300 8 V15 H0Z' fill='%23608C8C' fill-opacity='.28'/%3E%3C/svg%3E") repeat-x;background-size:300px 15px;animation:am-wave 9s linear infinite}
+/* Serta: verde-claro de cervejaria, bolhas lentas e brilho de vidro */
+.sc[data-s="serta"]{background:radial-gradient(70% 60% at 80% 10%,#F4FBF0,transparent 70%),linear-gradient(170deg,#E4F3E5,#C9E8D0)}
+.sc-bubbles span{position:absolute;bottom:-60px;width:var(--s);height:var(--s);border-radius:50%;border:2px solid rgba(24,121,75,.28);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.8),rgba(255,255,255,0) 60%);animation:sc-up var(--d) linear var(--dl) infinite}
+@keyframes sc-up{to{transform:translate(var(--sx),-115vh)}}
+.sc-shine{background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 38%,transparent 46%)}
+/* Toni Venturi: amarelo do letreiro, manchas pretas e película nas laterais */
+.sc[data-s="toni-venturi"]{background:linear-gradient(170deg,#FAE6B8,#F3C98E)}
+.sc-splat{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='230'%3E%3Cg fill='%232A0E05' fill-opacity='.6'%3E%3Cpath d='M60 40c40-20 90 10 100 50s-20 70-60 80-90-10-95-55 15-60 55-75z'/%3E%3Ccircle cx='190' cy='70' r='14'/%3E%3Ccircle cx='215' cy='120' r='7'/%3E%3Ccircle cx='160' cy='190' r='10'/%3E%3Ccircle cx='240' cy='40' r='5'/%3E%3Ccircle cx='270' cy='150' r='4'/%3E%3C/g%3E%3C/svg%3E") left 50px top 30px/300px 230px no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='230'%3E%3Cg fill='%232A0E05' fill-opacity='.6'%3E%3Cpath d='M60 40c40-20 90 10 100 50s-20 70-60 80-90-10-95-55 15-60 55-75z'/%3E%3Ccircle cx='190' cy='70' r='14'/%3E%3Ccircle cx='215' cy='120' r='7'/%3E%3Ccircle cx='160' cy='190' r='10'/%3E%3Ccircle cx='240' cy='40' r='5'/%3E%3Ccircle cx='270' cy='150' r='4'/%3E%3C/g%3E%3C/svg%3E") right 60px bottom 40px/240px 184px no-repeat}
+.sc .sc-film{width:34px;background:repeating-linear-gradient(180deg,transparent 0 10px,#F3C98E 10px 22px) 50% var(--fy,0px)/12px 22px repeat-y,#1E0A04}
+.sc .sc-film--l{right:auto;left:0}.sc .sc-film--r{left:auto;right:0}
+/* Existe Moda: jeans claro com costura */
+.sc[data-s="existe-moda"]{background:repeating-linear-gradient(45deg,rgba(47,76,133,.07) 0 2px,transparent 2px 7px),linear-gradient(170deg,#E1E7F2,#C7D2E6)}
+.sc .sc-stitch{background:linear-gradient(transparent calc(50% - 1px),transparent calc(50% + 1px)) ;border-top:2px dashed rgba(227,38,43,.35);border-bottom:2px dashed rgba(47,76,133,.35);inset:9vh -10vw;transform:rotate(-6deg)}
+/* Cidade Vertical: entardecer com a silhueta dos prédios */
+.sc[data-s="cidade-vertical"]{background:linear-gradient(180deg,#151A33 0%,#2D3561 45%,#8E5D78 78%,#F2A66A 100%)}
+.sc-sky{background:radial-gradient(1.5px 1.5px at 12% 14%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 38% 8%,#fff 50%,transparent 51%),radial-gradient(1.2px 1.2px at 64% 18%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 86% 10%,#fff 50%,transparent 51%),radial-gradient(1.2px 1.2px at 74% 30%,#fff 50%,transparent 51%);opacity:.7}
+.sc .sc-city{top:auto;height:34vh;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='300' viewBox='0 0 480 300' preserveAspectRatio='none'%3E%3Cpath fill='%230E1120' d='M0 300V170h40v-60h46v90h30V60h52v140h24v-90h44v-40h40v200h28V120h50v60h36V80h44v220z'/%3E%3Cg fill='%23F2A66A'%3E%3Crect x='104' y='80' width='8' height='10'/%3E%3Crect x='134' y='110' width='8' height='10'/%3E%3Crect x='212' y='90' width='8' height='10' fill='%239FB7FF'/%3E%3Crect x='300' y='140' width='8' height='10'/%3E%3Crect x='420' y='100' width='8' height='10'/%3E%3Crect x='448' y='150' width='8' height='10' fill='%239FB7FF'/%3E%3Crect x='56' y='130' width='8' height='10'/%3E%3C/g%3E%3C/svg%3E") repeat-x bottom/480px 100%}
+/* La Aura: lilás com spray laranja e brilho neon */
+.sc[data-s="la-aura"]{background:linear-gradient(160deg,#F2DDF6,#E2C3EE)}
+.sc-neon{background:radial-gradient(40% 40% at 15% 25%,rgba(255,43,214,.28),transparent 70%),radial-gradient(35% 35% at 85% 75%,rgba(255,138,31,.3),transparent 70%)}
+.sc-spray{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='600'%3E%3Cg fill='none' stroke='%23FF7A1A' stroke-width='14' stroke-linecap='round' opacity='.3'%3E%3Cpath d='M80 230c-60-100 80-160 120-60 40-100 180-40 120 60L200 400z'/%3E%3Cpath d='M520 80q80 120 0 240t40 200'/%3E%3C/g%3E%3C/svg%3E") 0 0/700px 600px}
+@media (max-width:700px){.sc .sc-film{width:14px;background-size:6px 22px}.sc .sc-water{height:12vh}.sc .sc-city{height:24vh}}
+@media (prefers-reduced-motion:reduce){.sc{transition:none}.sc-bubbles,.sc-water::before{animation:none;display:none}}
+
+/* refinamento dos painéis */
+.project.th{box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 0 0 1px rgba(0,0,0,.06),0 44px 90px -44px rgba(10,10,20,.6)}
+#p-cidade-errante::before{-webkit-mask:linear-gradient(90deg,#000 0,#000 45%,rgba(0,0,0,.25) 62%);mask:linear-gradient(90deg,#000 0,#000 45%,rgba(0,0,0,.25) 62%)}
+#p-serta::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;background:linear-gradient(115deg,transparent 52%,rgba(255,255,255,.12) 58%,transparent 64%)}
+#p-cidade-vertical,#p-la-aura,#p-as-margens{box-shadow:0 0 0 1px rgba(255,255,255,.1),0 44px 90px -40px rgba(0,0,0,.75)}
+#p-la-aura .p-text h3{animation-duration:9s}
+.project.th .roles li{transition:background .2s,color .2s}
+.project.th .roles li:hover{background:var(--th-acc);color:var(--th-hover-ink,#111)}
+.project.th .p-meta{letter-spacing:.08em}
+
 /* ===== IDENTIDADE POR PROJETO ===== */
 .project.th{position:relative;isolation:isolate;padding:clamp(28px,4.4vw,64px);border-radius:28px;background:var(--th-bg);color:var(--th-ink,var(--ink));overflow:hidden;box-shadow:0 30px 60px -36px rgba(26,27,38,.55)}
 .project.th.has-block{padding-bottom:calc(clamp(28px,4.4vw,64px) + 64px);overflow:visible}
@@ -677,12 +726,12 @@ p{margin:0}
 
 /* Cidade Vertical: noite com janelas acesas */
 #p-cidade-vertical{--th-bg:linear-gradient(180deg,#0E1120,#161A2E);--th-ink:#F2F0EC;--th-h:#FFFFFF;--th-acc:#F2A66A;--th-soft:#C9C6D2;
-  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='132'%3E%3Cg fill='%2323273d'%3E%3Crect x='8' y='8' width='22' height='28' rx='2'/%3E%3Crect x='44' y='8' width='22' height='28' rx='2'/%3E%3Crect x='116' y='8' width='22' height='28' rx='2'/%3E%3Crect x='152' y='52' width='22' height='28' rx='2'/%3E%3Crect x='8' y='96' width='22' height='28' rx='2'/%3E%3Crect x='80' y='96' width='22' height='28' rx='2'/%3E%3C/g%3E%3Crect x='80' y='8' width='22' height='28' rx='2' fill='%23F2A66A' opacity='.55'/%3E%3Crect x='44' y='52' width='22' height='28' rx='2' fill='%239FB7FF' opacity='.4'/%3E%3Crect x='116' y='96' width='22' height='28' rx='2' fill='%23F2A66A' opacity='.4'/%3E%3C/svg%3E");--th-pat-o:.7}
+  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='132'%3E%3Cg fill='%2323273d'%3E%3Crect x='8' y='8' width='22' height='28' rx='2'/%3E%3Crect x='44' y='8' width='22' height='28' rx='2'/%3E%3Crect x='116' y='8' width='22' height='28' rx='2'/%3E%3Crect x='152' y='52' width='22' height='28' rx='2'/%3E%3Crect x='8' y='96' width='22' height='28' rx='2'/%3E%3Crect x='80' y='96' width='22' height='28' rx='2'/%3E%3C/g%3E%3Crect x='80' y='8' width='22' height='28' rx='2' fill='%23F2A66A' opacity='.55'/%3E%3Crect x='44' y='52' width='22' height='28' rx='2' fill='%239FB7FF' opacity='.4'/%3E%3Crect x='116' y='96' width='22' height='28' rx='2' fill='%23F2A66A' opacity='.4'/%3E%3C/svg%3E");--th-pat-o:.32}
 #p-cidade-vertical .p-text h3{text-shadow:4px 5px 0 rgba(110,140,255,.45)}
 
 /* La Aura: neon roxo e spray laranja */
 #p-la-aura{--th-bg:radial-gradient(70% 70% at 80% 25%,#B21FBF 0%,rgba(178,31,191,0) 60%),radial-gradient(60% 60% at 10% 90%,#FF7A1A55 0%,transparent 60%),#36094F;--th-ink:#FFFFFF;--th-h:#FFE36A;--th-acc:#FFB347;--th-soft:#EBD3F2;
-  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='300'%3E%3Cg fill='none' stroke='%23FF8A1F' stroke-width='9' stroke-linecap='round' opacity='.35'%3E%3Cpath d='M40 120c-30-50 40-80 60-30 20-50 90-20 60 30L100 200z'/%3E%3Cpath d='M230 60q40 60 0 120t20 100'/%3E%3C/g%3E%3C/svg%3E") 0 0/600px 500px;--th-pat-o:.45}
+  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='300'%3E%3Cg fill='none' stroke='%23FF8A1F' stroke-width='9' stroke-linecap='round' opacity='.35'%3E%3Cpath d='M40 120c-30-50 40-80 60-30 20-50 90-20 60 30L100 200z'/%3E%3Cpath d='M230 60q40 60 0 120t20 100'/%3E%3C/g%3E%3C/svg%3E") 0 0/600px 500px;--th-pat-o:.22}
 #p-la-aura .p-text h3{text-shadow:0 0 10px rgba(255,138,31,.9),0 0 30px rgba(255,43,214,.75);animation:la-neon 5s steps(1) infinite}
 @keyframes la-neon{0%,100%{opacity:1}42%{opacity:.55}43%{opacity:1}44%{opacity:.7}45%{opacity:1}}
 
@@ -1239,6 +1288,15 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
 
 <!-- ============ PROJETOS ============ -->
 <section class="paper section" id="projetos" aria-labelledby="proj-t" style="padding-top:24px">
+  <div class="scene" id="scene" aria-hidden="true"><div class="scene__fix">
+    <div class="sc" data-s="cidade-errante"><i class="sc-brick"></i></div>
+    <div class="sc" data-s="as-margens"><i class="sc-stain"></i><i class="sc-water"></i></div>
+    <div class="sc" data-s="serta"><i class="sc-bubbles"></i><i class="sc-shine"></i></div>
+    <div class="sc" data-s="toni-venturi"><i class="sc-film sc-film--l"></i><i class="sc-film sc-film--r"></i><i class="sc-splat"></i></div>
+    <div class="sc" data-s="existe-moda"><i class="sc-stitch"></i></div>
+    <div class="sc" data-s="cidade-vertical"><i class="sc-sky"></i><i class="sc-city"></i></div>
+    <div class="sc" data-s="la-aura"><i class="sc-neon"></i><i class="sc-spray"></i></div>
+  </div></div>
   <div class="wrap">
     <div class="proj-head">
       <h2 class="cut" id="proj-t" data-cut>Projetos</h2>
@@ -2174,6 +2232,27 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     document.getElementById('ce-x').addEventListener('click',close);
     lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
     document.addEventListener('keydown',e=>{ if(!lb.hidden&&e.key==='Escape') close(); });
+  })();
+
+  /* ---------- Cenário de fundo: troca conforme o projeto na tela ---------- */
+  (function(){
+    const sec=document.getElementById('projetos'), sc=document.getElementById('scene'); if(!sc) return;
+    const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const layers={}; sc.querySelectorAll('.sc').forEach(l=>layers[l.dataset.s]=l);
+    const owners=[]; document.querySelectorAll('#projects > *').forEach(el=>{ let id=null; if(el.classList.contains('project')) id=el.id.slice(2); else { let p=el.previousElementSibling; while(p&&!p.classList.contains('project')) p=p.previousElementSibling; if(p) id=p.id.slice(2); } if(id) owners.push([el,id]); });
+    const bub=sc.querySelector('.sc-bubbles');
+    if(bub&&!still) for(let i=0;i<16;i++){ const s=document.createElement('span'); const z=14+Math.random()*46; s.style.cssText='left:'+(Math.random()*100).toFixed(1)+'%;--s:'+z.toFixed(0)+'px;--d:'+(14+Math.random()*14).toFixed(1)+'s;--dl:-'+(Math.random()*28).toFixed(1)+'s;--sx:'+((Math.random()-.5)*120).toFixed(0)+'px'; bub.appendChild(s); }
+    const films=sc.querySelectorAll('.sc-film');
+    let cur=null, tick=false;
+    function pick(){ tick=false; const mid=innerHeight/2; let best=null, bd=1e9;
+      const sr=sec.getBoundingClientRect();
+      const hd=sec.querySelector('.proj-head'); if(sr.bottom>0&&sr.top<innerHeight&&(!hd||hd.getBoundingClientRect().bottom<innerHeight*.12)) for(const [el,id] of owners){ if(el.hidden||!el.offsetParent) continue; const r=el.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) continue; const d=(r.top<=mid&&r.bottom>=mid)?0:Math.min(Math.abs(r.top-mid),Math.abs(r.bottom-mid)); if(d<bd){ bd=d; best=id; } }
+      if(best!==cur){ if(cur&&layers[cur]) layers[cur].classList.remove('on'); if(best&&layers[best]) layers[best].classList.add('on'); cur=best; }
+      if(!still&&cur==='toni-venturi') films.forEach((f,i)=>f.style.setProperty('--fy',((i?-1:1)*scrollY*.4%22).toFixed(1)+'px'));
+    }
+    addEventListener('scroll',()=>{ if(!tick){ tick=true; requestAnimationFrame(pick); } },{passive:true}); addEventListener('resize',pick);
+    document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>setTimeout(pick,50)));
+    pick();
   })();
 
   /* ---------- Identidade por projeto: água de Às Margens, bolhas da Serta ---------- */

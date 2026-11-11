@@ -238,6 +238,17 @@
     'João Vitor de gorro laranja operando uma câmera no gimbal':'João Vitor in an orange beanie operating a camera on a gimbal',
     /* novas ilustrações */
     'Ventania':'Gust','3 cores':'3 colors','Azul':'Blue','sticker P&B':'B&W sticker',
+    /* instituto criar */
+    'curta':'short film','versão acessível':'accessible version','foodfilm':'food film',
+    'Depois de ser demitida injustamente por denunciar um caso de assédio no trabalho, Dominique, uma jovem sonhadora, entra em depressão e conta com a ajuda da mãe para voltar a enxergar a bondade nas pessoas.':'After being unfairly fired for reporting harassment at work, Dominique, a young dreamer, falls into depression and relies on her mother to learn to see the good in people again.',
+    'Cenografia':'Set design','Correção de cor':'Color correction','Pôster':'Poster',
+    'Foodfilm com estética dos anos 80: rosa, roxo, armários de escola e textura de fita VHS. Comandei o setor de pós-produção e fiz a cor do filme.':'A food film with an 80s look: pink, purple, school lockers and VHS tape texture. I led the post-production department and did the color.',
+    'Lucas, 19 anos, enfrenta problemas no emprego. Nos dias sozinho, voltam velhos sentimentos de solidão e medo. Com ajuda, ele começa a lutar pela própria saúde mental.':'Lucas, 19, is struggling at work. On the days he spends alone, old feelings of loneliness and fear come back. With help, he starts fighting for his mental health.',
+    '2º assistente de montagem':'2nd assistant editor','Assistir no YouTube ↗':'Watch on YouTube ↗',
+    'Thumbnail ilustrada de Sonhos Roubados: personagem vermelha deitada sob uma lua e o título ondulado':'Illustrated Sonhos Roubados thumbnail: a red character lying under a moon, with the wavy title',
+    'Três jovens com roupas rosa dos anos 80 olhando para cima, uma segura um copo de shake':'Three young women in pink 80s outfits looking up, one holding a shake cup',
+    'Jovem de óculos lendo uma carta em uma sala com pouca luz':'Young man in glasses reading a letter in a dim room',
+    'Assistir Sonhos Roubados aqui':'Watch Sonhos Roubados here','Assistir SHAKE80 aqui':'Watch SHAKE80 here','Assistir Inércia aqui':'Watch Inércia here',
     /* às margens */
     'Direção de fotografia':'Director of photography','Direção de pós-produção':'Post-production supervisor','Cartaz':'Poster',
     'Assistir Às Margens aqui':'Watch Às Margens here','Cena de Às Margens':'Still from Às Margens','Comporta':'Floodgate',

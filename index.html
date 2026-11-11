@@ -630,6 +630,56 @@ p{margin:0}
 }
 @media (prefers-reduced-motion:reduce){.ce__card{transition:none}}
 
+/* ===== INSTITUTO CRIAR: Sonhos Roubados, SHAKE80, Inércia ===== */
+.yt-play{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#111;font-size:22px;padding-left:5px;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .2s}
+.yt-play:hover,.yt-play:focus-visible{transform:scale(1.08)}
+.yt-play:focus-visible{outline:3px solid var(--th-acc,#fff);outline-offset:3px}
+.print.yt-on img{visibility:hidden}
+.print iframe{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);border:0;background:#000}
+.p-yt{align-self:flex-start;color:var(--th-h,var(--ink));font-size:15px;text-underline-offset:4px;margin-top:2px}
+.p-yt:hover{color:var(--th-acc)}
+
+/* Sonhos Roubados: carmim da animação, lua e verde ácido, título que derrete como sonho */
+#p-sonhos-roubados{--th-bg:radial-gradient(45% 55% at 88% 8%,rgba(150,255,90,.32),transparent 62%),radial-gradient(40% 45% at 8% 100%,rgba(255,220,120,.18),transparent 60%),linear-gradient(160deg,#9A1733,#4C0717);--th-ink:#FFF1EE;--th-h:#F4F0E6;--th-acc:#B8FF6A;--th-soft:#F4D3DA;
+  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");--th-pat-o:.08}
+#p-sonhos-roubados .p-text h3{filter:url(#sr-wavy);text-shadow:0 0 24px rgba(184,255,106,.35);font-size:clamp(44px,5.6vw,76px)}
+.sr-star{position:absolute;width:var(--s);aspect-ratio:1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 4l13 31 33 3-25 22 8 33-29-18-29 18 8-33L4 38l33-3z' fill='%23520A1C'/%3E%3C/svg%3E") center/contain no-repeat;transform:rotate(var(--r));opacity:.9}
+
+/* SHAKE80: VHS anos 80, rosa e roxo, título cromado */
+#p-shake80{--th-bg:linear-gradient(160deg,#2E0F45 0%,#7A1E6C 55%,#D13C86 100%);--th-ink:#FFF0F8;--th-h:#FFE45C;--th-acc:#4FE3FF;--th-soft:#F7D6EA;--th-font:"Anton","Arial Narrow",Impact,sans-serif;
+  --th-pat:repeating-linear-gradient(0deg,rgba(0,0,0,.2) 0 1px,transparent 1px 4px)}
+#p-shake80 .p-text h3{text-transform:uppercase;font-style:italic;font-size:clamp(60px,7.4vw,108px);line-height:.9;letter-spacing:.01em;text-shadow:3px 3px 0 #4FE3FF,-3px -2px 0 #FF2E88;transform:skewX(-6deg)}
+.vhs-osd{position:absolute;left:clamp(16px,2.4vw,34px);right:clamp(16px,2.4vw,34px);top:clamp(10px,1.6vw,22px);display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:rgba(255,255,255,.85);text-shadow:2px 0 0 rgba(255,46,136,.7),-2px 0 0 rgba(79,227,255,.7)}
+.vhs-osd b{font-weight:500}
+.vhs-osd i{font-style:normal;animation:cv-blink 1.2s steps(1) infinite}
+.vhs-track{position:absolute;left:0;right:0;height:22px;top:30%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.12) 40%,rgba(255,255,255,.04) 60%,transparent);animation:vhs-roll 7s linear infinite}
+@keyframes vhs-roll{from{top:-5%}to{top:105%}}
+@media (max-width:900px){#p-shake80{padding-top:56px}}
+
+/* Inércia: azul frio, pouca luz, título espaçado que fica para trás na rolagem */
+#p-inercia{--th-bg:radial-gradient(55% 45% at 15% 0%,rgba(230,205,160,.22),transparent 65%),linear-gradient(170deg,#1D2733,#0E131A);--th-ink:#E6ECF2;--th-h:#DCE5EE;--th-acc:#A9C1DA;--th-soft:#AEB9C6;--th-font:var(--f-mono);
+  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");--th-pat-o:.07}
+#p-inercia .p-text h3{text-transform:uppercase;font-weight:400;letter-spacing:.32em;font-size:clamp(34px,4.4vw,60px);transform:translateY(var(--lag,0px));will-change:transform}
+#p-inercia .p-text h3 .l{transform:none}
+#p-inercia .print img{filter:saturate(.85)}
+
+/* cenários de fundo */
+.sc[data-s="sonhos-roubados"]{background:radial-gradient(120% 80% at 50% 0%,#17463A,#0A1F1A 70%)}
+.sc-moon{background:radial-gradient(circle at 72% 22%,rgba(246,236,150,.85) 0,rgba(246,236,150,.55) 7vmin,rgba(246,236,150,.12) 16vmin,transparent 26vmin)}
+.sc-aurora{background:radial-gradient(60% 18% at 20% 40%,rgba(120,255,80,.22),transparent 70%),radial-gradient(50% 14% at 80% 70%,rgba(120,255,80,.18),transparent 70%);filter:blur(6px);animation:sr-aur 14s ease-in-out infinite alternate}
+@keyframes sr-aur{to{transform:translateX(4vw) skewX(-6deg)}}
+.sc-stars{background:radial-gradient(1.5px 1.5px at 10% 20%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 30% 70%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 55% 35%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 88% 50%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 65% 85%,#fff 50%,transparent 51%);opacity:.6}
+.sc[data-s="shake80"]{background:linear-gradient(180deg,#1A0630 0%,#4B1060 45%,#FF5FA2 72%,#2A0A3D 72.2%,#14041F 100%)}
+.sc-sun{background:radial-gradient(circle at 50% 72%,#FFD36B 0,#FF7AA8 18vmin,transparent 18.2vmin);-webkit-mask:repeating-linear-gradient(180deg,#000 0 14px,transparent 14px 20px);mask:repeating-linear-gradient(180deg,#000 0 14px,transparent 14px 20px);opacity:.9}
+.sc .sc-grid{top:72%;background:linear-gradient(rgba(79,227,255,.55) 2px,transparent 2px) 0 0/100% 40px,linear-gradient(90deg,rgba(79,227,255,.55) 2px,transparent 2px) 50% 0/80px 100%;transform:perspective(320px) rotateX(58deg);transform-origin:50% 0;inset:72% -50% -60% -50%;animation:sh-grid 2.2s linear infinite}
+@keyframes sh-grid{to{background-position:0 40px,50% 0}}
+.sc-scan{background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 4px)}
+.sc[data-s="inercia"]{background:linear-gradient(180deg,#CDD5DE,#9FAAB8)}
+.sc-fog{background:radial-gradient(40% 30% at 20% 30%,rgba(255,255,255,.5),transparent 70%),radial-gradient(45% 35% at 80% 70%,rgba(255,255,255,.4),transparent 70%);animation:in-fog 30s ease-in-out infinite alternate}
+@keyframes in-fog{to{transform:translate(-6vw,3vh)}}
+.sc-lamp{background:radial-gradient(30% 40% at 0% 0%,rgba(240,210,160,.45),transparent 70%)}
+@media (prefers-reduced-motion:reduce){.sc-aurora,.sc .sc-grid,.sc-fog,.vhs-track,.vhs-osd i{animation:none}#p-sonhos-roubados .p-text h3{filter:none}}
+
 /* ===== CENÁRIO DE FUNDO QUE ACOMPANHA O PROJETO ===== */
 #projetos{position:relative;isolation:isolate}
 .scene{position:absolute;inset:0;z-index:-1;clip-path:inset(0);pointer-events:none}
@@ -1072,6 +1122,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
   </ol>
   <div class="mnav__foot"><span>@loopim._</span><a href="https://wa.me/5511967388424" target="_blank" rel="noopener">WhatsApp</a></div>
 </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="sr-wavy" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="2" seed="4"><animate attributeName="baseFrequency" dur="9s" values="0.012 0.05;0.016 0.07;0.012 0.05" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="10"/></filter></svg>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-prev" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
   <symbol id="i-next" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
@@ -1296,6 +1347,9 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     <div class="sc" data-s="existe-moda"><i class="sc-stitch"></i></div>
     <div class="sc" data-s="cidade-vertical"><i class="sc-sky"></i><i class="sc-city"></i></div>
     <div class="sc" data-s="la-aura"><i class="sc-neon"></i><i class="sc-spray"></i></div>
+    <div class="sc" data-s="sonhos-roubados"><i class="sc-moon"></i><i class="sc-aurora"></i><i class="sc-stars"></i></div>
+    <div class="sc" data-s="shake80"><i class="sc-sun"></i><i class="sc-grid"></i><i class="sc-scan"></i></div>
+    <div class="sc" data-s="inercia"><i class="sc-fog"></i><i class="sc-lamp"></i></div>
   </div></div>
   <div class="wrap">
     <div class="proj-head">
@@ -1505,7 +1559,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
   <div class="wrap">
     <div class="bc-head">
       <div>
-        <span class="mono">08 / 08 · Making of · 30 e 31 out 2025</span>
+        <span class="mono">11 / 11 · Making of · 30 e 31 out 2025</span>
         <h2 class="cut" id="bc-t" data-cut>Bloqueio Criativo</h2>
       </div>
       <div class="bc-text">
@@ -1942,7 +1996,19 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     {id:'la-aura', title:'La Aura', meta:'Videoclipe',
      text:'Videoclipe da artista La Aura: color grading, cartaz de divulgação e uma animação para a cena dos créditos.',
      roles:['Colorista','Cartaz de divulgação','Animação dos créditos'], tags:['cor','design','anim'],
-     img:'la-aura.jpg', w:552, h:715, alt:'La Aura de boina e gravata posando em frente a grafite neon roxo e laranja', tall:true}
+     img:'la-aura.jpg', w:552, h:715, alt:'La Aura de boina e gravata posando em frente a grafite neon roxo e laranja', tall:true},
+    {id:'sonhos-roubados', title:'Sonhos Roubados', meta:'Instituto Criar · curta · versão acessível',
+     text:'Depois de ser demitida injustamente por denunciar um caso de assédio no trabalho, Dominique, uma jovem sonhadora, entra em depressão e conta com a ajuda da mãe para voltar a enxergar a bondade nas pessoas.',
+     roles:['Cenografia','Correção de cor','Thumbnail','Pôster'], tags:['cor','design'], yt:'uKluQTuD3tU', dur:'10 min',
+     img:'../criar/sonhos-roubados.jpg', w:1280, h:720, alt:'Thumbnail ilustrada de Sonhos Roubados: personagem vermelha deitada sob uma lua e o título ondulado'},
+    {id:'shake80', title:'SHAKE80', meta:'Instituto Criar · foodfilm',
+     text:'Foodfilm com estética dos anos 80: rosa, roxo, armários de escola e textura de fita VHS. Comandei o setor de pós-produção e fiz a cor do filme.',
+     roles:['Direção de pós-produção','Colorista'], tags:['cor','montagem'], yt:'7Y5HDAq9Bw0', dur:'2 min',
+     img:'../criar/shake80.jpg', w:1280, h:720, alt:'Três jovens com roupas rosa dos anos 80 olhando para cima, uma segura um copo de shake'},
+    {id:'inercia', title:'Inércia', meta:'Instituto Criar · curta',
+     text:'Lucas, 19 anos, enfrenta problemas no emprego. Nos dias sozinho, voltam velhos sentimentos de solidão e medo. Com ajuda, ele começa a lutar pela própria saúde mental.',
+     roles:['Colorista','2º assistente de montagem'], tags:['cor','montagem'], yt:'vUZG7lrUUQI', dur:'9 min',
+     img:'../criar/inercia.jpg', w:1280, h:720, alt:'Jovem de óculos lendo uma carta em uma sala com pouca luz'}
   ];
 
   /* ---------- render dos projetos ---------- */
@@ -1954,12 +2020,12 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     const maxw = p.tall ? 'max-width:440px;margin-inline:auto' : '';
     art.innerHTML =
       '<div class="p-media"><div class="print" style="--rot:'+rot+'deg;'+maxw+'">'+
-        '<img src="img/'+p.img+'" alt="'+p.alt+'" width="'+p.w+'" height="'+p.h+'" loading="lazy"></div>'+
+        '<img src="img/'+p.img+'" alt="'+p.alt+'" width="'+p.w+'" height="'+p.h+'" loading="lazy">'+(p.yt?'<button type="button" class="yt-play" data-yt="'+p.yt+'" data-title="'+p.title+'" aria-label="Assistir '+p.title+' aqui"><span aria-hidden="true">▶</span></button>':'')+'</div>'+
         (p.extra ? '<figure class="print extra" style="margin:0"><img src="img/'+p.extra.img+'" alt="'+p.extra.alt+'" loading="lazy"></figure>' : '')+
       '</div>'+
-      '<div class="p-text"><span class="mono p-meta">'+String(i+1).padStart(2,'0')+' / 08 · '+p.meta+'</span>'+
+      '<div class="p-text"><span class="mono p-meta">'+String(i+1).padStart(2,'0')+' / '+String(P.length+1).padStart(2,'0')+' · '+p.meta+'</span>'+
         '<h3 class="cut" data-cut>'+p.title+'</h3><p>'+p.text+'</p>'+
-        '<ul class="roles" aria-label="Funções">'+p.roles.map(r=>'<li>'+r+'</li>').join('')+'</ul></div>';
+        '<ul class="roles" aria-label="Funções">'+p.roles.map(r=>'<li>'+r+'</li>').join('')+'</ul>'+(p.yt?'<a class="p-yt" href="https://youtu.be/'+p.yt+'" target="_blank" rel="noopener">Assistir no YouTube ↗</a>':'')+'</div>';
     list.appendChild(art);
   });
   /* bloco de fotos do evento logo após o projeto Toni Venturi */
@@ -2232,6 +2298,28 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     document.getElementById('ce-x').addEventListener('click',close);
     lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
     document.addEventListener('keydown',e=>{ if(!lb.hidden&&e.key==='Escape') close(); });
+  })();
+
+  /* ---------- Instituto Criar: vídeos do YouTube nos cards, estrelas, VHS, inércia ---------- */
+  (function(){
+    const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(still) document.querySelectorAll('#sr-wavy animate').forEach(a=>a.remove());
+    document.querySelectorAll('.yt-play').forEach(b=>b.addEventListener('click',()=>{
+      const pr=b.closest('.print'); const f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0'; f.title=b.dataset.title;
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true; f.referrerPolicy='strict-origin-when-cross-origin';
+      pr.classList.add('yt-on'); pr.style.transform='none'; b.replaceWith(f); f.focus(); }));
+    const add=(id,html)=>{ const a=document.getElementById(id); if(!a) return null; const d=document.createElement('div'); d.className='th-deco'; d.setAttribute('aria-hidden','true'); d.innerHTML=html; a.prepend(d); return d; };
+    add('p-sonhos-roubados',[[6,8,60,-12],[90,12,44,18],[84,80,72,8],[40,92,36,-20],[2,70,30,30]].map(([x,y,s,r])=>'<span class="sr-star" style="left:'+x+'%;top:'+y+'%;--s:'+s+'px;--r:'+r+'deg"></span>').join(''));
+    const osd=add('p-shake80','<div class="vhs-osd"><b>▶ PLAY</b><span>SP <i>●</i> 00:00:00</span></div><div class="vhs-track"></div>');
+    const tc=osd&&osd.querySelector('.vhs-osd span');
+    const inH=document.querySelector('#p-inercia .p-text h3');
+    let last=scrollY, lag=0, raf=0;
+    function step(){ raf=0; const sy=scrollY, v=sy-last; last=sy;
+      if(inH&&!still){ lag=Math.abs(v)>240?0:lag*.86+v*.6; lag=Math.max(-26,Math.min(26,lag)); inH.style.setProperty('--lag',lag.toFixed(1)+'px'); if(Math.abs(lag)>.3) raf=requestAnimationFrame(step); else inH.style.setProperty('--lag','0px'); }
+      if(tc){ const a=document.getElementById('p-shake80').getBoundingClientRect(); const p=Math.max(0,Math.min(1,(innerHeight-a.top)/(innerHeight+a.height))); const s=Math.round(p*136); tc.innerHTML='SP <i>●</i> 00:'+String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+    }
+    addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(step); },{passive:true});
   })();
 
   /* ---------- Cenário de fundo: troca conforme o projeto na tela ---------- */

@@ -59,7 +59,7 @@
           ds.forEach(d=>{ const yy=d.y+d.len*easeOut(k); ctx.strokeStyle=d.c; ctx.lineWidth=d.w; ctx.lineCap='round'; ctx.beginPath(); ctx.moveTo(d.x,d.y-4); ctx.lineTo(d.x,yy); ctx.stroke(); ctx.fillStyle=d.c; ctx.beginPath(); ctx.arc(d.x,yy,d.w*.9,0,7); ctx.fill(); });
           if(k<1) raf(grow); })(td);
         // adesivos e linha de artes
-        const picks=[['img/ilustracoes/il-vento-orange.jpg',-14,.16,.22],['img/ilustracoes/il-dog.webp',10,.82,.2],['img/ilustracoes/il-frank.jpg',-6,.78,.72],['img/ilustracoes/il-cromado.webp',8,.2,.7]];
+        const picks=[['eu/head-orange.jpg',-14,.16,.22],['img/ilustracoes/il-dog.webp',10,.82,.2],['eu/il-frank.jpg',-6,.78,.72],['img/ilustracoes/il-cromado.webp',8,.2,.7]];
         picks.forEach((p,i)=>later(()=>{ const im=document.createElement('img'); im.className='intro__stk'; im.src=p[0]; im.alt=''; im.style.setProperty('--r',p[1]+'deg'); im.style.left=`calc(${p[2]*100}% - 6vw)`; im.style.top=`calc(${p[3]*100}% - 6vw)`; root.appendChild(im); raf(()=>im.classList.add('on')); },250+i*160));
         later(()=>tag.classList.add('on'),400);
         later(finish,1900);

@@ -540,6 +540,11 @@ p{margin:0}
 @media (max-width:900px){.il-head,.il3d{grid-template-columns:minmax(0,1fr)}.il-in{padding-block:72px}}
 @media (prefers-reduced-motion:reduce){.il-float{animation:none}}
 
+
+/* foto extra dos projetos nunca cobre o texto do lado/de baixo */
+.p-media{margin-bottom:12%}
+@media (max-width:900px){ .p-media{margin-bottom:16%} .p-media .extra{width:46%;bottom:-12%} }
+@media (min-width:901px){ .project .p-media{margin-bottom:0} }
 /* ===== LAMBUZA (identidade) e MAIS NO BEHANCE ===== */
 .lz{--lzo:#FF6A00;background:#121212;color:#F4EFE8;padding-block:clamp(72px,9vw,120px);position:relative;overflow:hidden}
 .lz::before{content:"LAMBUZA LAMBUZA LAMBUZA";position:absolute;left:-2%;top:46%;font-family:var(--f-display);font-size:clamp(120px,19vw,300px);line-height:1;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(255,106,0,.18);transform:rotate(-6deg);pointer-events:none}
@@ -597,7 +602,7 @@ p{margin:0}
 .ce__rec{display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;align-self:start;border:1.5px solid rgba(246,241,234,.5);border-radius:999px;padding:7px 14px}
 .ce__rec i{width:9px;height:9px;border-radius:50%;background:#FF5A3C}
 .ce__word{position:absolute;z-index:-1;left:0;right:0;top:50%;transform:translateY(-58%);margin:0;display:flex;justify-content:space-between;padding-inline:clamp(10px,2vw,30px);
-  font-family:var(--f-display);font-size:clamp(70px,13.5vw,230px);line-height:1;letter-spacing:-.02em;color:rgba(255,248,240,.16);pointer-events:none;white-space:nowrap}
+  font-family:var(--f-display);font-size:clamp(64px,10.6vw,200px);line-height:1;letter-spacing:-.02em;color:rgba(255,248,240,.16);pointer-events:none;white-space:nowrap}
 .ce__word span:last-child{color:transparent;-webkit-text-stroke:1.5px rgba(255,248,240,.42)}
 .ce__cards{position:relative;z-index:2;transform-style:preserve-3d;min-height:clamp(260px,40vw,480px)}
 .ce__card{position:absolute;left:50%;top:50%;width:var(--w);margin:0;transform-style:preserve-3d;
@@ -612,6 +617,7 @@ p{margin:0}
 .ce__disc{width:40px;height:40px;border-radius:50%;background:#fff;color:#1a1210;display:grid;place-items:center}
 .ce__disc .ic{width:16px;height:16px;margin-left:2px}
 .ce-lb video{max-width:100%;max-height:calc(100vh - 120px);border-radius:10px;background:#000}
+@media (min-width:901px){ .ce__word{top:30%} .ce__card{top:64%} .ce__cards{min-height:clamp(300px,42vw,500px)} }
 @media (max-width:900px){
   .ce{margin-top:-40px;min-height:auto;row-gap:20px}
   .ce__meta{grid-template-columns:1fr 1fr;row-gap:14px}
@@ -619,7 +625,8 @@ p{margin:0}
   .ce__cards{min-height:58vw}
   .ce__card{width:calc(var(--w) * 1.5)}
   .ce__foot{grid-template-columns:minmax(0,1fr)}
-  .ce__word{font-size:15vw;top:42%}
+  .ce__word{position:relative;top:auto;transform:none;flex-direction:column;align-items:flex-start;font-size:17vw;line-height:.9;padding-inline:0;color:rgba(255,248,240,.35)}
+  .ce__word span:last-child{-webkit-text-stroke-color:rgba(255,248,240,.7)}
 }
 @media (prefers-reduced-motion:reduce){.ce__card{transition:none}}
 
@@ -683,7 +690,9 @@ html.intro-lock,html.intro-lock body{overflow:hidden}
   margin-top:-21px;position:relative}
 @media (max-width:700px){
   .stk{width:calc(var(--s) * .55)}
-  .stk--sm,.stk:nth-child(4){display:none}
+  .stk--sm,.stk:nth-child(3),.stk:nth-child(4){display:none}
+  .stk:nth-child(1){left:3%!important;top:104px!important}
+  .stk:nth-child(2){left:auto!important;right:3%;top:104px!important}
   .spray-hint{display:none}
 }
 @media (prefers-reduced-motion:reduce){ .stk{animation:none} }
@@ -823,9 +832,53 @@ html.rv .cut.rv-cut.in .l{opacity:1;transform:rotate(var(--r,0deg)) translateY(v
   html{scroll-behavior:auto}
   .cut .l,.print,#av-head,#av-face,#av-shades{transition:none}
 }
+/* ===== menu fixo (celular sempre; computador depois do topo) ===== */
+.mnav-btn{position:fixed;z-index:120;top:calc(14px + env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));height:48px;padding:0 16px 0 14px;display:flex;align-items:center;gap:10px;
+  border:0;border-radius:999px;background:var(--ink);color:var(--cream);font:500 13px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 24px -10px rgba(0,0,0,.6);
+  transition:opacity .3s,transform .35s cubic-bezier(.3,1.5,.5,1)}
+.mnav-btn i{position:relative;width:20px;height:12px;display:block}
+.mnav-btn i::before,.mnav-btn i::after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;transition:transform .3s,top .3s}
+.mnav-btn i::before{top:0}.mnav-btn i::after{top:10px}
+.mnav-btn[aria-expanded="true"] i::before{top:5px;transform:rotate(45deg)}
+.mnav-btn[aria-expanded="true"] i::after{top:5px;transform:rotate(-45deg)}
+@media (min-width:561px){ .mnav-btn{opacity:0;transform:translateY(-20px) scale(.9);pointer-events:none} .mnav-btn.show,.mnav-btn[aria-expanded="true"]{opacity:1;transform:none;pointer-events:auto} }
+.mnav{position:fixed;inset:0;z-index:110;background:var(--mat-deep);color:var(--cream);display:flex;flex-direction:column;justify-content:center;
+  padding:calc(80px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) calc(32px + env(safe-area-inset-bottom,0px)) max(24px,env(safe-area-inset-left,0px));
+  background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:40px 40px;
+  clip-path:circle(0 at calc(100% - 50px) 38px);transition:clip-path .55s cubic-bezier(.7,0,.2,1);overflow:auto}
+.mnav.open{clip-path:circle(150% at calc(100% - 50px) 38px)}
+.mnav[hidden]{display:flex!important;visibility:hidden}
+.mnav.open{visibility:visible}
+.mnav ol{list-style:none;margin:0 auto;padding:0;width:min(100%,900px);display:flex;flex-direction:column;gap:2px}
+.mnav li{opacity:0;transform:translateY(24px);transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.mnav.open li{opacity:1;transform:none;transition-delay:calc(.15s + var(--i) * 45ms)}
+.mnav a{display:flex;align-items:baseline;gap:14px;padding:6px 0;text-decoration:none;color:var(--cream);font-family:var(--f-display);font-size:clamp(34px,7vw,64px);line-height:1.05;border-bottom:1px solid rgba(255,255,255,.18)}
+.mnav a small{font-family:var(--f-mono);font-size:13px;color:#FFD23F;min-width:2.2em}
+.mnav a:hover,.mnav a:focus-visible{color:#FFD23F}
+.mnav__foot{width:min(100%,900px);margin:28px auto 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.mnav__foot a{font:inherit;border:0;display:inline;color:var(--cream);text-decoration:underline;text-underline-offset:4px}
+html.mnav-lock,html.mnav-lock body{overflow:hidden}
+@media (max-width:560px){ .mnav-btn{top:auto;right:auto;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);height:52px;padding:0 22px 0 18px} .mnav{clip-path:circle(0 at 50% calc(100% - 42px))} .mnav.open{clip-path:circle(150% at 50% calc(100% - 42px))} .mnav{justify-content:flex-end;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))} .mnav a{font-size:30px} }
+@media (prefers-reduced-motion:reduce){.mnav,.mnav li{transition:none}}
 </style>
 </head>
 <body>
+<button type="button" class="mnav-btn" id="mnav-btn" aria-expanded="false" aria-controls="mnav"><i aria-hidden="true"></i><span>Menu</span></button>
+<nav class="mnav" id="mnav" aria-label="Menu" hidden>
+  <ol>
+    <li style="--i:0"><a href="#topo"><small>01</small>Início</a></li>
+    <li style="--i:1"><a href="#projetos"><small>02</small>Projetos</a></li>
+    <li style="--i:2"><a href="#bastidores"><small>03</small>Bastidores</a></li>
+    <li style="--i:3"><a href="#lambuza"><small>04</small>Lambuza</a></li>
+    <li style="--i:4"><a href="#ilustracoes"><small>05</small>Ilustrações</a></li>
+    <li style="--i:5"><a href="#behance"><small>06</small>Mais no Behance</a></li>
+    <li style="--i:6"><a href="#sobre"><small>07</small>Sobre</a></li>
+    <li style="--i:7"><a href="#experiencia"><small>08</small>Experiência</a></li>
+    <li style="--i:8"><a href="#certificados"><small>09</small>Certificados</a></li>
+    <li style="--i:9"><a href="#contato"><small>10</small>Contato</a></li>
+  </ol>
+  <div class="mnav__foot"><span>@loopim._</span><a href="https://wa.me/5511967388424" target="_blank" rel="noopener">WhatsApp</a></div>
+</nav>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-prev" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
   <symbol id="i-next" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
@@ -2325,6 +2378,19 @@ html.rv .cut.rv-cut.in .l{opacity:1;transform:rotate(var(--r,0deg)) translateY(v
     const fallback=()=>{ const el=document.getElementById(b.dataset.copy); const sel=getSelection(); const rg=document.createRange(); rg.selectNodeContents(el); sel.removeAllRanges(); sel.addRange(rg); b.textContent='Selecionado'; setTimeout(()=>b.textContent=label,1600); };
     try{ navigator.clipboard.writeText(val).then(done,fallback); }catch(err){ fallback(); }
   }));
+})();
+</script>
+<script>
+(function(){
+  const btn=document.getElementById("mnav-btn"), nav=document.getElementById("mnav"), hero=document.getElementById("topo"), label=btn.querySelector("span");
+  function set(open){ btn.setAttribute("aria-expanded",open); nav.classList.toggle("open",open); document.documentElement.classList.toggle("mnav-lock",open);
+    if(open){ nav.hidden=false; label.textContent=document.documentElement.lang==="en"?"Close":"Fechar"; setTimeout(()=>nav.querySelector("a").focus({preventScroll:true}),300); }
+    else { label.textContent=document.documentElement.lang==="en"?"Menu":"Menu"; setTimeout(()=>{ if(!nav.classList.contains("open")) nav.hidden=true; },550); } }
+  btn.addEventListener("click",()=>set(btn.getAttribute("aria-expanded")!=="true"));
+  nav.addEventListener("click",e=>{ const a=e.target.closest("a[href^=\"#\"]"); if(!a) return; e.preventDefault(); set(false); const t=document.querySelector(a.getAttribute("href")); if(t) setTimeout(()=>t.scrollIntoView({behavior:"smooth"}),120); });
+  addEventListener("keydown",e=>{ if(e.key==="Escape"&&btn.getAttribute("aria-expanded")==="true"){ set(false); btn.focus(); } });
+  const show=()=>btn.classList.toggle("show", !hero || scrollY > hero.offsetHeight*0.7);
+  addEventListener("scroll",show,{passive:true}); show();
 })();
 </script>
 <script src="imersivo.js"></script>

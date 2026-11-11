@@ -29,8 +29,9 @@
       if(z>120) op=clamp(1-(z-120)/260,0,1);
       if(z<-2400) op=clamp(1-(-z-2400)/1400,0,1);
       op*= it.last ? 1-.55*end : 1-end;
-      const X=(phone&&!it.word?it.x*.75:it.x)/100*vw, Y=(phone&&!it.word?it.y*1.6+(it.y>=0?8:-8)*(it.last?0:1):it.y)/100*vh;
+      const X=(it.word||it.last?it.x:(phone?it.x*.75:it.x*1.22))/100*vw, Y=(phone&&!it.word?it.y*1.6+(it.y>=0?8:-8)*(it.last?0:1):it.y)/100*vh;
       it.el.style.transform=`translate3d(${(X-it.wd/2).toFixed(1)}px,${(Y-it.h/2).toFixed(1)}px,${z.toFixed(1)}px)`;
+      if(!it.word&&!it.last){ const near=items.some(w=>w.word&&Math.abs((w.z+C)-z)<420&&(w.z+C)>-1400); if(near) op*=0.55; }
       it.el.style.opacity=op.toFixed(3);
       it.el.style.visibility=op<0.01?'hidden':'visible';
       if(it.word) it.el.style.setProperty('--gx',g.toFixed(1)+'px');

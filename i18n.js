@@ -238,6 +238,23 @@
     'João Vitor de gorro laranja operando uma câmera no gimbal':'João Vitor in an orange beanie operating a camera on a gimbal',
     /* novas ilustrações */
     'Ventania':'Gust','3 cores':'3 colors','Azul':'Blue','sticker P&B':'B&W sticker',
+    /* às margens */
+    'Direção de fotografia':'Director of photography','Direção de pós-produção':'Post-production supervisor','Cartaz':'Poster',
+    'Assistir Às Margens aqui':'Watch Às Margens here','Cena de Às Margens':'Still from Às Margens','Comporta':'Floodgate',
+    'Curta · Jardim Lapenna, São Miguel Paulista':'Short film · Jardim Lapenna, São Miguel Paulista',
+    'A água sobe. O bairro fica.':'The water rises. The neighborhood stays.',
+    'Às Margens parte de uma pergunta incômoda: por que, mesmo perdendo tudo nas enchentes, as pessoas continuam morando no Jardim Lapenna? O filme mostra que os alagamentos não são acidente natural, e sim consequência de decisões urbanas que empurram a periferia para áreas vulneráveis.':'Às Margens starts from an uncomfortable question: why do people keep living in Jardim Lapenna, even after losing everything to the floods? The film shows that the flooding is not a natural accident, but the result of urban decisions that push the outskirts into vulnerable areas.',
+    'Comporta aberta':'Floodgate open','Assistir aqui':'Watch here','Abrir no YouTube ↗':'Open on YouTube ↗',
+    /* cidade vertical */
+    'Videopoema vertical · Anne Almeida':'Vertical video poem · Anne Almeida','Capa':'Cover art','Videopoema vertical':'Vertical video poem',
+    '20 andares de poesia':'20 floors of poetry','Andar':'Floor','Montagem':'Editing',
+    'Videopoema de pré-lançamento do livro':'Pre-launch video poem for the book',
+    ', de Anne Almeida. Filmado e montado em 9:16, para ser visto no celular: a cidade que cresce para cima, em colagens de trem, prédio e asfalto.':' by Anne Almeida. Shot and edited in 9:16, made to be watched on a phone: a city that grows upward, in collages of trains, buildings and asphalt.',
+    'Trailer · 22 s':'Trailer · 22 s','Videopoema completo · 1:44':'Full video poem · 1:44',
+    'Trailer de Cidade Vertical tocando sem som':'Cidade Vertical trailer playing without sound',
+    'Ligar o som do trailer':'Turn trailer sound on','Desligar o som do trailer':'Turn trailer sound off','Vídeo de Cidade Vertical':'Cidade Vertical video',
+    /* menu */
+    'Início':'Home','Fechar':'Close','Menu':'Menu',
     /* lambuza e behance */
     'Identidade visual · Branding':'Visual identity · Branding','Branding':'Branding',
     'Hamburgueria com cara de quem come com a mão. Criei o personagem, o logo e a identidade, e levei para sacola, caixa, copo e papel de embrulho.':'A burger joint that looks like you eat with your hands. I created the character, the logo and the identity, and took them to bags, boxes, cups and wrapping paper.',

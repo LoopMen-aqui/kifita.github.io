@@ -9,7 +9,7 @@
 <meta name="description" content="Portfólio de João Vitor Alves (Kifita): pós-produção, color grading, operação de câmera, fotografia e ilustração. Extremo sul de São Paulo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Mono:wght@400;500&family=Poppins:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bagel+Fat+One&family=Cormorant+Garamond:ital,wght@1,600&family=DM+Mono:wght@400;500&family=Kaushan+Script&family=Poppins:wght@400;500;600&display=swap">
 <style>
 /* Layout: mesa de corte turquesa (abertura) → sala escura com rolos 3D → páginas de papel recortado (projetos) → mesa de corte de novo (contato) */
 :root{
@@ -630,6 +630,150 @@ p{margin:0}
 }
 @media (prefers-reduced-motion:reduce){.ce__card{transition:none}}
 
+/* ===== IDENTIDADE POR PROJETO ===== */
+.project.th{position:relative;isolation:isolate;padding:clamp(28px,4.4vw,64px);border-radius:28px;background:var(--th-bg);color:var(--th-ink,var(--ink));overflow:hidden;box-shadow:0 30px 60px -36px rgba(26,27,38,.55)}
+.project.th.has-block{padding-bottom:calc(clamp(28px,4.4vw,64px) + 64px);overflow:visible}
+.project.th.has-block>.th-clip{overflow:hidden}
+.project.th::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-2;background:var(--th-pat,none);opacity:var(--th-pat-o,1);pointer-events:none}
+.project.th .p-meta{color:var(--th-acc)}
+.project.th .p-text h3{color:var(--th-h);font-family:var(--th-font,var(--f-display))}
+.project.th .p-text p{color:var(--th-soft)}
+.project.th .roles li{color:var(--th-acc);border-color:var(--th-acc)}
+.project.th .print{background:var(--th-print,var(--cream))}
+.project.th+.ce,.project.th+.am,.project.th+.cv,.project.th+.tv,.project.th+.em{margin-top:-184px;position:relative;z-index:1;width:calc(100% - clamp(20px,4vw,72px));margin-inline:auto}
+.th-deco{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;border-radius:inherit}
+
+/* Cidade Errante: tijolo e cor quente */
+#p-cidade-errante{--th-bg:#F1DCCB;--th-ink:#3A1E14;--th-h:#A63A1F;--th-acc:#1D6E74;--th-soft:#5B3A2C;
+  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40'%3E%3Cg fill='none' stroke='%23DDB49C' stroke-width='2'%3E%3Cpath d='M0 1h80M0 21h80M1 1v20M41 21v20'/%3E%3C/g%3E%3C/svg%3E");--th-pat-o:.8}
+#p-cidade-errante .p-text h3{text-shadow:4px 4px 0 rgba(29,110,116,.35)}
+
+/* Às Margens: concreto úmido, serifa, água que sobe */
+#p-as-margens{--th-bg:linear-gradient(170deg,#2E352F 0%,#1B211C 100%);--th-ink:#E9E1D2;--th-h:#EDE3D0;--th-acc:#A9C6B6;--th-soft:#BFC3B8;--th-print:#D9D2C3;--th-font:"Cormorant Garamond",Georgia,serif;
+  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");--th-pat-o:.12}
+#p-as-margens .p-text h3{font-style:italic;font-weight:600;font-size:clamp(52px,6.4vw,92px);letter-spacing:.01em;line-height:.9}
+#p-as-margens .p-text h3 .l,#p-serta .p-text h3 .l{transform:none}
+.am-water{position:absolute;left:0;right:0;bottom:0;height:var(--lvl,0%);background:linear-gradient(180deg,rgba(120,165,165,.32),rgba(60,100,105,.5));transition:height .2s linear}
+.am-water::before{content:"";position:absolute;left:0;right:0;top:-12px;height:13px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='24' viewBox='0 0 240 24'%3E%3Cpath d='M0 12 Q30 0 60 12 T120 12 T180 12 T240 12 V24 H0Z' fill='%2378A5A5'/%3E%3C/svg%3E") repeat-x;background-size:240px 13px;opacity:.32;animation:am-wave 6s linear infinite}
+@keyframes am-wave{to{background-position-x:240px}}
+.am-ruler{position:absolute;left:clamp(8px,1.4vw,20px);top:12%;bottom:8%;width:18px;border-left:1.5px solid rgba(233,225,210,.3);background:repeating-linear-gradient(180deg,rgba(233,225,210,.35) 0 1.5px,transparent 1.5px 24px);background-size:8px 100%;background-repeat:no-repeat}
+
+/* Cerveja Serta: verde garrafa, bolhas subindo, letra de rótulo */
+#p-serta{--th-bg:linear-gradient(160deg,#0B4D33 0%,#18794B 58%,#3FAE6E 100%);--th-ink:#F1F7EE;--th-h:#FFFFFF;--th-acc:#D4F58A;--th-soft:#D7EBDD;--th-font:"Kaushan Script",cursive}
+#p-serta .p-text h3{font-size:clamp(52px,6.4vw,90px);text-shadow:4px 4px 0 #083A25;line-height:1}
+.sb-bub i{position:absolute;bottom:-20px;width:var(--s);height:var(--s);border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.55),rgba(255,255,255,.05) 60%);animation:sb-up var(--d) linear var(--dl) infinite;opacity:0}
+@keyframes sb-up{0%{transform:translate(0,0);opacity:0}10%{opacity:.85}90%{opacity:.6}100%{transform:translate(var(--sx),calc(-1 * var(--hh,900px)));opacity:0}}
+
+/* Toni Venturi: cartaz laranja, letra condensada amarela, película */
+#p-toni-venturi{--th-bg:radial-gradient(70% 80% at 85% 20%,#2A0E05 0%,rgba(42,14,5,0) 55%),linear-gradient(160deg,#C24A18,#9E3510);--th-ink:#FFF1E4;--th-h:#F7C531;--th-acc:#FFD34A;--th-soft:#FBE3D1;--th-font:"Anton","Arial Narrow",Impact,sans-serif;
+  --th-pat:repeating-linear-gradient(90deg,rgba(20,6,2,.85) 0 14px,transparent 14px 26px) top/100% 12px no-repeat,repeating-linear-gradient(90deg,rgba(20,6,2,.85) 0 14px,transparent 14px 26px) bottom/100% 12px no-repeat}
+#p-toni-venturi .p-text h3{text-transform:uppercase;font-size:clamp(52px,6.6vw,96px);line-height:.92;letter-spacing:.005em;text-shadow:3px 3px 0 #2A0E05}
+
+/* Existe Moda em SP?: jeans com costura */
+#p-existe-moda{--th-bg:#2F4C85;--th-ink:#EEF2FA;--th-h:#FFFFFF;--th-acc:#FFD68C;--th-soft:#CFD8EC;
+  --th-pat:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(0,0,0,.08) 0 1px,transparent 1px 5px)}
+#p-existe-moda::after{content:"";position:absolute;inset:12px;border:2px dashed rgba(255,214,140,.6);border-radius:20px;pointer-events:none;z-index:-1}
+#p-existe-moda .p-text h3{text-shadow:4px 4px 0 #E3262B}
+
+/* Cidade Vertical: noite com janelas acesas */
+#p-cidade-vertical{--th-bg:linear-gradient(180deg,#0E1120,#161A2E);--th-ink:#F2F0EC;--th-h:#FFFFFF;--th-acc:#F2A66A;--th-soft:#C9C6D2;
+  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='132'%3E%3Cg fill='%2323273d'%3E%3Crect x='8' y='8' width='22' height='28' rx='2'/%3E%3Crect x='44' y='8' width='22' height='28' rx='2'/%3E%3Crect x='116' y='8' width='22' height='28' rx='2'/%3E%3Crect x='152' y='52' width='22' height='28' rx='2'/%3E%3Crect x='8' y='96' width='22' height='28' rx='2'/%3E%3Crect x='80' y='96' width='22' height='28' rx='2'/%3E%3C/g%3E%3Crect x='80' y='8' width='22' height='28' rx='2' fill='%23F2A66A' opacity='.55'/%3E%3Crect x='44' y='52' width='22' height='28' rx='2' fill='%239FB7FF' opacity='.4'/%3E%3Crect x='116' y='96' width='22' height='28' rx='2' fill='%23F2A66A' opacity='.4'/%3E%3C/svg%3E");--th-pat-o:.7}
+#p-cidade-vertical .p-text h3{text-shadow:4px 5px 0 rgba(110,140,255,.45)}
+
+/* La Aura: neon roxo e spray laranja */
+#p-la-aura{--th-bg:radial-gradient(70% 70% at 80% 25%,#B21FBF 0%,rgba(178,31,191,0) 60%),radial-gradient(60% 60% at 10% 90%,#FF7A1A55 0%,transparent 60%),#36094F;--th-ink:#FFFFFF;--th-h:#FFE36A;--th-acc:#FFB347;--th-soft:#EBD3F2;
+  --th-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='300'%3E%3Cg fill='none' stroke='%23FF8A1F' stroke-width='9' stroke-linecap='round' opacity='.35'%3E%3Cpath d='M40 120c-30-50 40-80 60-30 20-50 90-20 60 30L100 200z'/%3E%3Cpath d='M230 60q40 60 0 120t20 100'/%3E%3C/g%3E%3C/svg%3E") 0 0/600px 500px;--th-pat-o:.45}
+#p-la-aura .p-text h3{text-shadow:0 0 10px rgba(255,138,31,.9),0 0 30px rgba(255,43,214,.75);animation:la-neon 5s steps(1) infinite}
+@keyframes la-neon{0%,100%{opacity:1}42%{opacity:.55}43%{opacity:1}44%{opacity:.7}45%{opacity:1}}
+
+/* Às Margens: bloco com o filme */
+.am{--am:#A9C6B6;position:relative;isolation:isolate;overflow:hidden;border-radius:22px;background:linear-gradient(180deg,#171D19,#0E1311);color:#E9E1D2;
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(22px,3.6vw,52px);align-items:center;padding:clamp(22px,3.6vw,48px);box-shadow:0 40px 80px -40px rgba(10,14,12,.8)}
+.am[hidden]{display:none}
+.am__player{position:relative;z-index:1;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 0 0 1.5px rgba(233,225,210,.18)}
+.am__yt{all:unset;position:absolute;inset:0;cursor:pointer;display:block}
+.am__yt img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
+.am__playbtn{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;display:grid;place-items:center;background:rgba(233,225,210,.92);color:#141A17;font-size:24px;padding-left:5px;box-sizing:border-box;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .2s}
+.am__yt:hover .am__playbtn,.am__yt:focus-visible .am__playbtn{transform:scale(1.08)}
+.am__yt:focus-visible{outline:3px solid var(--am);outline-offset:-3px}
+.am__player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.am__gate{position:absolute;inset:0;z-index:2;pointer-events:none;transform:translateY(calc(var(--open,0) * -100%));
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.25)),repeating-linear-gradient(180deg,#5d6560 0 10px,#7d8580 10px 13px,#4a514c 13px 22px);
+  border-bottom:6px solid #2b302c;display:grid;place-items:center}
+.am__gate span{background:#141A17;color:#E9E1D2;padding:6px 14px;border-radius:6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.am.played .am__gate{--open:1!important;transition:transform .5s}
+.am__copy{position:relative;z-index:1;display:flex;flex-direction:column;gap:16px;min-width:0}
+.am__eye{color:var(--am)}
+.am__h{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(40px,4.6vw,66px);line-height:.95;color:#F3EBDC;margin:0}
+.am__copy p{color:#BFC3B8;margin:0;max-width:50ch}
+.am__gauge{display:flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#BFC3B8}
+.am__gauge i{flex:1;height:6px;border-radius:3px;background:rgba(233,225,210,.15);overflow:hidden}
+.am__gauge b{display:block;height:100%;width:calc(var(--open,0) * 100%);background:var(--am)}
+.am__btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.am__play{display:inline-flex;align-items:center;gap:12px;background:#E9E1D2;color:#141A17;border:0;border-radius:999px;padding:7px 20px 7px 7px;font:500 15px var(--f-body);cursor:pointer;transition:transform .2s}
+.am__play:hover{transform:translateY(-2px)}
+.am__disc{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#141A17;color:#E9E1D2;font-size:12px;padding-left:2px;box-sizing:border-box}
+.am__link{color:#E9E1D2;font-size:15px;text-underline-offset:4px;padding:8px 6px}
+.am__water{position:absolute;left:0;right:0;bottom:0;height:var(--lvl,18%);z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(110,160,160,.18),rgba(60,100,105,.42))}
+.am__water::before{content:"";position:absolute;left:0;right:0;top:-12px;height:13px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='24' viewBox='0 0 240 24'%3E%3Cpath d='M0 12 Q30 0 60 12 T120 12 T180 12 T240 12 V24 H0Z' fill='%2378A5A5'/%3E%3C/svg%3E") repeat-x;background-size:240px 13px;opacity:.18;animation:am-wave 7s linear infinite reverse}
+@media (max-width:900px){
+  .project.th{border-radius:22px}
+  .project.th+.ce,.project.th+.am,.project.th+.cv,.project.th+.tv,.project.th+.em{width:calc(100% - 16px);margin-top:-150px}
+  .am{grid-template-columns:minmax(0,1fr)}
+  .am-ruler{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .sb-bub{display:none}.am-water::before,.am__water::before,#p-la-aura .p-text h3{animation:none}
+  .am__gate{transform:translateY(-100%)}
+}
+
+/* ===== CIDADE VERTICAL: videopoema 9:16 ===== */
+.cv{position:relative;margin-top:-40px;border-radius:24px;overflow:hidden;background:#0B0B0F;color:#F2F0EC;isolation:isolate;
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(64px,6vw,80px) clamp(20px,4vw,56px) clamp(24px,4vw,56px);box-shadow:0 40px 80px -40px rgba(26,27,38,.7)}
+.cv[hidden]{display:none}
+.cv__windows{position:absolute;inset:0;z-index:-1;display:grid;grid-template-columns:repeat(auto-fill,minmax(26px,1fr));grid-auto-rows:34px;gap:12px 10px;padding:18px;opacity:.5;overflow:hidden;
+  -webkit-mask:linear-gradient(90deg,#000 0,rgba(0,0,0,.2) 42%,rgba(0,0,0,.2) 70%,#000);mask:linear-gradient(90deg,#000 0,rgba(0,0,0,.2) 42%,rgba(0,0,0,.2) 70%,#000)}
+.cv__windows i{display:block;border-radius:2px;background:#1a1a22;box-shadow:inset 0 0 0 1.5px #23232c;transition:background .6s,box-shadow .6s}
+.cv__windows i.on{background:#F2A66A;box-shadow:0 0 14px rgba(242,166,106,.55)}
+.cv__windows i.on.b{background:#9FB7FF;box-shadow:0 0 14px rgba(110,140,255,.55)}
+.cv__phone{position:relative;justify-self:center;width:min(100%,330px);aspect-ratio:9/16;border-radius:34px;padding:10px;background:#16161c;box-shadow:0 0 0 2px #2b2b35,0 40px 70px -30px rgba(0,0,0,.9);transform:rotate(-2deg)}
+.cv__phone video{width:100%;height:100%;object-fit:cover;border-radius:26px;display:block;background:#000}
+.cv__sound{position:absolute;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(10,10,14,.6);color:#fff;display:grid;place-items:center;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.cv__sound svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.cv__sound .cv__spk{fill:currentColor;stroke:none}
+.cv__sound .cv__wave{opacity:.25}
+.cv__sound[aria-pressed="true"] .cv__wave{opacity:1}
+.cv__floor{position:absolute;z-index:2;left:clamp(16px,2vw,28px);top:clamp(16px,2vw,24px);display:flex;align-items:center;gap:8px;font-family:var(--f-mono,monospace);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  background:#000;border:1.5px solid #3a3a46;border-radius:8px;padding:6px 12px;color:#F2A66A}
+.cv__floor b{font-size:22px;font-weight:500;font-variant-numeric:tabular-nums;color:#FFB070}
+.cv__floor i{font-style:normal;font-size:11px;animation:cv-blink 1s steps(1) infinite}
+@keyframes cv-blink{50%{opacity:0}}
+.cv__copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+.cv__eye{color:#F2A66A}
+.cv__h{font-size:clamp(40px,5.4vw,78px);line-height:.95;color:#fff;margin:0;text-shadow:4px 5px 0 rgba(110,140,255,.45)}
+.cv__copy p{color:#C9C6D2;max-width:52ch;margin:0}
+.cv__copy p b{color:#fff}
+.cv .roles li{color:#fff;border-color:rgba(255,255,255,.5);background:transparent}
+.cv .roles li:last-child{background:#F2A66A;border-color:#F2A66A;color:#1a1210}
+.cv__btns{display:flex;flex-wrap:wrap;gap:10px}
+.cv__play{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;padding:7px 20px 7px 7px;font:500 15px inherit;font-family:inherit;cursor:pointer;transition:background .2s,transform .2s}
+.cv__play:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
+.cv__disc{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#0B0B0F;font-size:12px;padding-left:2px}
+.cv__play--main{background:#F2A66A;border-color:#F2A66A;color:#1a1210}
+.cv__play--main:hover{background:#ffbb82}
+.cv__strip{height:150px;overflow:hidden;border-radius:12px;-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.cv__rail{display:flex;gap:10px;width:max-content;height:100%;animation:cv-rail 34s linear infinite}
+.cv__rail img{height:100%;width:auto;aspect-ratio:9/16;object-fit:cover;border-radius:8px}
+@keyframes cv-rail{to{transform:translateX(calc(-50% - 5px))}}
+.cv:hover .cv__rail{animation-play-state:paused}
+.cv-lb{position:fixed;inset:0;z-index:300;background:rgba(6,6,10,.92);display:grid;place-items:center;padding:56px 16px 24px}
+.cv-lb[hidden]{display:none}
+.cv-lb video{max-height:calc(100vh - 100px);max-width:100%;aspect-ratio:9/16;border-radius:14px;background:#000}
+.cv-lb__x{position:absolute;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;font-size:18px;cursor:pointer}
+@media (max-width:900px){.cv{grid-template-columns:minmax(0,1fr);margin-top:-24px;padding-top:84px}
+  .cv__windows{-webkit-mask:linear-gradient(180deg,#000 0,#000 30%,rgba(0,0,0,.12) 52%,rgba(0,0,0,.12));mask:linear-gradient(180deg,#000 0,#000 30%,rgba(0,0,0,.12) 52%,rgba(0,0,0,.12))}.cv__phone{width:min(78%,300px)}.cv__strip{height:120px}}
+@media (prefers-reduced-motion:reduce){.cv__rail,.cv__floor i{animation:none}}
+
 /* ===== MULTIARTISTA: abertura, spray, adesivos, fitas, rasgos ===== */
 .intro{position:fixed;inset:0;z-index:300;background:#07080E;color:#F2F1EC;display:grid;place-items:center;overflow:hidden;
   clip-path:inset(0 0 0 0);transition:clip-path .7s cubic-bezier(.7,0,.2,1)}
@@ -1109,6 +1253,56 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
       </div>
     </div>
     <div class="projects" id="projects"></div>
+    <template id="am-tpl">
+      <div class="am" id="am-block" aria-labelledby="am-t">
+        <div class="am__player">
+          <button type="button" class="am__yt" id="am-yt" aria-label="Assistir Às Margens aqui">
+            <img src="https://i.ytimg.com/vi/6vHoODInPWk/maxresdefault.jpg" alt="Cena de Às Margens" width="1280" height="720" loading="lazy">
+            <span class="am__playbtn" aria-hidden="true">▶</span>
+          </button>
+          <div class="am__gate" id="am-gate" aria-hidden="true"><span class="mono">Comporta</span></div>
+        </div>
+        <div class="am__copy">
+          <span class="mono am__eye">Curta · Jardim Lapenna, São Miguel Paulista</span>
+          <h3 class="am__h" id="am-t">A água sobe. O bairro fica.</h3>
+          <p>Às Margens parte de uma pergunta incômoda: por que, mesmo perdendo tudo nas enchentes, as pessoas continuam morando no Jardim Lapenna? O filme mostra que os alagamentos não são acidente natural, e sim consequência de decisões urbanas que empurram a periferia para áreas vulneráveis.</p>
+          <div class="am__gauge" aria-hidden="true"><span class="mono">Comporta aberta</span><i><b id="am-bar"></b></i><span class="mono" id="am-pct">0%</span></div>
+          <div class="am__btns">
+            <button type="button" class="am__play" id="am-play"><span class="am__disc">▶</span>Assistir aqui</button>
+            <a class="am__link" href="https://youtu.be/6vHoODInPWk" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
+          </div>
+        </div>
+        <div class="am__water" aria-hidden="true"></div>
+      </div>
+    </template>
+    <template id="cv-tpl">
+      <div class="cv" id="cv-block" aria-labelledby="cv-t">
+        <div class="cv__windows" id="cv-windows" aria-hidden="true"></div>
+        <div class="cv__floor" aria-hidden="true"><span>Andar</span><b id="cv-floor">00</b><i>▲</i></div>
+        <div class="cv__phone">
+          <video id="cv-loop" src="cidade-vertical/trailer.mp4" poster="cidade-vertical/capa.jpg" muted loop playsinline preload="metadata" aria-label="Trailer de Cidade Vertical tocando sem som"></video>
+          <button type="button" class="cv__sound" id="cv-sound" aria-pressed="false" aria-label="Ligar o som do trailer"><svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path class="cv__spk" d="M4 9v6h4l5 4V5L8 9z"/><path class="cv__wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></button>
+        </div>
+        <div class="cv__copy">
+          <span class="mono cv__eye">Videopoema vertical · Anne Almeida</span>
+          <h3 class="cut cv__h" id="cv-t">20 andares de poesia</h3>
+          <p>Videopoema de pré-lançamento do livro <b>Cidade Vertical</b>, de Anne Almeida. Filmado e montado em 9:16, para ser visto no celular: a cidade que cresce para cima, em colagens de trem, prédio e asfalto.</p>
+          <ul class="roles" aria-label="Funções"><li>Operador de câmera</li><li>Montagem</li><li>Capa</li></ul>
+          <div class="cv__btns">
+            <button type="button" class="cv__play" data-src="cidade-vertical/trailer.mp4"><span class="cv__disc">▶</span>Trailer · 22 s</button>
+            <button type="button" class="cv__play cv__play--main" data-src="cidade-vertical/corte-final.mp4"><span class="cv__disc">▶</span>Videopoema completo · 1:44</button>
+          </div>
+          <div class="cv__strip" aria-hidden="true"><div class="cv__rail">
+            <img src="cidade-vertical/f1.jpg" alt="" loading="lazy"><img src="cidade-vertical/f2.jpg" alt="" loading="lazy"><img src="cidade-vertical/f3.jpg" alt="" loading="lazy"><img src="cidade-vertical/f4.jpg" alt="" loading="lazy"><img src="cidade-vertical/f5.jpg" alt="" loading="lazy"><img src="cidade-vertical/capa.jpg" alt="" loading="lazy">
+            <img src="cidade-vertical/f1.jpg" alt="" loading="lazy"><img src="cidade-vertical/f2.jpg" alt="" loading="lazy"><img src="cidade-vertical/f3.jpg" alt="" loading="lazy"><img src="cidade-vertical/f4.jpg" alt="" loading="lazy"><img src="cidade-vertical/f5.jpg" alt="" loading="lazy"><img src="cidade-vertical/capa.jpg" alt="" loading="lazy">
+          </div></div>
+        </div>
+      </div>
+    </template>
+    <div class="cv-lb" id="cv-lb" role="dialog" aria-modal="true" aria-label="Vídeo de Cidade Vertical" hidden>
+      <video id="cv-video" controls playsinline preload="none" poster="cidade-vertical/capa.jpg"></video>
+      <button type="button" class="cv-lb__x" id="cv-x" aria-label="Fechar">✕</button>
+    </div>
     <template id="ce-tpl">
       <div class="ce" id="ce-block" aria-labelledby="ce-t">
         <video class="ce__bg" src="cidade-errante/preview.mp4" poster="cidade-errante/frame-5.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
@@ -1665,7 +1859,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
      img:'cidade-errante.jpg', w:1400, h:455, alt:'Capa de Cidade Errante: rosto com pintura facial e o título em letras de tijolo'},
     {id:'as-margens', title:'Às Margens', meta:'Instituto KondZilla · emergência climática',
      text:'Filme realizado durante a formação no Instituto KondZilla. Retrata São Miguel Paulista, bairro da zona leste de São Paulo que sofre com enchentes e alagamentos, onde as casas têm comportas para se proteger da água.',
-     roles:['Operador de câmera','Colorista','Montador'], tags:['camera','cor','montagem'],
+     roles:['Direção de fotografia','Operador de câmera','Direção de pós-produção','Colorista','Montador','Cartaz'], tags:['camera','cor','montagem','design'],
      img:'as-margens.jpg', w:1140, h:1349, alt:'Cartaz de Às Margens: jovem sentada numa escadaria de viela', tall:true},
     {id:'serta', title:'Cerveja Serta', meta:'Cervejaria de Sertãozinho · still',
      text:'Imagens da cervejaria de Sertãozinho, que possui seu próprio laboratório de produção de cerveja.',
@@ -1684,7 +1878,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
      extra:{img:'moda/em-01.webp', alt:'Retrato de perfil em preto e branco de artista tatuado'}},
     {id:'cidade-vertical', title:'Cidade Vertical', meta:'Instituto KondZilla · livro de Anne Almeida',
      text:'Vídeo de pré-lançamento do livro homônimo da autora Anne Almeida, do Instituto KondZilla, construído a partir de poesias da própria obra.',
-     roles:['Operador de câmera','Montador'], tags:['camera','montagem'],
+     roles:['Operador de câmera','Montador','Capa'], tags:['camera','montagem','design'],
      img:'cidade-vertical-logo.jpg', w:941, h:312, alt:'Título Cidade, com janelas acesas dentro das letras',
      extra:{img:'cidade-vertical-foto.jpg', alt:'Mulher de costas olhando uma multidão'}},
     {id:'la-aura', title:'La Aura', meta:'Videoclipe',
@@ -1698,7 +1892,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
   P.forEach((p,i)=>{
     const rot = [-1.6,1.4,-1.1,1.8,-1.4,1.2,-1.8][i];
     const art = document.createElement('article');
-    art.className='project'; art.id='p-'+p.id; art.dataset.tags=p.tags.join(' ');
+    art.className='project th'; art.id='p-'+p.id; art.dataset.tags=p.tags.join(' ');
     const maxw = p.tall ? 'max-width:440px;margin-inline:auto' : '';
     art.innerHTML =
       '<div class="p-media"><div class="print" style="--rot:'+rot+'deg;'+maxw+'">'+
@@ -1711,7 +1905,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     list.appendChild(art);
   });
   /* bloco de fotos do evento logo após o projeto Toni Venturi */
-  (function(){ [['ce-tpl','p-cidade-errante'],['tv-tpl','p-toni-venturi'],['em-tpl','p-existe-moda']].forEach(([t,a])=>{ const tpl=document.getElementById(t), after=document.getElementById(a); if(tpl&&after) after.after(tpl.content.cloneNode(true)); }); })();
+  (function(){ [['ce-tpl','p-cidade-errante'],['am-tpl','p-as-margens'],['cv-tpl','p-cidade-vertical'],['tv-tpl','p-toni-venturi'],['em-tpl','p-existe-moda']].forEach(([t,a])=>{ const tpl=document.getElementById(t), after=document.getElementById(a); if(tpl&&after){ after.after(tpl.content.cloneNode(true)); after.classList.add('has-block'); } }); })();
 
   /* ---------- letras recortadas ---------- */
   let seed = 7;
@@ -1743,7 +1937,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
       a.hidden=!show; if(show) n++;
     });
     empty.hidden = n>0;
-    [['ce-block','p-cidade-errante'],['tv-event','p-toni-venturi'],['em-block','p-existe-moda']].forEach(([b,p])=>{ const be=document.getElementById(b), pe=document.getElementById(p); if(be&&pe) be.hidden=pe.hidden; });
+    [['ce-block','p-cidade-errante'],['am-block','p-as-margens'],['cv-block','p-cidade-vertical'],['tv-event','p-toni-venturi'],['em-block','p-existe-moda']].forEach(([b,p])=>{ const be=document.getElementById(b), pe=document.getElementById(p); if(be&&pe) be.hidden=pe.hidden; });
   }));
 
   /* ---------- réguas da mesa de corte ---------- */
@@ -1978,6 +2172,53 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     function close(){ vid.pause(); lb.hidden=true; document.body.style.overflow=''; if(opener&&opener.focus) opener.focus({preventScroll:true}); }
     document.getElementById('ce-play').addEventListener('click',open);
     document.getElementById('ce-x').addEventListener('click',close);
+    lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+    document.addEventListener('keydown',e=>{ if(!lb.hidden&&e.key==='Escape') close(); });
+  })();
+
+  /* ---------- Identidade por projeto: água de Às Margens, bolhas da Serta ---------- */
+  (function(){
+    const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const deco=(id,html)=>{ const a=document.getElementById(id); if(!a) return null; const d=document.createElement('div'); d.className='th-deco'; d.setAttribute('aria-hidden','true'); d.innerHTML=html; a.prepend(d); return d; };
+    const water=deco('p-as-margens','<div class="am-ruler"></div><div class="am-water"></div>');
+    const bub=deco('p-serta','<div class="sb-bub"></div>');
+    if(bub&&!still){ const box=bub.firstChild; for(let i=0;i<18;i++){ const b=document.createElement('i'); const s=6+Math.random()*16; b.style.cssText='left:'+(Math.random()*100).toFixed(1)+'%;--s:'+s.toFixed(0)+'px;--d:'+(7+Math.random()*8).toFixed(1)+'s;--dl:-'+(Math.random()*14).toFixed(1)+'s;--sx:'+((Math.random()-.5)*60).toFixed(0)+'px'; box.appendChild(b); } const setH=()=>bub.style.setProperty('--hh',(bub.offsetHeight+60)+'px'); setH(); addEventListener('resize',setH); }
+    const am=document.getElementById('am-block'), art=document.getElementById('p-as-margens');
+    const prog=el=>{ const r=el.getBoundingClientRect(); return Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height))); };
+    const bar=document.getElementById('am-pct');
+    let tick=false;
+    function draw(){ tick=false;
+      if(water&&art&&!art.hidden){ const p=prog(art); water.style.setProperty('--lvl',(Math.max(0,p-.2)/.8*30).toFixed(1)+'%'); }
+      if(am&&!am.hidden){ const p=prog(am); const o=still?1:Math.max(0,Math.min(1,(p-.18)/.32)); am.style.setProperty('--open',o.toFixed(3)); am.style.setProperty('--lvl',(6+p*12).toFixed(1)+'%'); if(bar) bar.textContent=Math.round(am.classList.contains('played')?100:o*100)+'%'; }
+    }
+    addEventListener('scroll',()=>{ if(!tick){ tick=true; requestAnimationFrame(draw); } },{passive:true}); addEventListener('resize',draw); draw();
+    if(am){
+      const yt=document.getElementById('am-yt');
+      function play(){ if(am.classList.contains('played')) return; am.classList.add('played'); if(bar) bar.textContent='100%';
+        const f=document.createElement('iframe'); f.src='https://www.youtube-nocookie.com/embed/6vHoODInPWk?autoplay=1&rel=0'; f.title='Às Margens'; f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true; f.referrerPolicy='strict-origin-when-cross-origin';
+        yt.replaceWith(f); f.focus(); }
+      yt.addEventListener('click',play); document.getElementById('am-play').addEventListener('click',play);
+    }
+  })();
+
+  /* ---------- Cidade Vertical: videopoema ---------- */
+  (function(){
+    const root=document.getElementById('cv-block'); if(!root) return;
+    const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const loop=document.getElementById('cv-loop'), snd=document.getElementById('cv-sound'), floor=document.getElementById('cv-floor'), win=document.getElementById('cv-windows');
+    const W=[]; for(let i=0;i<260;i++){ const e=document.createElement('i'); if(Math.random()<.2) e.classList.add('on'); if(Math.random()<.25) e.classList.add('b'); win.appendChild(e); W.push(e); }
+    let iv=null;
+    new IntersectionObserver(es=>{ if(es[0].isIntersecting){ if(!still) loop.play().catch(()=>{}); if(!iv&&!still) iv=setInterval(()=>W[(Math.random()*W.length)|0].classList.toggle('on'),220); } else { loop.pause(); clearInterval(iv); iv=null; } },{threshold:.15}).observe(root);
+    function onScroll(){ const r=root.getBoundingClientRect(); const p=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height))); floor.textContent=String(Math.round(p*20)).padStart(2,'0'); }
+    addEventListener('scroll',onScroll,{passive:true}); onScroll();
+    function setSnd(on){ loop.muted=!on; snd.setAttribute('aria-pressed',String(on)); snd.setAttribute('aria-label',on?'Desligar o som do trailer':'Ligar o som do trailer'); }
+    snd.addEventListener('click',()=>{ setSnd(loop.muted); if(!loop.muted) loop.play().catch(()=>{}); });
+    const lb=document.getElementById('cv-lb'), vid=document.getElementById('cv-video'), x=document.getElementById('cv-x'); let opener=null;
+    document.body.appendChild(lb);
+    function open(src){ opener=document.activeElement; setSnd(false); vid.src=src; lb.hidden=false; document.body.style.overflow='hidden'; vid.play().catch(()=>{}); x.focus(); }
+    function close(){ vid.pause(); vid.removeAttribute('src'); vid.load(); lb.hidden=true; document.body.style.overflow=''; if(opener&&opener.focus) opener.focus({preventScroll:true}); }
+    root.querySelectorAll('.cv__play').forEach(b=>b.addEventListener('click',()=>open(b.dataset.src)));
+    x.addEventListener('click',close);
     lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
     document.addEventListener('keydown',e=>{ if(!lb.hidden&&e.key==='Escape') close(); });
   })();

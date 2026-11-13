@@ -60,7 +60,7 @@
     const N=frames.length, seg=p*N, k=Math.min(N-1,Math.floor(seg)), t=seg-k;
     frames.forEach((f,i)=>{
       let reveal = i<k?1 : i===k ? clamp(t/.55,0,1) : 0;
-      if(i===0 && k===0) reveal=Math.max(reveal,.0001);
+      if(i===0) reveal=1; // a primeira foto já aparece inteira: a seção nunca fica vazia
       f.style.setProperty('--clip', reveal>=1?'none':blob(i,reveal));
       f.style.clipPath = reveal>=1?'none':blob(i,reveal);
       f.style.setProperty('--rot',rots[i%rots.length]+'deg');

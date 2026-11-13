@@ -188,6 +188,9 @@ p{margin:0}
 .course .when{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
 .course h3{font-family:var(--f-body);font-weight:600;font-size:19px;line-height:1.25}
 .course .where{color:var(--ink-soft)}
+.course--now{background:#FFE15A}
+.now-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:8px;vertical-align:1px;animation:em-blink 1.2s steps(1) infinite}
+@media (prefers-reduced-motion:reduce){.now-dot{animation:none}}
 .hours{margin-top:10px}
 .hours-bar{display:flex;height:22px;border:2px solid var(--ink);border-radius:3px;overflow:hidden}
 .hours-bar span{display:block;height:100%}
@@ -1456,7 +1459,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
       <h2 class="cut" id="sobre-t" data-cut>Opa, me chamo João Vítor</h2>
       <div class="bio">
         <p>Sou profissional de audiovisual do extremo sul de São Paulo, com atuação em pós-produção, operação de câmera e fotografia.</p>
-        <p>Me formei em Pós-produção pelo Instituto Criar e em Fotografia pela Casa Locomotiva, e concluí o curso de Audiovisual do Instituto KondZilla. Já atuei como freelancer na RapBox e, em 2026, trabalhei na produtora Olhar Imaginário como colorista, assistente de montagem, montador e assistente de fotografia.</p>
+        <p>Me formei em Pós-produção pelo Instituto Criar e em Fotografia pela Casa Locomotiva, concluí o curso de Audiovisual do Instituto KondZilla e hoje curso a graduação em Fotografia na UNIASSELVI. Já atuei como freelancer na RapBox e, em 2026, trabalhei na produtora Olhar Imaginário como colorista, assistente de montagem, montador e assistente de fotografia.</p>
       </div>
       <dl class="facts">
         <div><dt>Base</dt><dd>Extremo sul de São Paulo</dd></div>
@@ -2052,6 +2055,11 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
   <div class="wrap" style="margin-top:96px">
     <h2 class="cut" data-cut style="font-size:clamp(44px,6vw,80px);color:var(--cobalt)">Formação</h2>
     <div class="form-list">
+      <article class="course course--now">
+        <span class="when"><b class="now-dot" aria-hidden="true"></b>Cursando · desde 2026</span>
+        <h3>Graduação em Fotografia</h3>
+        <span class="where">UNIASSELVI · a distância</span>
+      </article>
       <article class="course">
         <span class="when">Out 2025 – Jan 2026 · 180 h</span>
         <h3>Audiovisual</h3>

@@ -238,6 +238,11 @@
     'João Vitor de gorro laranja operando uma câmera no gimbal':'João Vitor in an orange beanie operating a camera on a gimbal',
     /* novas ilustrações */
     'Ventania':'Gust','3 cores':'3 colors','Azul':'Blue','sticker P&B':'B&W sticker',
+    /* bastidores: edição */
+    'Na ilha de edição':'In the editing suite','Selecionando o material':'Picking the footage','Corte e cor':'Cut and color','Pós-produção':'Post-production',
+    'Vídeo: João Vitor editando no computador, com o material de um evento na tela':'Video: João Vitor editing at the computer, with event footage on screen',
+    'Vídeo: João Vitor no teclado, selecionando e montando o material':'Video: João Vitor at the keyboard, picking and cutting the footage',
+    'Vídeo: João Vitor de boné editando contra a luz da janela':'Video: João Vitor in a cap, editing against the window light',
     /* instagram */
     'No Instagram':'On Instagram','Bio':'Bio','✍️ Ilustrador':'✍️ Illustrator','📸 Fotografia em':'📸 Photography at','mil':'k','22,9':'22.9',
     'pessoas acompanham o meu traço':'people follow my work','Seguir @loopim._ ↗':'Follow @loopim._ ↗','Destaques do Instagram':'Instagram highlights',

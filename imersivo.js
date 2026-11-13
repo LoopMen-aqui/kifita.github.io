@@ -81,7 +81,7 @@
     if(!bt) return;
     const r=bt.getBoundingClientRect(), span=bt.offsetHeight-vh, p=span>0?clamp(-r.top/span,0,1):0;
     const visible=r.bottom>0&&r.top<vh;
-    if(visible!==btIn){ btIn=visible; vids.forEach(v=>{ if(visible) v.play().catch(()=>{}); else v.pause(); }); }
+    if(visible!==btIn){ btIn=visible; if(!visible) vids.forEach(v=>v.pause()); }
     if(!visible) return;
     track.style.transform=`translate3d(${(-p*bt._extra).toFixed(1)}px,0,0)`;
     cards.forEach(c=>{ const b=c.getBoundingClientRect(); const d=((b.left+b.width/2)-vw/2)/vw;

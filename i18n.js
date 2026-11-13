@@ -238,6 +238,21 @@
     'João Vitor de gorro laranja operando uma câmera no gimbal':'João Vitor in an orange beanie operating a camera on a gimbal',
     /* novas ilustrações */
     'Ventania':'Gust','3 cores':'3 colors','Azul':'Blue','sticker P&B':'B&W sticker',
+    /* instagram */
+    'No Instagram':'On Instagram','Bio':'Bio','✍️ Ilustrador':'✍️ Illustrator','📸 Fotografia em':'📸 Photography at','mil':'k','22,9':'22.9',
+    'pessoas acompanham o meu traço':'people follow my work','Seguir @loopim._ ↗':'Follow @loopim._ ↗','Destaques do Instagram':'Instagram highlights',
+    'Speed art':'Speed art','Stickers':'Stickers','Drop ativo':'Drop is live','Adesivo solto':'Loose sticker','Loop':'Loop','Arte em viagem':'Art on the road',
+    'Do rascunho à arte final':'From sketch to final art',
+    'No destaque Speed art do Instagram eu mostro o processo acelerado de cada desenho, do começo até a arte pronta.':'In my Speed art highlight on Instagram I show each drawing sped up, from the first line to the finished piece.',
+    'Assistir os speed arts no Instagram':'Watch the speed arts on Instagram','Assistir os speed arts ↗':'Watch the speed arts ↗',
+    'Adesivos':'Stickers','Drop de adesivos':'Sticker drop','Drop':'Drop','ativo':'live',
+    'Meus personagens também viram adesivo. Tem drop rolando: pede pelo direct ou pelo WhatsApp.':'My characters also become stickers. There’s a drop going on: order by DM or WhatsApp.',
+    'Pedir pelo direct ↗':'Order by DM ↗','WhatsApp ↗':'WhatsApp ↗','Ver o drop ↗':'See the drop ↗',
+    'Últimos posts':'Latest posts','Ver o perfil ↗':'See the profile ↗',
+    'Personagem abraçando um lápis gigante':'Character hugging a giant pencil','Quatro versões coloridas do mesmo personagem, estilo pop art':'Four colorful versions of the same character, pop art style',
+    'Coração vermelho sorridente':'Smiling red heart','Lettering colorido com estrelas':'Colorful lettering with stars','Lettering branco com estrelas e cores':'White lettering with stars and colors',
+    'Lettering amarelo e roxo com personagens':'Yellow and purple lettering with characters','Personagem atrás de um balão rosa':'Character behind a pink balloon',
+    'Personagem de boné azul e roxo':'Character in a blue and purple cap','Três personagens lado a lado em cores fortes':'Three characters side by side in bold colors',
     /* fotografia */
     'Fotografia':'Photography','Foco Errado · fotografia':'Foco Errado · photography',
     'Câmera na mão pelas ruas de São Paulo: atos, retratos, noite e still de produto. Tudo tratado por mim no Lightroom.':'Camera in hand through the streets of São Paulo: protests, portraits, night and product stills. All edited by me in Lightroom.',
@@ -283,7 +298,7 @@
     'Thumbnail ilustrada de Sonhos Roubados: personagem vermelha deitada sob uma lua e o título ondulado':'Illustrated Sonhos Roubados thumbnail: a red character lying under a moon, with the wavy title',
     'Três jovens com roupas rosa dos anos 80 olhando para cima, uma segura um copo de shake':'Three young women in pink 80s outfits looking up, one holding a shake cup',
     'Jovem de óculos lendo uma carta em uma sala com pouca luz':'Young man in glasses reading a letter in a dim room',
-    'Assistir Sonhos Roubados aqui':'Watch Sonhos Roubados here','Assistir SHAKE80 aqui':'Watch SHAKE80 here','Assistir Inércia aqui':'Watch Inércia here',
+    'Assistir Sonhos Roubados aqui':'Watch Sonhos Roubados here','Assistir SHAKE80 aqui':'Watch SHAKE80 here','Assistir Inércia aqui':'Watch Inércia here','Assistir La Aura aqui':'Watch La Aura here',
     /* às margens */
     'Direção de fotografia':'Director of photography','Direção de pós-produção':'Post-production supervisor','Cartaz':'Poster',
     'Assistir Às Margens aqui':'Watch Às Margens here','Cena de Às Margens':'Still from Às Margens','Comporta':'Floodgate',

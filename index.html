@@ -630,6 +630,73 @@ p{margin:0}
 }
 @media (prefers-reduced-motion:reduce){.ce__card{transition:none}}
 
+/* ===== NO INSTAGRAM ===== */
+.ig{position:relative;isolation:isolate;padding-block:110px;background:#FFF6EC;color:var(--ink);overflow:hidden}
+.ig::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(50% 40% at 0% 0%,rgba(255,79,147,.22),transparent 70%),radial-gradient(45% 40% at 100% 20%,rgba(255,170,40,.22),transparent 70%),radial-gradient(40% 40% at 60% 100%,rgba(91,92,242,.16),transparent 70%)}
+.ig__top{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end}
+.ig__eye{color:#E1306C}
+.ig__h{font-size:clamp(54px,8vw,116px);color:var(--ink);text-shadow:5px 6px 0 #FF4F93;margin-top:8px}
+.ig__bio{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.ig__bio li{background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;font-size:15px;box-shadow:3px 3px 0 var(--ink)}
+.ig__bio a{color:#C1135F;font-weight:600}
+.ig__count{justify-self:end;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.ig__count b{font:400 clamp(64px,8vw,112px)/.9 var(--f-display);background:linear-gradient(95deg,#F9A825,#FF4F93 45%,#7B4DFF);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.ig__count .mono{font-size:13px;color:#5a5b68}
+.ig__follow,.ig__btn{display:inline-flex;align-items:center;padding:12px 20px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;text-decoration:none;font-size:15px;transition:transform .2s}
+.ig__follow:hover,.ig__btn:hover{transform:translateY(-2px)}
+.ig__btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+/* destaques */
+.ig__hl{display:flex;gap:clamp(14px,2.4vw,30px);margin:46px 0 40px;overflow-x:auto;padding:6px 2px 10px;scrollbar-width:none}
+.ig__hl::-webkit-scrollbar{display:none}
+.ig__hl a{flex:none;display:flex;flex-direction:column;align-items:center;gap:8px;width:96px;color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:500;text-align:center}
+.ig__hl span{width:88px;height:88px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,#F9A825,#FF4F93,#7B4DFF,#F9A825);transition:transform .25s}
+.ig__hl img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid #FFF6EC;display:block}
+.ig__hl a:hover span,.ig__hl a:focus-visible span{transform:scale(1.07) rotate(-4deg)}
+/* cards */
+.ig__duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.ig__card{position:relative;border-radius:24px;padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:14px;overflow:hidden;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.ig__card h3{font:400 clamp(30px,3.2vw,44px)/1 var(--f-display);margin:0}
+.ig__card p{margin:0;max-width:44ch}
+.ig__tag{font-size:12px;letter-spacing:.1em}
+.ig__speed{background:#fff}
+.ig__speed .ig__tag{color:#7B4DFF}
+.ig__speedimg{position:relative;display:block;aspect-ratio:16/10;border-radius:16px;overflow:hidden;background:#f4f1ec;margin:4px 0}
+.ig__speedimg>img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.ig__speedimg:hover>img{transform:scale(1.05)}
+.ig__play{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;display:grid;place-items:center;background:rgba(26,27,38,.85);color:#fff;font-size:20px;padding-left:4px;box-sizing:border-box}
+.ig__ring{position:absolute;left:12px;bottom:12px;width:58px;height:58px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,#F9A825,#FF4F93,#7B4DFF,#F9A825)}
+.ig__ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid #fff;display:block}
+.ig__drop{background:#FFE15A}
+.ig__drop .ig__tag{color:#B4006A}
+.ig__stamp{position:absolute;right:22px;top:20px;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;text-align:center;font:400 20px/1 var(--f-display);color:#fff;background:#E1306C;transform:rotate(12deg);box-shadow:0 0 0 4px #FFE15A,0 0 0 6px #E1306C;animation:ig-pulse 2.4s ease-in-out infinite}
+@keyframes ig-pulse{50%{transform:rotate(12deg) scale(1.07)}}
+.ig__pile{position:relative;height:300px;margin:4px 0 8px}
+.ig__pile img{position:absolute;left:var(--x);top:var(--y);width:34%;max-width:150px;max-height:52%;object-fit:contain;height:auto;transform:rotate(var(--r));filter:drop-shadow(4px 6px 0 rgba(26,27,38,.28));transition:transform .3s}
+.ig__pile img.ig__card-stk{border:5px solid #fff;border-radius:10px;width:26%}
+.ig__pile:hover img{transform:rotate(calc(var(--r) * -1)) translateY(-4px)}
+.ig__btns{display:flex;flex-wrap:wrap;gap:10px}
+/* feed */
+.ig__feed{margin-top:40px}
+.ig__feedhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.ig__feedhead .mono{font-size:13px}
+.ig__feedhead a{color:var(--ink);font-weight:600}
+.ig__grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.ig__grid a{display:block;aspect-ratio:1;border-radius:14px;overflow:hidden;background:#fff;border:1.5px solid rgba(26,27,38,.12)}
+.ig__grid a.ig__wide{grid-column:span 2;aspect-ratio:auto}
+.ig__grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ig__grid a:hover img,.ig__grid a:focus-visible img{transform:scale(1.06)}
+@media (max-width:900px){
+  .ig{padding-block:80px}
+  .ig__top,.ig__duo{grid-template-columns:minmax(0,1fr)}
+  .ig__count{justify-self:start;text-align:left;align-items:flex-start}
+  .ig__hl{margin-inline:-16px;padding-inline:16px}
+  .ig__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .ig__grid a.ig__wide{grid-column:span 2;aspect-ratio:640/336}
+  .ig__stamp{width:76px;height:76px;font-size:16px;right:14px;top:14px}
+  .ig__pile{height:250px}
+}
+@media (prefers-reduced-motion:reduce){.ig__stamp{animation:none}}
+
 /* ===== FOTOGRAFIA: câmara escura, varal e folha de contato ===== */
 .ft{position:relative;isolation:isolate;background:#0B0A0A;color:#EFE9E4;padding-block:110px 120px;overflow:hidden}
 .ft::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60% 45% at 50% 0%,rgba(255,40,30,.32),transparent 70%),radial-gradient(40% 30% at 100% 100%,rgba(255,40,30,.12),transparent 70%)}
@@ -1192,12 +1259,13 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     <li style="--i:2"><a href="#bastidores"><small>03</small>Bastidores</a></li>
     <li style="--i:3"><a href="#lambuza"><small>04</small>Lambuza</a></li>
     <li style="--i:4"><a href="#ilustracoes"><small>05</small>Ilustrações</a></li>
-    <li style="--i:5"><a href="#fotografia"><small>06</small>Fotografia</a></li>
-    <li style="--i:6"><a href="#behance"><small>07</small>Mais no Behance</a></li>
-    <li style="--i:7"><a href="#sobre"><small>08</small>Sobre</a></li>
-    <li style="--i:8"><a href="#experiencia"><small>09</small>Experiência</a></li>
-    <li style="--i:9"><a href="#certificados"><small>10</small>Certificados</a></li>
-    <li style="--i:10"><a href="#contato"><small>11</small>Contato</a></li>
+    <li style="--i:5"><a href="#instagram"><small>06</small>No Instagram</a></li>
+    <li style="--i:6"><a href="#fotografia"><small>07</small>Fotografia</a></li>
+    <li style="--i:7"><a href="#behance"><small>08</small>Mais no Behance</a></li>
+    <li style="--i:8"><a href="#sobre"><small>09</small>Sobre</a></li>
+    <li style="--i:9"><a href="#experiencia"><small>10</small>Experiência</a></li>
+    <li style="--i:10"><a href="#certificados"><small>11</small>Certificados</a></li>
+    <li style="--i:11"><a href="#contato"><small>12</small>Contato</a></li>
   </ol>
   <div class="mnav__foot"><span>@loopim._</span><a href="https://wa.me/5511967388424" target="_blank" rel="noopener">WhatsApp</a></div>
 </nav>
@@ -1778,6 +1846,78 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
           <div class="thumbs" id="thumbs3d" aria-label="Escolher ilustração"></div>
           <span class="tip3d">Arraste para girar · setas do teclado também funcionam</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NO INSTAGRAM (@loopim._) ============ -->
+<section class="ig" id="instagram" aria-labelledby="ig-t">
+  <div class="wrap">
+    <div class="ig__top">
+      <div class="ig__id">
+        <span class="mono ig__eye">No Instagram</span>
+        <h2 class="cut ig__h" id="ig-t" data-cut>@loopim._</h2>
+        <ul class="ig__bio" aria-label="Bio">
+          <li>✍️ Ilustrador</li><li>📸 Fotografia em <a href="https://www.instagram.com/focoerrado_/" target="_blank" rel="noopener">@focoerrado_</a></li><li>✏️ Instituto Criar · T20</li>
+        </ul>
+      </div>
+      <div class="ig__count">
+        <b><span id="ig-n">22,9</span> mil</b>
+        <span class="mono">pessoas acompanham o meu traço</span>
+        <a class="ig__follow" href="https://www.instagram.com/loopim._/" target="_blank" rel="noopener">Seguir @loopim._ ↗</a>
+      </div>
+    </div>
+
+    <nav class="ig__hl" aria-label="Destaques do Instagram">
+      <a href="https://www.instagram.com/stories/highlights/17979389021428859/" target="_blank" rel="noopener"><span><img src="insta/h3.jpg" alt="" loading="lazy"></span>Speed art</a>
+      <a href="https://www.instagram.com/stories/highlights/18354410386081475/" target="_blank" rel="noopener"><span><img src="insta/h2.jpg" alt="" loading="lazy"></span>Stickers</a>
+      <a href="https://www.instagram.com/stories/highlights/18086087144049918/" target="_blank" rel="noopener"><span><img src="insta/h4.jpg" alt="" loading="lazy"></span>Drop ativo</a>
+      <a href="https://www.instagram.com/stories/highlights/18140032276429525/" target="_blank" rel="noopener"><span><img src="insta/h5.jpg" alt="" loading="lazy"></span>Adesivo solto</a>
+      <a href="https://www.instagram.com/stories/highlights/18214968775346747/" target="_blank" rel="noopener"><span><img src="insta/h1.jpg" alt="" loading="lazy"></span>Loop</a>
+      <a href="https://www.instagram.com/stories/highlights/18033337786845772/" target="_blank" rel="noopener"><span><img src="insta/h6.jpg" alt="" loading="lazy"></span>Arte em viagem</a>
+    </nav>
+
+    <div class="ig__duo">
+      <article class="ig__card ig__speed">
+        <span class="mono ig__tag">Speed art</span>
+        <h3>Do rascunho à arte final</h3>
+        <p>No destaque Speed art do Instagram eu mostro o processo acelerado de cada desenho, do começo até a arte pronta.</p>
+        <a class="ig__speedimg" href="https://www.instagram.com/stories/highlights/17979389021428859/" target="_blank" rel="noopener" aria-label="Assistir os speed arts no Instagram"><img src="insta/p01.jpg" alt="" loading="lazy"><span class="ig__play" aria-hidden="true">▶</span><span class="ig__ring" aria-hidden="true"><img src="insta/h3.jpg" alt=""></span></a>
+        <a class="ig__btn" href="https://www.instagram.com/stories/highlights/17979389021428859/" target="_blank" rel="noopener">Assistir os speed arts ↗</a>
+      </article>
+      <article class="ig__card ig__drop">
+        <span class="ig__stamp" aria-hidden="true">Drop<br>ativo</span>
+        <span class="mono ig__tag">Adesivos</span>
+        <h3>Drop de adesivos</h3>
+        <p>Meus personagens também viram adesivo. Tem drop rolando: pede pelo direct ou pelo WhatsApp.</p>
+        <div class="ig__pile" aria-hidden="true">
+          <img src="img/ilustracoes/il-dog.webp" alt="" style="--x:2%;--y:6%;--r:-10deg" loading="lazy">
+          <img src="eu/head-green.png" alt="" style="--x:30%;--y:0%;--r:8deg" loading="lazy">
+          <img src="img/ilustracoes/il-cromado.webp" alt="" style="--x:58%;--y:10%;--r:-6deg" loading="lazy">
+          <img src="eu/il-frank.jpg" alt="" class="ig__card-stk" style="--x:16%;--y:46%;--r:6deg" loading="lazy">
+          <img src="img/ilustracoes/il-oculos.webp" alt="" style="--x:52%;--y:48%;--r:12deg" loading="lazy">
+        </div>
+        <div class="ig__btns">
+          <a class="ig__btn" href="https://ig.me/m/loopim._" target="_blank" rel="noopener">Pedir pelo direct ↗</a>
+          <a class="ig__btn ig__btn--ghost" href="https://wa.me/5511967388424" target="_blank" rel="noopener">WhatsApp ↗</a>
+          <a class="ig__btn ig__btn--ghost" href="https://www.instagram.com/stories/highlights/18086087144049918/" target="_blank" rel="noopener">Ver o drop ↗</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="ig__feed">
+      <div class="ig__feedhead"><span class="mono">Últimos posts</span><a href="https://www.instagram.com/loopim._/" target="_blank" rel="noopener">Ver o perfil ↗</a></div>
+      <div class="ig__grid">
+        <a href="https://www.instagram.com/p/DdUn6rmxyEa/" target="_blank" rel="noopener"><img src="insta/p01.jpg" alt="Personagem abraçando um lápis gigante" loading="lazy"></a>
+        <a href="https://www.instagram.com/p/DdHmxx-xIf6/" target="_blank" rel="noopener"><img src="insta/p02.jpg" alt="Quatro versões coloridas do mesmo personagem, estilo pop art" loading="lazy"></a>
+        <a href="https://www.instagram.com/p/DdE4TNZRBvQ/" target="_blank" rel="noopener"><img src="insta/p03.jpg" alt="Coração vermelho sorridente" loading="lazy"></a>
+        <a href="https://www.instagram.com/p/DczmjEoR8VI/" target="_blank" rel="noopener"><img src="insta/p04.jpg" alt="Lettering colorido com estrelas" loading="lazy"></a>
+        <a href="https://www.instagram.com/p/DcEoeF0Ry_H/" target="_blank" rel="noopener"><img src="insta/p05.jpg" alt="Lettering branco com estrelas e cores" loading="lazy"></a>
+        <a href="https://www.instagram.com/p/DbyUZNOoOEg/" target="_blank" rel="noopener"><img src="insta/p07.jpg" alt="Lettering amarelo e roxo com personagens" loading="lazy"></a>
+        <a href="https://www.instagram.com/p/DbWGwvcG-6H/" target="_blank" rel="noopener"><img src="insta/p09.jpg" alt="Personagem atrás de um balão rosa" loading="lazy"></a>
+        <a href="https://www.instagram.com/p/DaionXGm0JG/" target="_blank" rel="noopener"><img src="insta/p10.jpg" alt="Personagem de boné azul e roxo" loading="lazy"></a>
+        <a href="https://www.instagram.com/p/DcBpSPfxrev/" target="_blank" rel="noopener" class="ig__wide"><img src="insta/p06.jpg" alt="Três personagens lado a lado em cores fortes" loading="lazy"></a>
       </div>
     </div>
   </div>
@@ -2423,6 +2563,15 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     document.getElementById('ce-x').addEventListener('click',close);
     lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
     document.addEventListener('keydown',e=>{ if(!lb.hidden&&e.key==='Escape') close(); });
+  })();
+
+  /* ---------- No Instagram: contador de seguidores ---------- */
+  (function(){
+    const el=document.getElementById('ig-n'); if(!el) return;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let done=false;
+    new IntersectionObserver((es,o)=>es.forEach(e=>{ if(!e.isIntersecting||done) return; done=true; o.disconnect(); const t0=performance.now(), D=1400;
+      (function f(t){ const p=Math.min(1,(t-t0)/D), v=22.9*(1-Math.pow(1-p,3)); el.textContent=(document.documentElement.lang||'').startsWith('en')?v.toFixed(1):v.toFixed(1).replace('.',','); if(p<1) requestAnimationFrame(f); })(t0); }),{threshold:.5}).observe(el);
   })();
 
   /* ---------- Fotografia: varal de revelação, folha de contato e visualizador ---------- */

@@ -630,6 +630,84 @@ p{margin:0}
 }
 @media (prefers-reduced-motion:reduce){.ce__card{transition:none}}
 
+/* ===== FOTOGRAFIA: câmara escura, varal e folha de contato ===== */
+.ft{position:relative;isolation:isolate;background:#0B0A0A;color:#EFE9E4;padding-block:110px 120px;overflow:hidden}
+.ft::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60% 45% at 50% 0%,rgba(255,40,30,.32),transparent 70%),radial-gradient(40% 30% at 100% 100%,rgba(255,40,30,.12),transparent 70%)}
+.ft::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.08;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.ft__head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:56px}
+.ft__eye{color:#FF5A4E}
+.ft__h{font-size:clamp(56px,6.6vw,100px);color:#FFF4EE;text-shadow:5px 6px 0 rgba(255,40,30,.55);margin-top:10px}
+.ft__lead{margin:0;color:#CFC6C0;font-size:18px;max-width:46ch}
+/* varal */
+.ft__varal{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:clamp(12px,2vw,28px);padding:34px 8px 40px}
+.ft__fio{position:absolute;left:-4%;right:-4%;top:22px;height:2px;background:linear-gradient(90deg,transparent,#8B7F78 6%,#8B7F78 94%,transparent);transform:rotate(-.6deg)}
+.ft__p{all:unset;box-sizing:border-box;position:relative;flex:1;max-width:220px;cursor:zoom-in;transform-origin:50% -14px;animation:ft-sway var(--d,6s) ease-in-out var(--dl,0s) infinite alternate;margin-top:var(--mt,0px)}
+.ft__p::before{content:"";position:absolute;left:50%;top:-22px;width:14px;height:34px;margin-left:-7px;border-radius:3px;background:linear-gradient(90deg,#B98A5E,#D9AE7E 50%,#A87B50);box-shadow:0 2px 4px rgba(0,0,0,.5);z-index:2}
+.ft__p span{display:block;background:#F7F2EA;padding:8px 8px 26px;box-shadow:0 22px 40px -18px rgba(0,0,0,.9)}
+.ft__p img{display:block;width:100%;height:auto;filter:grayscale(1) brightness(2.4) contrast(.35);transition:filter 2.2s ease var(--dev,0s)}
+.ft.dev .ft__p img{filter:none}
+.ft__p b{position:absolute;left:10px;bottom:6px;font:500 11px var(--f-mono);letter-spacing:.08em;color:#6b625c}
+.ft__p:focus-visible span{outline:3px solid #FF5A4E;outline-offset:3px}
+@keyframes ft-sway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+/* na mesa de edição */
+.ed{margin-top:30px}
+.ed__head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+.ed__h{font:400 clamp(30px,3.4vw,46px)/1 var(--f-display);color:#FFF4EE;margin:0;text-shadow:3px 4px 0 rgba(255,40,30,.5)}
+.ed__head p{margin:0;color:#BFB4AD;max-width:52ch;font-size:15px}
+.ed__grid{columns:3;column-gap:14px}
+.ed__c{margin:0 0 16px;display:flex;flex-direction:column;gap:8px;break-inside:avoid}
+.ed__c video{width:100%;display:block;border-radius:10px;background:#050505;box-shadow:0 20px 40px -20px rgba(0,0,0,.9)}
+.ed__c--v video{aspect-ratio:2/3;object-fit:cover}
+.ed__c--q video{aspect-ratio:1;object-fit:cover}
+.ed__c--h video{aspect-ratio:3/2;object-fit:cover}
+.ed__c figcaption{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#9E938C}
+@media (max-width:900px){.ed__grid{columns:2;column-gap:10px}.ed__c{margin-bottom:12px}}
+/* folha de contato */
+.ft__sheet{margin-top:40px;background:#141212;border-radius:18px;padding:clamp(16px,2.4vw,28px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.ft__bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;font-size:13px;color:#BFB4AD}
+.ft__bar b{color:#FF5A4E;font-weight:500}
+.ft__chips{display:flex;flex-wrap:wrap;gap:6px}
+.ft__chips button{font:500 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;border:1.5px solid rgba(239,233,228,.35);background:transparent;color:#EFE9E4;cursor:pointer;transition:background .15s,color .15s}
+.ft__chips button:hover{border-color:#EFE9E4}
+.ft__chips button[aria-pressed="true"]{background:#FF5A4E;border-color:#FF5A4E;color:#140806}
+.ft__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px 12px}
+.ft__c{all:unset;box-sizing:border-box;cursor:zoom-in;display:flex;flex-direction:column;gap:6px}
+.ft__c[hidden]{display:none}
+.ft__c span{display:block;position:relative;overflow:hidden;aspect-ratio:1;background:#050505;padding:6px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.05)}
+.ft__c img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:contain;display:block;transition:transform .25s}
+.ft__c:hover img,.ft__c:focus-visible img{transform:scale(1.04)}
+.ft__c:focus-visible span{outline:3px solid #FF5A4E;outline-offset:2px}
+.ft__c i{position:relative;font:500 12px var(--f-mono);font-style:normal;letter-spacing:.08em;color:#9E938C;align-self:flex-start;padding:2px 6px}
+.ft__c.star i{color:#FFB3AD}
+.ft__c.star i::after{content:"";position:absolute;inset:-8px -12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M18 34c-6-16 22-27 48-26s43 10 40 22-26 22-52 21S14 44 20 30c4-9 18-15 30-17' fill='none' stroke='%23FF3B30' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.ft__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.ft__btn{display:inline-flex;align-items:center;padding:13px 22px;border-radius:999px;background:#FF5A4E;color:#140806;font-weight:600;text-decoration:none;transition:transform .2s}
+.ft__btn:hover{transform:translateY(-2px)}
+.ft__btn--ghost{background:transparent;color:#EFE9E4;box-shadow:inset 0 0 0 1.5px rgba(239,233,228,.45)}
+/* visualizador */
+.ft-lb{position:fixed;inset:0;z-index:300;background:rgba(8,6,6,.95);display:grid;place-items:center;padding:60px 70px 30px}
+.ft-lb[hidden]{display:none}
+.ft-lb__fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;max-width:100%}
+.ft-lb__fig img{max-width:100%;max-height:calc(100vh - 140px);object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.ft-lb__fig figcaption{display:flex;gap:14px;align-items:baseline;color:#CFC6C0;font-size:14px;text-align:center}
+.ft-lb__fig figcaption .mono{color:#FF5A4E;font-size:12px}
+.ft-lb__b{position:absolute;width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(239,233,228,.45);background:rgba(20,18,18,.7);color:#fff;font-size:20px;cursor:pointer}
+.ft-lb__b:hover{border-color:#fff}
+.ft-lb__prev{left:12px;top:50%;margin-top:-26px}.ft-lb__next{right:12px;top:50%;margin-top:-26px}.ft-lb__x{right:14px;top:14px}
+@media (max-width:900px){
+  .ft{padding-block:80px 90px}
+  .ft__head{grid-template-columns:minmax(0,1fr);gap:16px;margin-bottom:30px}
+  .ft__varal{overflow-x:auto;scroll-snap-type:x mandatory;justify-content:flex-start;padding:34px 16px 30px;margin-inline:-16px;scrollbar-width:none}
+  .ft__varal::-webkit-scrollbar{display:none}
+  .ft__fio{left:0;right:auto;width:calc(var(--n,6) * 66vw);}
+  .ft__p{flex:0 0 58vw;max-width:none;scroll-snap-align:center}
+  .ft__grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 8px}
+  .ft-lb{padding:60px 10px 80px}
+  .ft-lb__prev,.ft-lb__next{top:auto;bottom:16px;margin-top:0}
+  .ft-lb__prev{left:calc(50% - 64px)}.ft-lb__next{right:calc(50% - 64px)}
+}
+@media (prefers-reduced-motion:reduce){.ft__p{animation:none}.ft__p img{transition:none;filter:none}}
+
 /* ===== INSTITUTO CRIAR: Sonhos Roubados, SHAKE80, Inércia ===== */
 .yt-play{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#111;font-size:22px;padding-left:5px;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .2s}
 .yt-play:hover,.yt-play:focus-visible{transform:scale(1.08)}
@@ -1114,11 +1192,12 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     <li style="--i:2"><a href="#bastidores"><small>03</small>Bastidores</a></li>
     <li style="--i:3"><a href="#lambuza"><small>04</small>Lambuza</a></li>
     <li style="--i:4"><a href="#ilustracoes"><small>05</small>Ilustrações</a></li>
-    <li style="--i:5"><a href="#behance"><small>06</small>Mais no Behance</a></li>
-    <li style="--i:6"><a href="#sobre"><small>07</small>Sobre</a></li>
-    <li style="--i:7"><a href="#experiencia"><small>08</small>Experiência</a></li>
-    <li style="--i:8"><a href="#certificados"><small>09</small>Certificados</a></li>
-    <li style="--i:9"><a href="#contato"><small>10</small>Contato</a></li>
+    <li style="--i:5"><a href="#fotografia"><small>06</small>Fotografia</a></li>
+    <li style="--i:6"><a href="#behance"><small>07</small>Mais no Behance</a></li>
+    <li style="--i:7"><a href="#sobre"><small>08</small>Sobre</a></li>
+    <li style="--i:8"><a href="#experiencia"><small>09</small>Experiência</a></li>
+    <li style="--i:9"><a href="#certificados"><small>10</small>Certificados</a></li>
+    <li style="--i:10"><a href="#contato"><small>11</small>Contato</a></li>
   </ol>
   <div class="mnav__foot"><span>@loopim._</span><a href="https://wa.me/5511967388424" target="_blank" rel="noopener">WhatsApp</a></div>
 </nav>
@@ -1147,6 +1226,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
       <ul>
         <li><a class="pill" href="#projetos">Projetos</a></li>
         <li><a class="pill" href="#ilustracoes">Ilustrações</a></li>
+        <li><a class="pill" href="#fotografia">Fotografia</a></li>
         <li><a class="pill" href="#sobre">Sobre</a></li>
         <li><a class="pill" href="#experiencia">Experiência</a></li>
         <li><a class="pill" href="#contato">Contato</a></li>
@@ -1700,6 +1780,51 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ FOTOGRAFIA (Foco Errado) ============ -->
+<section class="ft" id="fotografia" aria-labelledby="ft-t">
+  <div class="wrap">
+    <div class="ft__head">
+      <div>
+        <span class="mono ft__eye">Foco Errado · fotografia</span>
+        <h2 class="cut ft__h" id="ft-t" data-cut>Fotografia</h2>
+      </div>
+      <p class="ft__lead">Câmera na mão pelas ruas de São Paulo: atos, retratos, noite e still de produto. Tudo tratado por mim no Lightroom.</p>
+    </div>
+    <div class="ft__varal" id="ft-varal" aria-label="Fotos em destaque"><i class="ft__fio" aria-hidden="true"></i></div>
+    <div class="ed" aria-labelledby="ed-t">
+      <div class="ed__head">
+        <h3 class="ed__h" id="ed-t">Na mesa de edição</h3>
+        <p>A foto como saiu da câmera e como ficou depois do tratamento no Lightroom. A linha passa do original para a versão final.</p>
+      </div>
+      <div class="ed__grid">
+<figure class="ed__c ed__c--v"><video src="fotografia/edicao/e05.mp4" poster="fotografia/edicao/e05.jpg" muted loop playsinline preload="none" aria-label="Antes e depois da edição: Multidão de vermelho e uma pessoa de cocar num ato na avenida"></video><figcaption class="mono">05A · antes → depois</figcaption></figure>
+        <figure class="ed__c ed__c--h"><video src="fotografia/edicao/e10.mp4" poster="fotografia/edicao/e10.jpg" muted loop playsinline preload="none" aria-label="Antes e depois da edição: Homem de barba grisalha e óculos sorrindo de perto"></video><figcaption class="mono">10A · antes → depois</figcaption></figure>
+        <figure class="ed__c ed__c--q"><video src="fotografia/edicao/e16.mp4" poster="fotografia/edicao/e16.jpg" muted loop playsinline preload="none" aria-label="Antes e depois da edição: Retrato de perfil de um jovem tatuado"></video><figcaption class="mono">16A · antes → depois</figcaption></figure>
+        <figure class="ed__c ed__c--h"><video src="fotografia/edicao/e01.mp4" poster="fotografia/edicao/e01.jpg" muted loop playsinline preload="none" aria-label="Antes e depois da edição: Homem sorri de braços abertos entre fumaça verde e bandeiras numa manifestação"></video><figcaption class="mono">01A · antes → depois</figcaption></figure>
+        <figure class="ed__c ed__c--h"><video src="fotografia/edicao/e08.mp4" poster="fotografia/edicao/e08.jpg" muted loop playsinline preload="none" aria-label="Antes e depois da edição: Três pessoas maquiadas de palhaço posando numa rua à noite"></video><figcaption class="mono">08A · antes → depois</figcaption></figure>
+        <figure class="ed__c ed__c--v"><video src="fotografia/edicao/e25.mp4" poster="fotografia/edicao/e25.jpg" muted loop playsinline preload="none" aria-label="Antes e depois da edição: Rapaz de bigode cozinhando numa cozinha azulada"></video><figcaption class="mono">25A · antes → depois</figcaption></figure>
+      </div>
+    </div>
+    <div class="ft__sheet">
+      <div class="ft__bar">
+        <span class="mono">Folha de contato · <b id="ft-count">25</b> fotos</span>
+        <div class="ft__chips" role="group" aria-label="Filtrar fotografias"></div>
+      </div>
+      <div class="ft__grid" id="ft-grid"></div>
+    </div>
+    <div class="ft__cta">
+      <a class="ft__btn" href="https://lightroom.adobe.com/u/histrizdrog" target="_blank" rel="noopener">Ver tudo no Lightroom ↗</a>
+      <a class="ft__btn ft__btn--ghost" href="https://www.behance.net/focoerrado" target="_blank" rel="noopener">Behance Foco Errado ↗</a>
+    </div>
+  </div>
+  <div class="ft-lb" id="ft-lb" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+    <figure class="ft-lb__fig"><img id="ft-lb-img" alt=""><figcaption><span class="mono" id="ft-lb-n"></span><span id="ft-lb-cap"></span></figcaption></figure>
+    <button type="button" class="ft-lb__b ft-lb__prev" id="ft-prev" aria-label="Foto anterior">←</button>
+    <button type="button" class="ft-lb__b ft-lb__next" id="ft-next" aria-label="Próxima foto">→</button>
+    <button type="button" class="ft-lb__b ft-lb__x" id="ft-x" aria-label="Fechar">✕</button>
   </div>
 </section>
 
@@ -2298,6 +2423,73 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     document.getElementById('ce-x').addEventListener('click',close);
     lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
     document.addEventListener('keydown',e=>{ if(!lb.hidden&&e.key==='Escape') close(); });
+  })();
+
+  /* ---------- Fotografia: varal de revelação, folha de contato e visualizador ---------- */
+  (function(){
+    const sec=document.getElementById('fotografia'); if(!sec) return;
+    const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const C={rua:'Rua',retrato:'Retrato',pb:'Preto e branco',noite:'Noite',still:'Still',cena:'Cena'};
+    const F=[
+      ['rua','Homem sorri de braços abertos entre fumaça verde e bandeiras numa manifestação'],
+      ['rua','Homem de boné do Brasil aponta dentro de um vagão de metrô'],
+      ['retrato','Mulher de óculos sorri com a mão no queixo numa rua de comércio'],
+      ['rua','Manifestante mascarado entre bandeiras vermelhas'],
+      ['rua','Multidão de vermelho e uma pessoa de cocar num ato na avenida'],
+      ['rua','Pessoa sorri segurando o cartaz Brasil não cabe no quintal de ninguém'],
+      ['rua','Jovens de vermelho sentados numa marquise acima do ato'],
+      ['noite','Três pessoas maquiadas de palhaço posando numa rua à noite'],
+      ['noite','Pessoa sob luz vermelha numa rua à noite'],
+      ['retrato','Homem de barba grisalha e óculos sorrindo de perto'],
+      ['retrato','Dupla vestida de jeans posando diante de um muro escrito'],
+      ['still','Mão segurando cartas ilustradas em leque'],
+      ['noite','Pessoas trocando adesivos numa feira à noite'],
+      ['pb','Rapaz olhando o celular na rua, em preto e branco'],
+      ['pb','Rua do centro de São Paulo com prédios antigos, em preto e branco'],
+      ['retrato','Retrato de perfil de um jovem tatuado, em preto e branco'],
+      ['pb','Adesivo colado num poste, em preto e branco'],
+      ['still','Bebida e doce numa bandeja de madeira'],
+      ['still','Luminária de parede numa fachada de concreto'],
+      ['still','Copo de bebida sobre uma bandeja de madeira'],
+      ['still','Mesa de produtos com sacola e vela acesa'],
+      ['cena','Pessoa sentada num ambiente escuro com janela iluminada'],
+      ['cena','Mulher em pé numa sala com luz colorida'],
+      ['cena','Jovem olhando para cima numa sala com luz quente'],
+      ['cena','Rapaz de bigode cozinhando numa cozinha azulada']
+    ];
+    const STAR=[5,10,16,1,25,8];
+    const n2=i=>String(i).padStart(2,'0'), src=(i,p)=>'fotografia/f'+n2(i)+(p?'-p':'')+'.jpg';
+    const varal=document.getElementById('ft-varal'); varal.style.setProperty('--n',STAR.length);
+    STAR.forEach((i,k)=>{ const b=document.createElement('button'); b.type='button'; b.className='ft__p'; b.dataset.i=i;
+      b.style.cssText='--d:'+(5+k%3)+'s;--dl:-'+(k*.7).toFixed(1)+'s;--dev:'+(k*.35).toFixed(2)+'s;--mt:'+[0,18,6,24,2,14][k]+'px';
+      b.setAttribute('aria-label','Ampliar foto '+n2(i)+': '+F[i-1][1]);
+      b.innerHTML='<span><img src="'+src(i,1)+'" alt="" loading="lazy"></span><b>'+n2(i)+'A</b>'; varal.appendChild(b); });
+    const grid=document.getElementById('ft-grid');
+    F.forEach(([c,a],k)=>{ const i=k+1, b=document.createElement('button'); b.type='button'; b.className='ft__c'+(STAR.includes(i)?' star':''); b.dataset.i=i; b.dataset.c=c;
+      b.setAttribute('aria-label','Ampliar foto '+n2(i)+': '+a);
+      b.innerHTML='<span><img src="'+src(i,1)+'" alt="" loading="lazy"></span><i>▸ '+n2(i)+'A</i>'; grid.appendChild(b); });
+    const chips=sec.querySelector('.ft__chips'), cnt=document.getElementById('ft-count');
+    [['todas','Todas'],...Object.entries(C)].forEach(([k,l],j)=>{ const b=document.createElement('button'); b.type='button'; b.textContent=l; b.dataset.f=k; b.setAttribute('aria-pressed',String(!j)); chips.appendChild(b); });
+    let vis=F.map((_,k)=>k+1);
+    chips.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; chips.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+      const f=b.dataset.f; vis=[]; grid.querySelectorAll('.ft__c').forEach(c=>{ const on=f==='todas'||c.dataset.c===f; c.hidden=!on; if(on) vis.push(+c.dataset.i); }); cnt.textContent=vis.length; });
+    const eds=[...sec.querySelectorAll('.ed__c video')]; if(!still){ const vo=new IntersectionObserver(es=>es.forEach(e=>{ const v=e.target; if(e.isIntersecting){ if(v.preload==='none') v.preload='auto'; v.play().catch(()=>{}); } else v.pause(); }),{threshold:.35}); eds.forEach(v=>vo.observe(v)); } else eds.forEach(v=>{ v.controls=true; });
+    if(still) sec.classList.add('dev'); else new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ sec.classList.add('dev'); o.disconnect(); } }),{threshold:.2}).observe(varal);
+    const lb=document.getElementById('ft-lb'), im=document.getElementById('ft-lb-img'), nEl=document.getElementById('ft-lb-n'), cap=document.getElementById('ft-lb-cap'); let cur=1, list=vis, opener=null;
+    document.body.appendChild(lb);
+    function show(i){ cur=i; im.src=src(i); im.alt=F[i-1][1]; const p=list.indexOf(i); nEl.textContent=n2(i)+'A · '+(p+1)+' / '+list.length; cap.textContent=C[F[i-1][0]]; }
+    function open(i,fromStar){ opener=document.activeElement; list=fromStar?STAR.slice():vis.slice(); if(!list.includes(i)) list=[i]; show(i); lb.hidden=false; document.body.style.overflow='hidden'; document.getElementById('ft-x').focus(); }
+    function close(){ lb.hidden=true; document.body.style.overflow=''; if(opener&&opener.focus) opener.focus({preventScroll:true}); }
+    function step(d){ const p=list.indexOf(cur); show(list[(p+d+list.length)%list.length]); }
+    varal.addEventListener('click',e=>{ const b=e.target.closest('.ft__p'); if(b) open(+b.dataset.i,true); });
+    grid.addEventListener('click',e=>{ const b=e.target.closest('.ft__c'); if(b) open(+b.dataset.i,false); });
+    document.getElementById('ft-x').addEventListener('click',close);
+    document.getElementById('ft-prev').addEventListener('click',()=>step(-1));
+    document.getElementById('ft-next').addEventListener('click',()=>step(1));
+    lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+    document.addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape') close(); else if(e.key==='ArrowLeft') step(-1); else if(e.key==='ArrowRight') step(1); });
+    let tx=0; lb.addEventListener('touchstart',e=>{ tx=e.touches[0].clientX; },{passive:true});
+    lb.addEventListener('touchend',e=>{ const d=e.changedTouches[0].clientX-tx; if(Math.abs(d)>50) step(d<0?1:-1); });
   })();
 
   /* ---------- Instituto Criar: vídeos do YouTube nos cards, estrelas, VHS, inércia ---------- */

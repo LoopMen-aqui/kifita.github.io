@@ -2118,9 +2118,9 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
      roles:['Operador de câmera','Montador','Capa'], tags:['camera','montagem','design'],
      img:'cidade-vertical-logo.jpg', w:941, h:312, alt:'Título Cidade, com janelas acesas dentro das letras',
      extra:{img:'cidade-vertical-foto.jpg', alt:'Mulher de costas olhando uma multidão'}},
-    {id:'la-aura', title:'La Aura', meta:'Videoclipe',
+    {id:'la-aura', title:'La Aura', meta:'Videoclipe · Cê Sabe · Instituto Criar',
      text:'Videoclipe da artista La Aura: color grading, cartaz de divulgação e uma animação para a cena dos créditos.',
-     roles:['Colorista','Cartaz de divulgação','Animação dos créditos'], tags:['cor','design','anim'],
+     roles:['Colorista','Cartaz de divulgação','Animação dos créditos'], tags:['cor','design','anim'], yt:'KTCuQvhyQ54',
      img:'la-aura.jpg', w:552, h:715, alt:'La Aura de boina e gravata posando em frente a grafite neon roxo e laranja', tall:true},
     {id:'sonhos-roubados', title:'Sonhos Roubados', meta:'Instituto Criar · curta · versão acessível',
      text:'Depois de ser demitida injustamente por denunciar um caso de assédio no trabalho, Dominique, uma jovem sonhadora, entra em depressão e conta com a ajuda da mãe para voltar a enxergar a bondade nas pessoas.',
@@ -2500,7 +2500,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
       const pr=b.closest('.print'); const f=document.createElement('iframe');
       f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0'; f.title=b.dataset.title;
       f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true; f.referrerPolicy='strict-origin-when-cross-origin';
-      pr.classList.add('yt-on'); pr.style.transform='none'; b.replaceWith(f); f.focus(); }));
+      pr.classList.add('yt-on'); pr.style.transform='none'; const im=pr.querySelector('img'); if(im&&im.naturalHeight>im.naturalWidth){ pr.style.maxWidth='none'; pr.style.aspectRatio='16/9'; im.style.display='none'; } b.replaceWith(f); f.focus(); }));
     const add=(id,html)=>{ const a=document.getElementById(id); if(!a) return null; const d=document.createElement('div'); d.className='th-deco'; d.setAttribute('aria-hidden','true'); d.innerHTML=html; a.prepend(d); return d; };
     add('p-sonhos-roubados',[[6,8,60,-12],[90,12,44,18],[84,80,72,8],[40,92,36,-20],[2,70,30,30]].map(([x,y,s,r])=>'<span class="sr-star" style="left:'+x+'%;top:'+y+'%;--s:'+s+'px;--r:'+r+'deg"></span>').join(''));
     const osd=add('p-shake80','<div class="vhs-osd"><b>▶ PLAY</b><span>SP <i>●</i> 00:00:00</span></div><div class="vhs-track"></div>');

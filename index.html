@@ -130,6 +130,26 @@ p{margin:0}
 .polaroid img{width:100%;aspect-ratio:var(--ar,4/3);object-fit:cover}
 .polaroid figcaption{position:absolute;left:16px;right:16px;bottom:16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--ink-soft);text-transform:uppercase}
 .tape{position:absolute;width:110px;height:30px;top:-14px;left:50%;transform:translateX(-50%) rotate(-4deg);background:rgba(255,236,170,.72);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+/* autorretratos empilhados: foto e ilustração */
+.me-wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:44px;padding-right:8%}
+.me{all:unset;position:relative;display:block;width:min(100%,400px);aspect-ratio:3/4.1;cursor:pointer}
+.me:focus-visible{outline:3px solid var(--red);outline-offset:8px;border-radius:6px}
+.me__c{position:absolute;inset:0;margin:0;background:var(--cream);padding:12px 12px 54px;box-shadow:0 22px 44px -18px rgba(26,27,38,.5),0 2px 6px rgba(26,27,38,.12);transition:transform .55s cubic-bezier(.3,1.3,.5,1),z-index 0s .2s}
+.me__c img{width:100%;height:100%;object-fit:cover;display:block}
+.me__c figcaption{position:absolute;left:14px;right:14px;bottom:12px;display:flex;justify-content:space-between;align-items:baseline;color:var(--ink)}
+.me__c figcaption b{font:400 22px var(--f-display)}
+.me__c figcaption span{font:500 12px var(--f-mono);letter-spacing:.06em;color:var(--red)}
+.me__c--photo{z-index:2;transform:rotate(-4deg)}
+.me__c--art{z-index:1;transform:translate(16%,6%) rotate(7deg)}
+.me__c--art img{object-fit:contain;background:#fdfcfa}
+.me:hover .me__c--art{transform:translate(22%,4%) rotate(10deg)}
+.me.swap .me__c--photo{z-index:1;transform:translate(-16%,6%) rotate(-8deg)}
+.me.swap .me__c--art{z-index:2;transform:rotate(3deg)}
+.me.swap:hover .me__c--photo{transform:translate(-22%,4%) rotate(-11deg)}
+.me__tip{font-size:12px;color:var(--ink-soft);letter-spacing:.08em}
+@media (max-width:900px){.me-wrap{padding-right:14%;gap:36px}.me{width:min(66%,300px)}.me__c--art{transform:translate(12%,5%) rotate(6deg)}.me.swap .me__c--photo{transform:translate(-10%,5%) rotate(-7deg)}}
+#sobre{overflow-x:clip}
+@media (prefers-reduced-motion:reduce){.me__c{transition:none}}
 .sobre h2{font-size:clamp(48px,7vw,92px);color:var(--cobalt)}
 .sobre .eyebrow{color:var(--red);margin-bottom:14px}
 .sobre .bio{display:flex;flex-direction:column;gap:14px;margin-top:28px;max-width:58ch;color:var(--ink-soft)}
@@ -759,6 +779,8 @@ p{margin:0}
 .ft__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .ft__btn{display:inline-flex;align-items:center;padding:13px 22px;border-radius:999px;background:#FF5A4E;color:#140806;font-weight:600;text-decoration:none;transition:transform .2s}
 .ft__btn:hover{transform:translateY(-2px)}
+.ft__btn--ig{background:linear-gradient(95deg,#F9A825,#FF4F93 50%,#7B4DFF);color:#fff}
+.ft__eyelink{text-decoration:none}.ft__eyelink:hover{text-decoration:underline}
 .ft__btn--ghost{background:transparent;color:#EFE9E4;box-shadow:inset 0 0 0 1.5px rgba(239,233,228,.45)}
 /* visualizador */
 .ft-lb{position:fixed;inset:0;z-index:300;background:rgba(8,6,6,.95);display:grid;place-items:center;padding:60px 70px 30px}
@@ -1449,11 +1471,13 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
 <!-- ============ SOBRE ============ -->
 <section class="paper section" id="sobre" aria-labelledby="sobre-t">
   <div class="wrap sobre">
-    <figure class="polaroid" style="--rot:-3.5deg;--ar:600/516;margin:0">
-      <span class="tape" aria-hidden="true"></span>
-      <img src="img/retrato.jpg" alt="João Vitor de boné vermelho e óculos escuros, sentado na plateia de uma sessão de cinema" width="600" height="516">
-      <figcaption>João Vitor · @loopim._</figcaption>
-    </figure>
+    <div class="me-wrap">
+      <button type="button" class="me" id="me" aria-label="Trocar entre o autorretrato em foto e o autorretrato ilustrado">
+        <figure class="me__c me__c--art"><img src="eu/me-arte.jpg" alt="Autorretrato ilustrado: rosto em azul com cabelo black, óculos e grafites laranja e rosa em spray" width="700" height="1000" loading="lazy"><figcaption><b>No traço</b><span>@loopim._</span></figcaption></figure>
+        <figure class="me__c me__c--photo"><img src="eu/me-foto.jpg" alt="Autorretrato em lente olho de peixe: João Vitor sorrindo e puxando a boca, com rabiscos e estrelas desenhados por cima" width="720" height="1280" loading="lazy"><figcaption><b>Na lente</b><span>@focoerrado_</span></figcaption></figure>
+      </button>
+      <span class="mono me__tip" aria-hidden="true">↻ toque para trocar</span>
+    </div>
     <div>
       <p class="mono eyebrow">Sobre</p>
       <h2 class="cut" id="sobre-t" data-cut>Opa, me chamo João Vítor</h2>
@@ -1942,7 +1966,7 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
   <div class="wrap">
     <div class="ft__head">
       <div>
-        <span class="mono ft__eye">Foco Errado · fotografia</span>
+        <a class="mono ft__eye ft__eyelink" href="https://www.instagram.com/focoerrado_/" target="_blank" rel="noopener">Foco Errado · @focoerrado_ ↗</a>
         <h2 class="cut ft__h" id="ft-t" data-cut>Fotografia</h2>
       </div>
       <p class="ft__lead">Câmera na mão pelas ruas de São Paulo: atos, retratos, noite e still de produto. Tudo tratado por mim no Lightroom.</p>
@@ -1970,7 +1994,8 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
       <div class="ft__grid" id="ft-grid"></div>
     </div>
     <div class="ft__cta">
-      <a class="ft__btn" href="https://lightroom.adobe.com/u/histrizdrog" target="_blank" rel="noopener">Ver tudo no Lightroom ↗</a>
+      <a class="ft__btn ft__btn--ig" href="https://www.instagram.com/focoerrado_/" target="_blank" rel="noopener">Instagram @focoerrado_ ↗</a>
+      <a class="ft__btn ft__btn--ghost" href="https://lightroom.adobe.com/u/histrizdrog" target="_blank" rel="noopener">Ver tudo no Lightroom ↗</a>
       <a class="ft__btn ft__btn--ghost" href="https://www.behance.net/focoerrado" target="_blank" rel="noopener">Behance Foco Errado ↗</a>
     </div>
   </div>
@@ -2594,6 +2619,9 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     const bv=[...document.querySelectorAll('#bt-track video')];
     if(!matchMedia('(prefers-reduced-motion: reduce)').matches){ const vo=new IntersectionObserver(es=>es.forEach(e=>{ const v=e.target; if(e.isIntersecting){ if(v.preload==='none') v.preload='auto'; v.play().catch(()=>{}); } else v.pause(); }),{threshold:.25}); bv.forEach(v=>vo.observe(v)); }
   })();
+
+  /* ---------- Sobre: troca dos autorretratos ---------- */
+  (function(){ const me=document.getElementById('me'); if(me) me.addEventListener('click',()=>me.classList.toggle('swap')); })();
 
   /* ---------- No Instagram: contador de seguidores ---------- */
   (function(){

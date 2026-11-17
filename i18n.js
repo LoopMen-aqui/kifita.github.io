@@ -259,12 +259,16 @@
     'Coração vermelho sorridente':'Smiling red heart','Lettering colorido com estrelas':'Colorful lettering with stars','Lettering branco com estrelas e cores':'White lettering with stars and colors',
     'Lettering amarelo e roxo com personagens':'Yellow and purple lettering with characters','Personagem atrás de um balão rosa':'Character behind a pink balloon',
     'Personagem de boné azul e roxo':'Character in a blue and purple cap','Três personagens lado a lado em cores fortes':'Three characters side by side in bold colors',
+    /* sobre: autorretratos */
+    'Trocar entre o autorretrato em foto e o autorretrato ilustrado':'Switch between the photo self-portrait and the illustrated one','No traço':'In ink','Na lente':'Through the lens','↻ toque para trocar':'↻ tap to switch',
+    'Autorretrato ilustrado: rosto em azul com cabelo black, óculos e grafites laranja e rosa em spray':'Illustrated self-portrait: face in blue with an afro, glasses and orange and pink spray graffiti',
+    'Autorretrato em lente olho de peixe: João Vitor sorrindo e puxando a boca, com rabiscos e estrelas desenhados por cima':'Fisheye self-portrait: João Vitor grinning and pulling his lip, with scribbles and stars drawn on top',
     /* fotografia */
     'Fotografia':'Photography','Foco Errado · fotografia':'Foco Errado · photography',
     'Câmera na mão pelas ruas de São Paulo: atos, retratos, noite e still de produto. Tudo tratado por mim no Lightroom.':'Camera in hand through the streets of São Paulo: protests, portraits, night and product stills. All edited by me in Lightroom.',
     'Fotos em destaque':'Featured photos','Folha de contato ·':'Contact sheet ·','fotos':'photos','Filtrar fotografias':'Filter photos',
     'Todas':'All','Rua':'Street','Retrato':'Portrait','Preto e branco':'Black and white','Noite':'Night','Still':'Still','Cena':'Scene',
-    'Ver tudo no Lightroom ↗':'See it all on Lightroom ↗','Behance Foco Errado ↗':'Foco Errado on Behance ↗',
+    'Instagram @focoerrado_ ↗':'Instagram @focoerrado_ ↗','Foco Errado · @focoerrado_ ↗':'Foco Errado · @focoerrado_ ↗','Ver tudo no Lightroom ↗':'See it all on Lightroom ↗','Behance Foco Errado ↗':'Foco Errado on Behance ↗',
     'Na mesa de edição':'On the editing desk','antes → depois':'before → after',
     'A foto como saiu da câmera e como ficou depois do tratamento no Lightroom. A linha passa do original para a versão final.':'The photo straight out of the camera and how it looked after editing in Lightroom. The line sweeps from the original to the final version.',
     'Retrato de perfil de um jovem tatuado':'Profile portrait of a tattooed young man',

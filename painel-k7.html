@@ -189,7 +189,8 @@ textarea{width:100%;min-height:120px;padding:10px;border:1.5px solid var(--ink);
 
   /* ---------- porta ---------- */
   var dono=get();
-  if(dono&&dono.id){ open(); } else { $('gate').hidden=false; }
+  /* espera o resto do script carregar (tabela de preços, links) antes de abrir */
+  setTimeout(function(){ if(dono&&dono.id){ open(); } else { $('gate').hidden=false; } },0);
   var tries=0;
   $('gate-form').addEventListener('submit', async function(e){
     e.preventDefault();
@@ -238,28 +239,31 @@ textarea{width:100%;min-height:120px;padding:10px;border:1.5px solid var(--ink);
   function copiar(t, btn){ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){ var o=btn.textContent; btn.textContent='Copiado!'; setTimeout(function(){ btn.textContent=o; },1400); }).catch(function(){ prompt('Copie:', t); }); }
 
   /* ---------- orçamento ---------- */
+  /* [serviço, preço normal mín., preço normal máx., unidade, horas reais, seu mínimo (R$ 60/h)] */
+  var HORA=60;
   var SERV=[
-    ['Diária de operador de câmera',400,600,'diária'],['Diária de câmera com equipamento próprio',600,1000,'diária'],['Diária de assistente de câmera ou foto',250,350,'diária'],
-    ['Edição de reels / vídeo curto (até 60 s)',150,300,'vídeo'],['Montagem de videoclipe',800,1800,'clipe'],['Montagem de curta (até 15 min)',1500,3000,'filme'],
-    ['Color grading de clipe',500,1000,'clipe'],['Color grading de curta (~10 min)',800,1500,'filme'],['Animação curta (créditos, vinheta)',400,1000,'peça'],
-    ['Cobertura de evento (até 3 h, fotos tratadas)',450,700,'evento'],['Cobertura de evento (diária)',800,1200,'diária'],['Ensaio / retrato',300,500,'ensaio'],
-    ['Still de produto',40,80,'foto'],['Tratamento de imagem',8,15,'foto'],
-    ['Thumbnail',60,150,'arte'],['Arte de adesivo',120,300,'arte'],['Personagem / ilustração',250,600,'arte'],['Pôster ou cartaz',300,700,'arte'],
-    ['Logo simples',600,1200,'logo'],['Identidade visual completa',1800,4000,'projeto']
+    ['Diária de operador de câmera',600,700,'diária',8,500],['Diária de câmera com equipamento próprio',800,1000,'diária',8,700],['Diária de assistente de câmera ou foto',400,500,'diária',8,400],
+    ['Edição de reels / vídeo curto (até 60 s)',200,300,'vídeo',3,180],['Montagem de videoclipe',1300,1800,'clipe',20,1200],['Montagem de curta (até 15 min)',2500,3500,'filme',40,2400],
+    ['Color grading de clipe',650,1000,'clipe',10,600],['Color grading de curta (~10 min)',1300,1800,'filme',20,1200],['Animação curta (créditos, vinheta)',500,1000,'peça',8,480],
+    ['Cobertura de evento (até 3 h, fotos tratadas)',500,750,'evento',8,500],['Cobertura de evento (diária, fotos tratadas)',900,1300,'diária',14,840],['Ensaio / retrato',350,550,'ensaio',5,300],
+    ['Still de produto (pedido mínimo R$ 400)',60,90,'foto',1,60],['Tratamento de imagem',15,20,'foto',.25,15],
+    ['Thumbnail',120,180,'arte',2,120],['Arte de adesivo',250,350,'arte',4,240],['Personagem / ilustração',500,700,'arte',8,480],['Pôster ou cartaz',500,750,'arte',8,480],
+    ['Logo simples',900,1400,'logo',15,900],['Identidade visual completa',2500,4000,'projeto',40,2400]
   ];
-  var CLI={ong:{f:function(a,b){return a*.8;},t:'Valor social (cerca de 20% abaixo do mínimo da faixa).'},ind:{f:function(a,b){return a+(b-a)*.25;},t:'Começo da faixa de mercado.'},emp:{f:function(a,b){return b;},t:'Topo da faixa: cliente com verba.'},ag:{f:function(a,b){return b*1.25;},t:'Agência: topo da faixa + 25%.'}};
+  var CLI={ong:{f:function(a,b,m){return m;},t:'Valor social: o seu mínimo, sem prejuízo.'},ind:{f:function(a,b,m){return a;},t:'Preço normal, começo da faixa.'},emp:{f:function(a,b,m){return b;},t:'Topo da faixa: cliente com verba.'},ag:{f:function(a,b,m){return b*1.2;},t:'Agência: topo da faixa + 20%.'}};
   function orcamento(){
-    var s=$('o-serv'); SERV.forEach(function(x,i){ var o=document.createElement('option'); o.value=i; o.textContent=x[0]+'  ·  R$ '+x[1]+'–'+x[2]; s.appendChild(o); });
+    var s=$('o-serv'); SERV.forEach(function(x,i){ var o=document.createElement('option'); o.value=i; o.textContent=x[0]+'  ·  R$ '+x[1]+'–'+x[2]+(x[3]==='foto'?' por foto':''); s.appendChild(o); });
     ['o-serv','o-qtd','o-cli','o-tr','o-nome','o-urg','o-com'].forEach(function(id){ $(id).addEventListener('input', calc); $(id).addEventListener('change', calc); });
     calc();
   }
   var brl=function(v){ return 'R$ '+Math.round(v).toLocaleString('pt-BR'); };
   function calc(){
     var x=SERV[+$('o-serv').value], q=Math.max(1,+$('o-qtd').value||1), c=CLI[$('o-cli').value];
-    var unit=c.f(x[1],x[2]); if($('o-urg').checked) unit*=1.3; if($('o-com').checked) unit*=1.25;
-    unit=Math.ceil(unit/10)*10; var tr=Math.max(0,+$('o-tr').value||0), tot=unit*q+tr;
+    var unit=c.f(x[1],x[2],x[5]); if($('o-urg').checked) unit*=1.3; if($('o-com').checked) unit*=1.25;
+    unit=unit<100?Math.ceil(unit/5)*5:Math.ceil(unit/10)*10; var tr=Math.max(0,+$('o-tr').value||0), tot=unit*q+tr;
     $('o-total').textContent=brl(tot);
-    $('o-obs').textContent=c.t+(q>1?' '+q+' × '+brl(unit)+'.':'')+(tr?' Inclui '+brl(tr)+' de transporte.':'');
+    var hrs=x[4]*q, ph=(unit*q)/hrs;
+    $('o-obs').innerHTML=c.t+(q>1?' '+q+' × '+brl(unit)+'.':'')+(tr?' Inclui '+brl(tr)+' de transporte.':'')+'<br>Cerca de <b>'+(hrs<1?Math.round(hrs*60)+' min':String(+hrs.toFixed(1)).replace('.',',')+' h')+'</b> de trabalho = <b style="color:'+(ph<50?'var(--red)':'var(--ok)')+'">'+brl(ph)+' por hora</b>'+(ph<50?' · abaixo do seu mínimo!':'')+'.';
     var nome=$('o-nome').value.trim();
     var msg='Oi'+(nome?', '+nome:'')+'! Segue o orçamento:\n\n• '+x[0]+(q>1?' ('+q+' '+x[3]+(q>1?'s':'')+')':'')+': '+brl(unit*q)+(tr?'\n• Transporte: '+brl(tr):'')+'\n\nTotal: '+brl(tot)+'\n\nPagamento: 50% para reservar e 50% na entrega. Inclui 2 rodadas de ajuste.\nPortfólio: '+SITE+'?ref=orcamento\n\nJoão Vitor · Kifita';
     $('o-msg').value=msg; $('o-wa').href='https://wa.me/?text='+encodeURIComponent(msg);

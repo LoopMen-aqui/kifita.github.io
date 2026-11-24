@@ -7,6 +7,19 @@
 <title>João Vitor · Kifita</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Portfólio de João Vitor Alves (Kifita): pós-produção, color grading, operação de câmera, fotografia e ilustração. Extremo sul de São Paulo.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1C9C95">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kifita">
+<meta property="og:title" content="João Vitor · Kifita — pós-produção, câmera, fotografia e ilustração">
+<meta property="og:description" content="Color grading, montagem, operação de câmera, fotografia e ilustração. Extremo sul de São Paulo. Veja os projetos e peça um orçamento.">
+<meta property="og:url" content="https://loopmen-aqui.github.io/kifita.github.io/">
+<meta property="og:image" content="https://loopmen-aqui.github.io/kifita.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bagel+Fat+One&family=Cormorant+Garamond:ital,wght@1,600&family=DM+Mono:wght@400;500&family=Kaushan+Script&family=Poppins:wght@400;500;600&display=swap">
@@ -219,6 +232,37 @@ p{margin:0}
 .c1{background:var(--red)}.c2{background:#F2B33D}.c3{background:var(--cobalt)}.c4{background:var(--mat)}
 
 /* ===== contato ===== */
+/* ferramentas do contato */
+.avail{display:inline-flex;align-items:center;gap:10px;margin-top:20px;background:rgba(255,252,243,.14);border:1.5px solid rgba(255,252,243,.45);border-radius:999px;padding:7px 16px;font-size:14.5px;font-weight:500}
+.avail i{width:10px;height:10px;border-radius:50%;background:#7CFF9B;box-shadow:0 0 0 0 rgba(124,255,155,.7);animation:av-pulse 2s infinite}
+@keyframes av-pulse{70%{box-shadow:0 0 0 9px rgba(124,255,155,0)}100%{box-shadow:0 0 0 0 rgba(124,255,155,0)}}
+.kit{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.kit__b{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--cream);color:var(--ink);border:0;font:600 15px var(--f-body);text-decoration:none;cursor:pointer;box-shadow:3px 4px 0 rgba(8,70,66,.5);transition:transform .15s}
+.kit__b:hover{transform:translateY(-2px)}
+.kit__b span{font-size:15px}
+.brief-wrap{position:relative;z-index:2;padding-bottom:180px;margin-top:-120px}
+.brief{background:var(--cream);color:var(--ink);border-radius:18px;padding:clamp(20px,3vw,36px);box-shadow:8px 9px 0 rgba(8,70,66,.55);display:flex;flex-direction:column;gap:20px}
+.brief__head .mono{color:var(--red)}
+.brief__head h3{font:400 clamp(30px,3.6vw,46px)/1 var(--f-display);color:var(--cobalt);margin:6px 0 8px}
+.brief__head p{margin:0;color:var(--ink-soft);max-width:60ch}
+.brief fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.brief legend{font-weight:600;padding:0;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:500 14.5px var(--f-body);padding:8px 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
+.chips button:hover{background:var(--paper-2)}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.brief label{display:flex;flex-direction:column;gap:6px;font-weight:600}
+.brief input,.brief textarea{font:15px var(--f-body);padding:10px 12px;border:1.5px solid var(--ink);border-radius:10px;background:#fff;color:var(--ink);width:100%;box-sizing:border-box}
+.brief textarea{resize:vertical}
+.brief__row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:14px}
+.brief__out{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn-wa,.btn-mail{font:600 16px var(--f-body);padding:13px 22px;border-radius:999px;border:0;cursor:pointer}
+.btn-wa{background:#1FAF55;color:#fff}
+.btn-mail{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-wa:hover,.btn-mail:hover{transform:translateY(-2px)}
+.brief__hint{font-size:14px;color:var(--ink-soft)}
+@media (max-width:700px){.brief__row{grid-template-columns:1fr}.brief-wrap{margin-top:-150px;padding-bottom:150px}}
+@media (prefers-reduced-motion:reduce){.avail i{animation:none}}
 .contato-in{position:relative;z-index:2;padding-block:96px 200px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
 .contato-in h2{font-size:clamp(56px,9vw,124px);color:var(--cream);text-shadow:4px 5px 0 rgba(8,70,66,.55)}
 .contato-in .lead{margin-top:22px;max-width:36ch;font-size:18px}
@@ -2239,7 +2283,13 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
   <div class="wrap contato-in">
     <div>
       <h2 class="cut" id="contato-t" data-cut>Meu contato</h2>
+      <p class="avail"><i aria-hidden="true"></i>Disponível para novos projetos · respondo em até 24 h</p>
       <p class="lead">Tem um filme, clipe ou campanha precisando de cor, corte ou câmera? Me chama.</p>
+      <div class="kit" aria-label="Materiais">
+        <a class="kit__b" href="portfolio-kifita.pdf" download data-ev="baixou_pdf"><span aria-hidden="true">↓</span>Portfólio em PDF</a>
+        <a class="kit__b" href="kifita.vcf" download data-ev="salvou_contato"><span aria-hidden="true">＋</span>Salvar contato</a>
+        <button type="button" class="kit__b" id="share" data-ev="compartilhou"><span aria-hidden="true">↗</span>Compartilhar</button>
+      </div>
     </div>
     <dl class="cards">
       <div class="ccard">
@@ -2262,6 +2312,40 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
         </div>
       </div>
     </dl>
+  </div>
+  <div class="wrap brief-wrap">
+    <form class="brief" id="brief" novalidate aria-labelledby="brief-t">
+      <div class="brief__head">
+        <span class="mono">Orçamento sem complicação</span>
+        <h3 id="brief-t">Me conta do seu projeto</h3>
+        <p>Responda o que souber. No final, a mensagem sai pronta para você me mandar no WhatsApp ou por e-mail.</p>
+      </div>
+      <fieldset><legend>1 · O que você precisa?</legend>
+        <div class="chips" data-name="servico" data-multi="1">
+          <button type="button">Edição / montagem</button><button type="button">Color grading</button><button type="button">Câmera / set</button><button type="button">Fotografia</button><button type="button">Ilustração</button><button type="button">Identidade visual / design</button><button type="button">Outro</button>
+        </div>
+      </fieldset>
+      <fieldset><legend>2 · Que tipo de projeto?</legend>
+        <div class="chips" data-name="tipo">
+          <button type="button">Filme / curta</button><button type="button">Videoclipe</button><button type="button">Documentário</button><button type="button">Evento</button><button type="button">Campanha / marca</button><button type="button">Redes sociais</button><button type="button">Outro</button>
+        </div>
+      </fieldset>
+      <fieldset><legend>3 · Verba aproximada</legend>
+        <div class="chips" data-name="verba">
+          <button type="button">Até R$ 500</button><button type="button">R$ 500 a 1.500</button><button type="button">R$ 1.500 a 3.000</button><button type="button">Acima de R$ 3.000</button><button type="button">Prefiro conversar</button>
+        </div>
+      </fieldset>
+      <div class="brief__row">
+        <label>4 · Prazo<input type="date" id="b-prazo"></label>
+        <label>Seu nome<input type="text" id="b-nome" autocomplete="name" placeholder="Como posso te chamar?"></label>
+      </div>
+      <label>5 · Conte um pouco<textarea id="b-desc" rows="3" placeholder="Ex.: clipe de 3 minutos, já gravado, preciso de montagem e cor."></textarea></label>
+      <div class="brief__out">
+        <button type="button" class="btn-wa" id="b-wa" data-ev="pediu_orcamento_whatsapp">Enviar pelo WhatsApp</button>
+        <button type="button" class="btn-mail" id="b-mail" data-ev="pediu_orcamento_email">Enviar por e-mail</button>
+        <span class="brief__hint" id="b-hint" role="status"></span>
+      </div>
+    </form>
   </div>
   <div class="wrap foot"><span>© 2026 João Vitor Alves</span><span>Kifita · Portfólio criativo</span></div>
   <div class="watermark" aria-hidden="true">LOOPIM</div>
@@ -2619,6 +2703,42 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     if(wavy&&sr){ const svg=wavy.ownerSVGElement; svg.pauseAnimations(); new IntersectionObserver(es=>{ es[0].isIntersecting?svg.unpauseAnimations():svg.pauseAnimations(); }).observe(sr); }
     const bv=[...document.querySelectorAll('#bt-track video')];
     if(!matchMedia('(prefers-reduced-motion: reduce)').matches){ const vo=new IntersectionObserver(es=>es.forEach(e=>{ const v=e.target; if(e.isIntersecting){ if(v.preload==='none') v.preload='auto'; v.play().catch(()=>{}); } else v.pause(); }),{threshold:.25}); bv.forEach(v=>vo.observe(v)); }
+  })();
+
+  /* ---------- Contato: orçamento guiado, compartilhar e avisos no Clarity ---------- */
+  (function(){
+    const ev=n=>{ try{ if(window.clarity) window.clarity('event',n); }catch(e){} };
+    document.addEventListener('click',e=>{ const a=e.target.closest('[data-ev]'); if(a&&!a.closest('#brief')) ev(a.dataset.ev);
+      const w=e.target.closest('a[href*="wa.me"]'); if(w) ev('clicou_whatsapp');
+      const c=e.target.closest('[data-copy]'); if(c) ev('copiou_contato'); });
+    const f=document.getElementById('brief'); if(!f) return;
+    f.querySelectorAll('.chips').forEach(g=>{ const multi=g.dataset.multi; g.querySelectorAll('button').forEach(b=>{ b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',()=>{ if(!multi) g.querySelectorAll('button').forEach(x=>{ if(x!==b) x.setAttribute('aria-pressed','false'); }); b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true'); }); }); });
+    const pick=n=>[...f.querySelectorAll('.chips[data-name="'+n+'"] [aria-pressed="true"]')].map(b=>b.textContent);
+    const en=()=>(document.documentElement.lang||'').startsWith('en');
+    function msg(){
+      const nome=document.getElementById('b-nome').value.trim(), prazo=document.getElementById('b-prazo').value, desc=document.getElementById('b-desc').value.trim();
+      const s=pick('servico'), t=pick('tipo'), v=pick('verba');
+      const dt=prazo?new Date(prazo+'T12:00').toLocaleDateString(en()?'en-GB':'pt-BR'):'';
+      const L=en()?['Hi João! I found your portfolio and I have a project.','Name','I need','Project type','Budget','Deadline','Details']:['Oi, João! Vi o seu portfólio e tenho um projeto.','Nome','Preciso de','Tipo de projeto','Verba','Prazo','Detalhes'];
+      const out=[L[0],''];
+      if(nome) out.push('• '+L[1]+': '+nome); if(s.length) out.push('• '+L[2]+': '+s.join(', ')); if(t.length) out.push('• '+L[3]+': '+t[0]);
+      if(v.length) out.push('• '+L[4]+': '+v[0]); if(dt) out.push('• '+L[5]+': '+dt); if(desc) out.push('', L[6]+': '+desc);
+      return {txt:out.join('\n'), vazio:!(s.length||t.length||desc)};
+    }
+    const hint=document.getElementById('b-hint');
+    function enviar(kind){
+      const m=msg(); if(m.vazio){ hint.textContent=en()?'Pick at least what you need, or write a few words about it.':'Escolha pelo menos o que você precisa ou escreva um pouco sobre o projeto.'; return; }
+      hint.textContent='';
+      ev(kind==='wa'?'pediu_orcamento_whatsapp':'pediu_orcamento_email');
+      if(kind==='wa') window.open('https://wa.me/5511967388424?text='+encodeURIComponent(m.txt),'_blank','noopener');
+      else location.href='mailto:kifita.prod@gmail.com?subject='+encodeURIComponent(en()?'Project quote':'Orçamento de projeto')+'&body='+encodeURIComponent(m.txt);
+    }
+    document.getElementById('b-wa').addEventListener('click',()=>enviar('wa'));
+    document.getElementById('b-mail').addEventListener('click',()=>enviar('mail'));
+    const sh=document.getElementById('share');
+    if(sh) sh.addEventListener('click',async()=>{ const data={title:'João Vitor · Kifita',text:en()?'Portfolio: post-production, camera, photography and illustration.':'Portfólio: pós-produção, câmera, fotografia e ilustração.',url:'https://loopmen-aqui.github.io/kifita.github.io/?ref=compartilhado'};
+      try{ if(navigator.share){ await navigator.share(data); return; } await navigator.clipboard.writeText(data.url); const o=sh.lastChild.textContent; sh.lastChild.textContent=en()?'Link copied!':'Link copiado!'; setTimeout(()=>sh.lastChild.textContent=o,1600); }catch(e){} });
   })();
 
   /* ---------- Sobre: troca dos autorretratos ---------- */

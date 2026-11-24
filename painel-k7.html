@@ -95,6 +95,7 @@ textarea{width:100%;min-height:120px;padding:10px;border:1.5px solid var(--ink);
         <li><b>Gravações:</b> assista como cada pessoa rolou e clicou no site.</li>
         <li><b>Mapas de calor:</b> onde mais clicam e até onde rolam a página.</li>
       </ul>
+      <p class="muted" style="margin:0;font-size:14px"><b>Avisos de clientes:</b> no Clarity, abra <b>Filtros → Eventos personalizados</b> para ver quantas pessoas <b>pediram orçamento</b> (WhatsApp ou e-mail), <b>baixaram o PDF</b>, <b>salvaram o seu contato</b>, <b>clicaram no WhatsApp</b> ou <b>compartilharam</b> o site, e assista à gravação de cada uma.</p>
       <p class="muted" style="margin:0;font-size:13px">Só entra na contagem quem aceita o aviso de cookies. As suas visitas, neste aparelho, nunca entram.</p>
     </section>
 
@@ -179,7 +180,7 @@ textarea{width:100%;min-height:120px;padding:10px;border:1.5px solid var(--ink);
 
 <script>
 (function(){
-  var SALT='5fa0d498315a7dfd', HASH='5dcfedfa528222c1ffcc6041f5e3afa900666d0be3a4011839ca58ce238f3237';
+  var SALT='5fa0d498315a7dfd'; var HASH='5dcfedfa528222c1ffcc6041f5e3afa900666d0be3a4011839ca58ce238f3237';
   var SITE='https://loopmen-aqui.github.io/kifita.github.io/', KEY='kf_owner';
   var $=function(id){ return document.getElementById(id); };
   function get(){ try{ return JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){ return null; } }

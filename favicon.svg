@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 20 220 220"><rect x="-10" y="20" width="220" height="220" rx="44" fill="#1C9C95"/>
+      <path d="M28 230 C30 196 58 182 100 182 C142 182 170 196 172 230 Z" fill="#4B2E83" stroke="#141414" stroke-width="4"/>
+      <path d="M70 186 L100 214 L130 186 L120 180 L100 198 L80 180 Z" fill="#E8692B" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+      <rect x="86" y="160" width="28" height="26" fill="#9A6340" stroke="#141414" stroke-width="4"/>
+      <g fill="#161616" stroke="#141414" stroke-width="3"><circle cx="52" cy="92" r="12"/><circle cx="46" cy="112" r="12"/><circle cx="52" cy="132" r="11"/><circle cx="148" cy="92" r="12"/><circle cx="154" cy="112" r="12"/><circle cx="148" cy="132" r="11"/></g>
+      <ellipse cx="54" cy="120" rx="8" ry="11" fill="#9A6340" stroke="#141414" stroke-width="4"/><ellipse cx="146" cy="120" rx="8" ry="11" fill="#9A6340" stroke="#141414" stroke-width="4"/>
+      <path d="M58 96 C58 70 76 62 100 62 C124 62 142 70 142 96 L142 124 C142 152 124 172 100 172 C76 172 58 152 58 124 Z" fill="#A86C46" stroke="#141414" stroke-width="4"/>
+      <path d="M100 118 C97 128 95 132 100 134 C103 135 105 134 106 132" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round"/>
+      <path d="M90 153 Q100 160 110 153" fill="none" stroke="#141414" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M62 104 L138 104" stroke="#141414" stroke-width="4" stroke-linecap="round"/>
+      <rect x="65" y="103" width="31" height="20" rx="8" fill="#101010" stroke="#141414" stroke-width="3"/><rect x="104" y="103" width="31" height="20" rx="8" fill="#101010" stroke="#141414" stroke-width="3"/>
+      <path d="M72 116 L80 107 M111 116 L119 107" stroke="#FFFCF3" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
+      <path d="M52 94 C50 56 72 34 100 34 C128 34 150 56 148 94 Z" fill="#C4282E" stroke="#141414" stroke-width="4"/>
+      <path d="M44 96 C64 84 136 84 156 96 C158 100 154 104 150 103 C130 94 70 94 50 103 C46 104 42 100 44 96 Z" fill="#9E1E24" stroke="#141414" stroke-width="4"/>
+      <circle cx="100" cy="64" r="11" fill="#FFFCF3" stroke="#141414" stroke-width="3"/>
+      <text x="100" y="69.5" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="14" fill="#C4282E">K</text>
+    </svg>

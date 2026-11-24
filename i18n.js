@@ -259,6 +259,18 @@
     'Coração vermelho sorridente':'Smiling red heart','Lettering colorido com estrelas':'Colorful lettering with stars','Lettering branco com estrelas e cores':'White lettering with stars and colors',
     'Lettering amarelo e roxo com personagens':'Yellow and purple lettering with characters','Personagem atrás de um balão rosa':'Character behind a pink balloon',
     'Personagem de boné azul e roxo':'Character in a blue and purple cap','Três personagens lado a lado em cores fortes':'Three characters side by side in bold colors',
+    /* contato: ferramentas */
+    'Disponível para novos projetos · respondo em até 24 h':'Available for new projects · I reply within 24 h','Materiais':'Materials',
+    'Portfólio em PDF':'Portfolio (PDF)','Salvar contato':'Save contact','Compartilhar':'Share',
+    'Orçamento sem complicação':'Easy quote','Me conta do seu projeto':'Tell me about your project',
+    'Responda o que souber. No final, a mensagem sai pronta para você me mandar no WhatsApp ou por e-mail.':'Answer what you can. At the end, the message is ready for you to send me on WhatsApp or by e-mail.',
+    '1 · O que você precisa?':'1 · What do you need?','2 · Que tipo de projeto?':'2 · What kind of project?','3 · Verba aproximada':'3 · Approximate budget','4 · Prazo':'4 · Deadline','5 · Conte um pouco':'5 · Tell me a bit more',
+    'Seu nome':'Your name','Como posso te chamar?':'What should I call you?','Ex.: clipe de 3 minutos, já gravado, preciso de montagem e cor.':'E.g.: a 3-minute music video, already shot, needs editing and color.',
+    'Edição / montagem':'Editing','Ilustração':'Illustration','Câmera / set':'Camera / on set','Identidade visual / design':'Visual identity / design','Outro':'Other',
+    'Filme / curta':'Film / short','Evento':'Event','Campanha / marca':'Campaign / brand','Redes sociais':'Social media',
+    'Até R$ 500':'Up to R$ 500','R$ 500 a 1.500':'R$ 500 to 1,500','R$ 1.500 a 3.000':'R$ 1,500 to 3,000','Acima de R$ 3.000':'Over R$ 3,000','Prefiro conversar':'Let’s talk',
+    'Enviar pelo WhatsApp':'Send on WhatsApp','Enviar por e-mail':'Send by e-mail',
+    'Escolha pelo menos o que você precisa ou escreva um pouco sobre o projeto.':'Pick at least what you need, or write a few words about it.',
     /* aviso de cookies */
     'Uso cookies só para saber quantas pessoas visitam o site e o que mais chama atenção.':'I use cookies only to know how many people visit the site and what catches their eye.','Aceitar':'Accept','Recusar':'Decline','Aviso de cookies':'Cookie notice','Abrir o seu painel secreto':'Open your secret panel',
     /* sobre: autorretratos */

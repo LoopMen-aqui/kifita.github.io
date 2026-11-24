@@ -232,6 +232,41 @@ p{margin:0}
 .c1{background:var(--red)}.c2{background:#F2B33D}.c3{background:var(--cobalt)}.c4{background:var(--mat)}
 
 /* ===== contato ===== */
+/* ===== já trabalhei com ===== */
+.wk{background:var(--ink);color:var(--cream);padding:22px 0;overflow:hidden;position:relative}
+.wk__t{position:absolute;left:clamp(16px,4vw,60px);top:50%;transform:translateY(-50%);z-index:2;margin:0;background:var(--red);color:#fff;font-size:12px;padding:8px 14px;border-radius:999px;box-shadow:0 0 0 8px var(--ink)}
+.wk__list{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wk__rail{-webkit-mask:linear-gradient(90deg,transparent 0,#000 18%,#000 92%,transparent);mask:linear-gradient(90deg,transparent 0,#000 18%,#000 92%,transparent)}
+.wk__track{display:flex;align-items:center;gap:26px;width:max-content;animation:wk-roll 38s linear infinite;font:400 clamp(22px,2.6vw,34px)/1 var(--f-display);white-space:nowrap}
+.wk__track i{font-style:normal;color:var(--pink);font-size:.6em}
+@keyframes wk-roll{to{transform:translateX(calc(-50% - 13px))}}
+.wk:hover .wk__track{animation-play-state:paused}
+@media (max-width:700px){.wk__t{position:static;transform:none;display:inline-block;margin:0 0 14px 16px;box-shadow:none}.wk__rail{-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}}
+@media (prefers-reduced-motion:reduce){.wk__track{animation:none;flex-wrap:wrap;width:auto;padding:0 16px 0 220px}}
+/* ===== como eu trabalho + faq ===== */
+.hw__eye{color:var(--red);display:block}
+.hw h2{font-size:clamp(48px,7vw,92px);color:var(--cobalt);margin-top:10px}
+.hw__steps{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+.hw__steps li{position:relative;background:var(--cream);border:2px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:20px 18px 22px;display:flex;flex-direction:column;gap:8px}
+.hw__steps li:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);z-index:2;font:500 18px var(--f-mono);color:var(--red)}
+.hw__n{font:500 13px var(--f-mono);color:var(--red);letter-spacing:.08em}
+.hw__steps h3{font:400 26px/1 var(--f-display);margin:0}
+.hw__steps p{margin:0;color:var(--ink-soft);font-size:15px}
+.faq{margin-top:56px;max-width:860px}
+.faq__t{font:400 clamp(28px,3.2vw,40px)/1 var(--f-display);margin:0 0 16px}
+.faq__i{border-top:2px solid var(--ink)}
+.faq__i:last-of-type{border-bottom:2px solid var(--ink)}
+.faq__i summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px 4px;font-weight:600;font-size:17px}
+.faq__i summary::-webkit-details-marker{display:none}
+.faq__i summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font:500 18px var(--f-mono);transition:transform .2s}
+.faq__i[open] summary::after{transform:rotate(45deg);background:var(--ink);color:var(--cream)}
+.faq__i summary:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.faq__i p{margin:0;padding:0 4px 18px;color:var(--ink-soft);max-width:70ch}
+.hw__cta{display:inline-flex;align-items:center;gap:10px;margin-top:34px;padding:14px 24px;border-radius:999px;background:var(--red);color:#fff;font-weight:600;text-decoration:none;box-shadow:4px 4px 0 var(--ink)}
+.hw__cta:hover{transform:translateY(-2px)}
+@media (max-width:900px){.hw__steps{grid-template-columns:repeat(2,minmax(0,1fr))}.hw__steps li::after{display:none}}
+@media (max-width:520px){.hw__steps{grid-template-columns:1fr}}
+
 /* ferramentas do contato */
 .avail{display:inline-flex;align-items:center;gap:10px;margin-top:20px;background:rgba(255,252,243,.14);border:1.5px solid rgba(255,252,243,.45);border-radius:999px;padding:7px 16px;font-size:14.5px;font-weight:500}
 .avail i{width:10px;height:10px;border-radius:50%;background:#7CFF9B;box-shadow:0 0 0 0 rgba(124,255,155,.7);animation:av-pulse 2s infinite}
@@ -1343,7 +1378,8 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
     <li style="--i:8"><a href="#sobre"><small>09</small>Sobre</a></li>
     <li style="--i:9"><a href="#experiencia"><small>10</small>Experiência</a></li>
     <li style="--i:10"><a href="#certificados"><small>11</small>Certificados</a></li>
-    <li style="--i:11"><a href="#contato"><small>12</small>Contato</a></li>
+    <li style="--i:11"><a href="#como-trabalho"><small>12</small>Como trabalho</a></li>
+    <li style="--i:12"><a href="#contato"><small>13</small>Contato</a></li>
   </ol>
   <div class="mnav__foot"><span>@loopim._</span><a href="https://wa.me/5511967388424" target="_blank" rel="noopener">WhatsApp</a></div>
 </nav>
@@ -1537,6 +1573,13 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
       </dl>
     </div>
   </div>
+</section>
+
+<!-- ============ JÁ TRABALHEI COM ============ -->
+<section class="wk" aria-labelledby="wk-t">
+  <h2 class="mono wk__t" id="wk-t">Já trabalhei com</h2>
+  <ul class="wk__list"><li>Instituto KondZilla</li><li>Instituto Criar</li><li>Olhar Imaginário</li><li>ModaLab+ · Instituto Ecotece</li><li>RapBox</li><li>Noite de Kino</li><li>Cervejaria Serta</li></ul>
+  <div class="wk__rail" aria-hidden="true"><div class="wk__track"><span>Instituto KondZilla</span><i aria-hidden="true">✦</i><span>Instituto Criar</span><i aria-hidden="true">✦</i><span>Olhar Imaginário</span><i aria-hidden="true">✦</i><span>ModaLab+ · Instituto Ecotece</span><i aria-hidden="true">✦</i><span>RapBox</span><i aria-hidden="true">✦</i><span>Noite de Kino</span><i aria-hidden="true">✦</i><span>Cervejaria Serta</span><i aria-hidden="true">✦</i><span>Instituto KondZilla</span><i aria-hidden="true">✦</i><span>Instituto Criar</span><i aria-hidden="true">✦</i><span>Olhar Imaginário</span><i aria-hidden="true">✦</i><span>ModaLab+ · Instituto Ecotece</span><i aria-hidden="true">✦</i><span>RapBox</span><i aria-hidden="true">✦</i><span>Noite de Kino</span><i aria-hidden="true">✦</i><span>Cervejaria Serta</span><i aria-hidden="true">✦</i></div></div>
 </section>
 
 <!-- ============ ORIGEM: história em tinta ============ -->
@@ -2277,6 +2320,32 @@ html.mnav-lock,html.mnav-lock body{overflow:hidden}
 <div class="fita fita--c" aria-label="Ilustrador, audiovisual, graffiti, câmera, cor, montagem, lettering e sticker"><div class="fita__row"><div class="fita__track"><span>Ilustrador</span><i aria-hidden="true">✶</i><span>Audiovisual</span><i aria-hidden="true">✶</i><span>Graffiti</span><i aria-hidden="true">✶</i><span>Câmera</span><i aria-hidden="true">✶</i><span>Cor</span><i aria-hidden="true">✶</i><span>Montagem</span><i aria-hidden="true">✶</i><span>Lettering</span><i aria-hidden="true">✶</i><span>Sticker</span><i aria-hidden="true">✶</i><span>Ilustrador</span><i aria-hidden="true">✶</i><span>Audiovisual</span><i aria-hidden="true">✶</i><span>Graffiti</span><i aria-hidden="true">✶</i><span>Câmera</span><i aria-hidden="true">✶</i><span>Cor</span><i aria-hidden="true">✶</i><span>Montagem</span><i aria-hidden="true">✶</i><span>Lettering</span><i aria-hidden="true">✶</i><span>Sticker</span><i aria-hidden="true">✶</i></div></div></div>
 <div class="fita fita--d" aria-label="Ilustrador, audiovisual, graffiti, câmera, cor, montagem, lettering e sticker"><div class="fita__row"><div class="fita__track"><span>Ilustrador</span><i aria-hidden="true">✶</i><span>Audiovisual</span><i aria-hidden="true">✶</i><span>Graffiti</span><i aria-hidden="true">✶</i><span>Câmera</span><i aria-hidden="true">✶</i><span>Cor</span><i aria-hidden="true">✶</i><span>Montagem</span><i aria-hidden="true">✶</i><span>Lettering</span><i aria-hidden="true">✶</i><span>Sticker</span><i aria-hidden="true">✶</i><span>Ilustrador</span><i aria-hidden="true">✶</i><span>Audiovisual</span><i aria-hidden="true">✶</i><span>Graffiti</span><i aria-hidden="true">✶</i><span>Câmera</span><i aria-hidden="true">✶</i><span>Cor</span><i aria-hidden="true">✶</i><span>Montagem</span><i aria-hidden="true">✶</i><span>Lettering</span><i aria-hidden="true">✶</i><span>Sticker</span><i aria-hidden="true">✶</i></div></div></div>
 </div>
+
+<!-- ============ COMO EU TRABALHO + PERGUNTAS ============ -->
+<section class="paper section hw" id="como-trabalho" aria-labelledby="hw-t">
+  <div class="wrap">
+    <span class="mono hw__eye">Sem surpresa no meio do caminho</span>
+    <h2 class="cut" id="hw-t" data-cut>Como eu trabalho</h2>
+    <ol class="hw__steps">
+      <li><b class="hw__n">01</b><h3>Conversa</h3><p>Você me conta a ideia, o prazo e a verba, pelo formulário ou no WhatsApp.</p></li>
+      <li><b class="hw__n">02</b><h3>Orçamento</h3><p>Mando o valor, o que está incluído e o prazo de entrega, tudo por escrito.</p></li>
+      <li><b class="hw__n">03</b><h3>Sinal de 50%</h3><p>Com o sinal pago por Pix, a data fica reservada e o trabalho começa.</p></li>
+      <li><b class="hw__n">04</b><h3>Entrega e ajustes</h3><p>Entrego, você revisa e eu faço até 2 rodadas de ajuste. O restante é pago na entrega final.</p></li>
+    </ol>
+    <div class="faq">
+      <h3 class="faq__t">Perguntas frequentes</h3>
+      <details class="faq__i"><summary>Quanto tempo leva?</summary><p>Depende do trabalho. Como referência: reels em 3 a 5 dias úteis, fotos de evento tratadas em até 7 dias e videoclipe em 1 a 2 semanas. O prazo certo vai no orçamento.</p></details>
+      <details class="faq__i"><summary>Quantas alterações estão incluídas?</summary><p>Duas rodadas de ajuste. Mudanças grandes de rumo depois disso (outra música, outra história, outro estilo) entram como novo orçamento.</p></details>
+      <details class="faq__i"><summary>Como é o pagamento?</summary><p>50% para reservar a data e 50% na entrega final, por Pix. Em trabalhos maiores dá para combinar parcelas.</p></details>
+      <details class="faq__i"><summary>Você vai até o local?</summary><p>Sim, em São Paulo e região. Quando o lugar é longe, o transporte entra no orçamento.</p></details>
+      <details class="faq__i"><summary>Em que formato recebo o material?</summary><p>Vídeo em MP4 pronto para redes e telão, no tamanho que você precisar (horizontal, vertical ou quadrado). Fotos em JPG em alta qualidade e em versão leve para redes. Outros formatos, a combinar.</p></details>
+      <details class="faq__i"><summary>Posso pedir só a cor ou só a montagem?</summary><p>Pode. Faço só o color grading de um material já montado, só a montagem, ou o pacote completo.</p></details>
+      <details class="faq__i"><summary>Você mostra o trabalho no seu portfólio?</summary><p>Sim, depois que o projeto for lançado. Se o trabalho for confidencial, é só avisar antes e ele não aparece.</p></details>
+      <details class="faq__i"><summary>Atende ONG e projeto social?</summary><p>Sim, com valor social. Me conta o projeto que a gente encontra um formato que caiba.</p></details>
+    </div>
+    <a class="hw__cta" href="#brief">Pedir um orçamento <span aria-hidden="true">→</span></a>
+  </div>
+</section>
 
 <!-- ============ CONTATO ============ -->
 <footer class="mat rip" id="contato" aria-labelledby="contato-t">

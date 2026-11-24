@@ -259,6 +259,8 @@
     'Coração vermelho sorridente':'Smiling red heart','Lettering colorido com estrelas':'Colorful lettering with stars','Lettering branco com estrelas e cores':'White lettering with stars and colors',
     'Lettering amarelo e roxo com personagens':'Yellow and purple lettering with characters','Personagem atrás de um balão rosa':'Character behind a pink balloon',
     'Personagem de boné azul e roxo':'Character in a blue and purple cap','Três personagens lado a lado em cores fortes':'Three characters side by side in bold colors',
+    /* aviso de cookies */
+    'Uso cookies só para saber quantas pessoas visitam o site e o que mais chama atenção.':'I use cookies only to know how many people visit the site and what catches their eye.','Aceitar':'Accept','Recusar':'Decline','Aviso de cookies':'Cookie notice','Abrir o seu painel secreto':'Open your secret panel',
     /* sobre: autorretratos */
     'Trocar entre o autorretrato em foto e o autorretrato ilustrado':'Switch between the photo self-portrait and the illustrated one','No traço':'In ink','Na lente':'Through the lens','↻ toque para trocar':'↻ tap to switch',
     'Autorretrato ilustrado: rosto em azul com cabelo black, óculos e grafites laranja e rosa em spray':'Illustrated self-portrait: face in blue with an afro, glasses and orange and pink spray graffiti',

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Sala do Kifita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Mono:wght@400;500&family=Poppins:wght@400;500;600&display=swap">
+<style>
+:root{--paper:#F3F1EC;--ink:#1A1B26;--soft:#4A4B57;--cobalt:#1442C0;--red:#D0262C;--mat:#1C9C95;--cream:#FFFCF3;--yel:#FFE15A;--ok:#1E9E5A}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Poppins,system-ui,sans-serif}
+h1,h2{font-family:"Bagel Fat One",sans-serif;font-weight:400;line-height:1;margin:0}
+.mono{font-family:"DM Mono",monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+button,input,select{font:inherit}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:0;background:var(--ink);color:#fff;font-weight:600;cursor:pointer;text-decoration:none}
+.btn:hover{transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn--y{background:var(--yel);color:var(--ink)}
+/* porta */
+.gate{min-height:100vh;display:grid;place-items:center;padding:24px;background:var(--mat);background-image:linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px);background-size:32px 32px}
+.gate__box{background:var(--cream);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);border-radius:18px;padding:32px;width:min(100%,380px);text-align:center;display:flex;flex-direction:column;gap:16px}
+.gate__box h1{font-size:40px;color:var(--cobalt)}
+.pin{letter-spacing:.5em;text-align:center;font:500 28px "DM Mono",monospace;padding:12px;border:2px solid var(--ink);border-radius:10px;width:100%}
+.err{color:var(--red);min-height:1.4em;font-size:14px}
+/* painel */
+.app{max-width:1180px;margin:0 auto;padding:40px 20px 80px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.top h1{font-size:clamp(44px,6vw,72px);color:var(--cobalt);text-shadow:4px 5px 0 rgba(208,38,44,.25)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.card{grid-column:span 6;background:var(--cream);border:2px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card--wide{grid-column:span 12}
+.card--third{grid-column:span 4}
+.card h2{font-size:28px}
+.card .mono{color:var(--red)}
+.big{font:400 64px/1 "Bagel Fat One",sans-serif;color:var(--ink)}
+.muted{color:var(--soft);font-size:14.5px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.lnk{display:flex;gap:8px;align-items:center;background:#fff;border:1.5px solid rgba(26,27,38,.2);border-radius:10px;padding:8px 10px;font:13px "DM Mono",monospace;overflow:hidden}
+.lnk span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lnk button{flex:none;border:0;background:var(--ink);color:#fff;border-radius:8px;padding:6px 10px;cursor:pointer;font:500 12px "DM Mono",monospace}
+.res{max-height:260px;overflow:auto;font:13px "DM Mono",monospace;background:#fff;border:1.5px solid rgba(26,27,38,.2);border-radius:10px;padding:10px}
+.res div{display:flex;gap:10px;padding:2px 0}
+.ok{color:var(--ok)} .bad{color:var(--red);font-weight:600}
+label{display:flex;flex-direction:column;gap:4px;font-size:13.5px;font-weight:500}
+select,input[type=number],input[type=text]{padding:9px 10px;border:1.5px solid var(--ink);border-radius:8px;background:#fff;width:100%}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.total{font:400 44px/1 "Bagel Fat One",sans-serif;color:var(--cobalt)}
+textarea{width:100%;min-height:120px;padding:10px;border:1.5px solid var(--ink);border-radius:8px;font:14px/1.5 Poppins,sans-serif;resize:vertical}
+.chk{display:flex;align-items:center;gap:8px;font-weight:500;font-size:14px;flex-direction:row}
+@media (max-width:860px){.card,.card--third{grid-column:span 12}.form{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ PORTA ============ -->
+<div class="gate" id="gate" hidden>
+  <form class="gate__box" id="gate-form" autocomplete="off">
+    <span class="mono" style="color:var(--red)">Área restrita</span>
+    <h1>Sala do Kifita</h1>
+    <p class="muted" style="margin:0">Digite o seu PIN. Depois disso, este aparelho fica reconhecido como seu.</p>
+    <input class="pin" id="pin" inputmode="numeric" pattern="[0-9]*" maxlength="6" aria-label="PIN de 6 números" autofocus>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn" type="submit" style="justify-content:center">Entrar</button>
+    <a href="./" class="muted">← voltar para o site</a>
+  </form>
+</div>
+
+<!-- ============ PAINEL ============ -->
+<main class="app" id="app" hidden>
+  <div class="top">
+    <div>
+      <span class="mono" style="color:var(--red)">Só você vê esta página</span>
+      <h1 id="hello">E aí, João</h1>
+    </div>
+    <div class="row">
+      <a class="btn btn--ghost" href="./">Ver o site</a>
+      <button class="btn btn--ghost" id="sair" type="button">Esquecer este aparelho</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- visitas -->
+    <section class="card">
+      <span class="mono">Visitas no site</span>
+      <h2>Quem passou por aqui</h2>
+      <p class="muted" id="vis-msg" style="margin:0">Os números ficam no Microsoft Clarity, protegidos pelo login da sua conta Google.</p>
+      <div class="row">
+        <a class="btn" id="cl-open" href="https://clarity.microsoft.com/projects/view/zip8pz05p8/dashboard" target="_blank" rel="noopener">Abrir o Clarity ↗</a>
+      </div>
+      <ul class="muted" style="margin:0;padding-left:18px">
+        <li><b>Painel:</b> visitantes por dia, celular ou computador, país e de onde vieram.</li>
+        <li><b>Gravações:</b> assista como cada pessoa rolou e clicou no site.</li>
+        <li><b>Mapas de calor:</b> onde mais clicam e até onde rolam a página.</li>
+      </ul>
+      <p class="muted" style="margin:0;font-size:13px">Só entra na contagem quem aceita o aviso de cookies. As suas visitas, neste aparelho, nunca entram.</p>
+    </section>
+
+    <!-- aparelho -->
+    <section class="card">
+      <span class="mono">Este aparelho</span>
+      <h2>Reconhecido como seu</h2>
+      <div class="big" id="me-visits">0</div>
+      <p class="muted" id="me-msg"></p>
+      <p class="muted" style="margin:0">Enquanto este aparelho estiver reconhecido, <b>as suas visitas não entram na contagem</b> e aparece um botão <b>K</b> no canto do site que traz você direto para cá. Faça o mesmo no celular e no computador: cada aparelho é reconhecido separadamente.</p>
+    </section>
+
+    <!-- links rastreados -->
+    <section class="card card--wide">
+      <span class="mono">Links rastreados</span>
+      <h2>Descubra de onde vem cada visita</h2>
+      <p class="muted" style="margin:0">Use um link diferente em cada lugar. No Clarity, filtre por “URL de entrada” com o nome do link para saber quantas pessoas vieram do Instagram, do PDF ou de uma proposta.</p>
+      <div class="grid" id="links" style="gap:10px"></div>
+      <div class="row">
+        <input type="text" id="ref-new" placeholder="Criar link para… (ex.: edital-proac, cliente-ong)" style="max-width:360px">
+        <button class="btn btn--y" id="ref-add" type="button">Gerar link</button>
+      </div>
+    </section>
+
+    <!-- orçamento -->
+    <section class="card card--wide">
+      <span class="mono">Calculadora</span>
+      <h2>Orçamento rápido</h2>
+      <div class="grid" style="gap:20px">
+        <div style="grid-column:span 7" class="form">
+          <label style="grid-column:1/-1">Serviço<select id="o-serv"></select></label>
+          <label>Quantidade<input type="number" id="o-qtd" value="1" min="1"></label>
+          <label>Tipo de cliente<select id="o-cli">
+            <option value="ong">ONG / coletivo sem verba</option>
+            <option value="ind" selected>Artista independente</option>
+            <option value="emp">Marca / empresa</option>
+            <option value="ag">Agência</option>
+          </select></label>
+          <label>Transporte (R$)<input type="number" id="o-tr" value="0" min="0" step="10"></label>
+          <label>Nome do cliente<input type="text" id="o-nome" placeholder="opcional"></label>
+          <label class="chk"><input type="checkbox" id="o-urg"> Urgente (+30%)</label>
+          <label class="chk"><input type="checkbox" id="o-com"> Uso comercial / anúncio (+25%)</label>
+        </div>
+        <div style="grid-column:span 5;display:flex;flex-direction:column;gap:10px">
+          <span class="mono" style="color:var(--soft)">Valor sugerido</span>
+          <div class="total" id="o-total">R$ 0</div>
+          <p class="muted" id="o-obs" style="margin:0"></p>
+          <textarea id="o-msg" aria-label="Mensagem de orçamento"></textarea>
+          <div class="row">
+            <button class="btn" id="o-copy" type="button">Copiar mensagem</button>
+            <a class="btn btn--y" id="o-wa" href="#" target="_blank" rel="noopener">Enviar no WhatsApp ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- verificador -->
+    <section class="card">
+      <span class="mono">Verificador</span>
+      <h2>O site está inteiro?</h2>
+      <p class="muted" style="margin:0">Confere se todas as imagens, vídeos e arquivos do site estão no ar. Use depois de subir arquivos no GitHub.</p>
+      <div class="row"><button class="btn" id="chk" type="button">Verificar agora</button><span class="muted" id="chk-sum"></span></div>
+      <div class="res" id="chk-res" hidden></div>
+    </section>
+
+    <!-- atalhos -->
+    <section class="card">
+      <span class="mono">Atalhos</span>
+      <h2>Tudo à mão</h2>
+      <div class="row">
+        <a class="btn btn--ghost" href="https://github.com/LoopMen-aqui/kifita.github.io/upload/main" target="_blank" rel="noopener">Subir arquivos no GitHub</a>
+        <a class="btn btn--ghost" href="https://github.com/LoopMen-aqui/kifita.github.io" target="_blank" rel="noopener">Repositório</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/loopim._/" target="_blank" rel="noopener">@loopim._</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/focoerrado_/" target="_blank" rel="noopener">@focoerrado_</a>
+        <a class="btn btn--ghost" href="https://www.behance.net/histrizdrog" target="_blank" rel="noopener">Behance</a>
+        <a class="btn btn--ghost" href="https://lightroom.adobe.com/u/histrizdrog" target="_blank" rel="noopener">Lightroom</a>
+        <a class="btn btn--ghost" href="https://web.whatsapp.com" target="_blank" rel="noopener">WhatsApp Web</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script>
+(function(){
+  var SALT='5fa0d498315a7dfd', HASH='5dcfedfa528222c1ffcc6041f5e3afa900666d0be3a4011839ca58ce238f3237';
+  var SITE='https://loopmen-aqui.github.io/kifita.github.io/', KEY='kf_owner';
+  var $=function(id){ return document.getElementById(id); };
+  function get(){ try{ return JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){ return null; } }
+  function set(v){ try{ localStorage.setItem(KEY, JSON.stringify(v)); }catch(e){} }
+  async function sha(t){ var b=await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)); return [...new Uint8Array(b)].map(function(x){return x.toString(16).padStart(2,'0');}).join(''); }
+
+  /* ---------- porta ---------- */
+  var dono=get();
+  if(dono&&dono.id){ open(); } else { $('gate').hidden=false; }
+  var tries=0;
+  $('gate-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    if(tries>=5){ $('err').textContent='Muitas tentativas. Recarregue a página e tente de novo.'; return; }
+    var ok=(await sha(SALT+':'+$('pin').value.trim()))===HASH;
+    if(!ok){ tries++; $('err').textContent='PIN errado.'; $('pin').value=''; return; }
+    var id=(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random());
+    set({id:id, since:Date.now(), visits:0, last:Date.now()});
+    $('gate').hidden=true; open();
+  });
+  $('sair').addEventListener('click', function(){
+    if(!confirm('Este aparelho deixa de ser reconhecido e suas visitas voltam a ser contadas. Continuar?')) return;
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    location.href='./';
+  });
+
+  function open(){
+    $('app').hidden=false; dono=get();
+    var d=new Date(dono.since);
+    var h=new Date().getHours();
+    $('hello').textContent=(h<12?'Bom dia':h<18?'Boa tarde':'Boa noite')+', João';
+    $('me-visits').textContent=(dono.visits||0)+' '+((dono.visits||0)===1?'visita sua':'visitas suas');
+    $('me-msg').textContent='Reconhecido desde '+d.toLocaleDateString('pt-BR')+'. Código do aparelho: '+String(dono.id).slice(0,8)+'.';
+    links(); orcamento(); verificador();
+  }
+
+  /* ---------- links rastreados ---------- */
+  var BASE=[['instagram','Bio do @loopim._'],['focoerrado','Bio do @focoerrado_'],['whatsapp','WhatsApp'],['pdf','Portfólio em PDF'],['curriculo','Currículo'],['behance','Behance']];
+  function links(){
+    var extra=[]; try{ extra=JSON.parse(localStorage.getItem('kf_refs')||'[]'); }catch(e){}
+    var box=$('links'); box.innerHTML='';
+    BASE.concat(extra.map(function(r){ return [r, r]; })).forEach(function(p){
+      var url=SITE+'?ref='+encodeURIComponent(p[0]);
+      var d=document.createElement('div'); d.className='card--third'; d.style.cssText='grid-column:span 4;display:flex;flex-direction:column;gap:4px;min-width:0';
+      d.innerHTML='<span class="mono" style="color:var(--soft)">'+p[1].replace(/</g,'')+'</span><div class="lnk"><span>'+url+'</span><button type="button">Copiar</button></div>';
+      d.querySelector('button').addEventListener('click', function(){ copiar(url, this); });
+      box.appendChild(d);
+    });
+  }
+  $('ref-add').addEventListener('click', function(){
+    var v=$('ref-new').value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9-]+/g,'-').replace(/^-|-$/g,'');
+    if(!v) return; var a=[]; try{ a=JSON.parse(localStorage.getItem('kf_refs')||'[]'); }catch(e){}
+    if(a.indexOf(v)<0) a.push(v); try{ localStorage.setItem('kf_refs', JSON.stringify(a)); }catch(e){}
+    $('ref-new').value=''; links();
+  });
+  function copiar(t, btn){ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){ var o=btn.textContent; btn.textContent='Copiado!'; setTimeout(function(){ btn.textContent=o; },1400); }).catch(function(){ prompt('Copie:', t); }); }
+
+  /* ---------- orçamento ---------- */
+  var SERV=[
+    ['Diária de operador de câmera',400,600,'diária'],['Diária de câmera com equipamento próprio',600,1000,'diária'],['Diária de assistente de câmera ou foto',250,350,'diária'],
+    ['Edição de reels / vídeo curto (até 60 s)',150,300,'vídeo'],['Montagem de videoclipe',800,1800,'clipe'],['Montagem de curta (até 15 min)',1500,3000,'filme'],
+    ['Color grading de clipe',500,1000,'clipe'],['Color grading de curta (~10 min)',800,1500,'filme'],['Animação curta (créditos, vinheta)',400,1000,'peça'],
+    ['Cobertura de evento (até 3 h, fotos tratadas)',450,700,'evento'],['Cobertura de evento (diária)',800,1200,'diária'],['Ensaio / retrato',300,500,'ensaio'],
+    ['Still de produto',40,80,'foto'],['Tratamento de imagem',8,15,'foto'],
+    ['Thumbnail',60,150,'arte'],['Arte de adesivo',120,300,'arte'],['Personagem / ilustração',250,600,'arte'],['Pôster ou cartaz',300,700,'arte'],
+    ['Logo simples',600,1200,'logo'],['Identidade visual completa',1800,4000,'projeto']
+  ];
+  var CLI={ong:{f:function(a,b){return a*.8;},t:'Valor social (cerca de 20% abaixo do mínimo da faixa).'},ind:{f:function(a,b){return a+(b-a)*.25;},t:'Começo da faixa de mercado.'},emp:{f:function(a,b){return b;},t:'Topo da faixa: cliente com verba.'},ag:{f:function(a,b){return b*1.25;},t:'Agência: topo da faixa + 25%.'}};
+  function orcamento(){
+    var s=$('o-serv'); SERV.forEach(function(x,i){ var o=document.createElement('option'); o.value=i; o.textContent=x[0]+'  ·  R$ '+x[1]+'–'+x[2]; s.appendChild(o); });
+    ['o-serv','o-qtd','o-cli','o-tr','o-nome','o-urg','o-com'].forEach(function(id){ $(id).addEventListener('input', calc); $(id).addEventListener('change', calc); });
+    calc();
+  }
+  var brl=function(v){ return 'R$ '+Math.round(v).toLocaleString('pt-BR'); };
+  function calc(){
+    var x=SERV[+$('o-serv').value], q=Math.max(1,+$('o-qtd').value||1), c=CLI[$('o-cli').value];
+    var unit=c.f(x[1],x[2]); if($('o-urg').checked) unit*=1.3; if($('o-com').checked) unit*=1.25;
+    unit=Math.ceil(unit/10)*10; var tr=Math.max(0,+$('o-tr').value||0), tot=unit*q+tr;
+    $('o-total').textContent=brl(tot);
+    $('o-obs').textContent=c.t+(q>1?' '+q+' × '+brl(unit)+'.':'')+(tr?' Inclui '+brl(tr)+' de transporte.':'');
+    var nome=$('o-nome').value.trim();
+    var msg='Oi'+(nome?', '+nome:'')+'! Segue o orçamento:\n\n• '+x[0]+(q>1?' ('+q+' '+x[3]+(q>1?'s':'')+')':'')+': '+brl(unit*q)+(tr?'\n• Transporte: '+brl(tr):'')+'\n\nTotal: '+brl(tot)+'\n\nPagamento: 50% para reservar e 50% na entrega. Inclui 2 rodadas de ajuste.\nPortfólio: '+SITE+'?ref=orcamento\n\nJoão Vitor · Kifita';
+    $('o-msg').value=msg; $('o-wa').href='https://wa.me/?text='+encodeURIComponent(msg);
+  }
+  $('o-copy').addEventListener('click', function(){ copiar($('o-msg').value, this); });
+
+  /* ---------- verificador ---------- */
+  function verificador(){
+    $('chk').addEventListener('click', async function(){
+      var btn=this; btn.disabled=true; $('chk-sum').textContent='Lendo o site…'; var res=$('chk-res'); res.hidden=false; res.innerHTML='';
+      var html=await (await fetch('index.html',{cache:'no-store'})).text();
+      var set=new Set(['index.html','i18n.js','imersivo.js','artista.js','visitas.js']);
+      html.replace(/(?:src|href|poster)="([^"#:?]+\.(?:jpe?g|png|webp|gif|svg|mp4|webm|js|css|pdf))"/gi, function(m,u){ set.add(u.replace(/^\.\//,'')); });
+      html.replace(/['"]((?:img|eu|insta|fotografia|criar|cidade-vertical|cidade-errante|behance)\/[^'"\s+]+\.(?:jpe?g|png|webp|mp4))['"]/gi, function(m,u){ set.add(u); });
+      var list=[...set].filter(function(u){ return !/['+s]/.test(u); }), bad=0, done=0;
+      $('chk-sum').textContent='Verificando '+list.length+' arquivos…';
+      var q=list.slice();
+      async function worker(){ while(q.length){ var u=q.shift(); var ok=false;
+        try{ var r=await fetch(u,{method:'HEAD',cache:'no-store'}); ok=r.ok; if(!ok){ r=await fetch(u,{cache:'no-store'}); ok=r.ok; } }catch(e){}
+        done++; if(!ok){ bad++; var d=document.createElement('div'); d.innerHTML='<span class="bad">✕ falta</span><span>'+u+'</span>'; res.prepend(d); }
+        $('chk-sum').textContent=done+' / '+list.length+' conferidos'; } }
+      await Promise.all([worker(),worker(),worker(),worker(),worker(),worker()]);
+      var s=document.createElement('div'); s.innerHTML=bad?'<span class="bad">'+bad+' arquivo(s) faltando no GitHub.</span>':'<span class="ok">✓ Todos os '+list.length+' arquivos estão no ar.</span>'; res.prepend(s);
+      $('chk-sum').textContent=''; btn.disabled=false;
+    });
+  }
+})();
+</script>
+</body>
+</html>

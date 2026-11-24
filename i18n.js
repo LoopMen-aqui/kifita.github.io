@@ -259,7 +259,10 @@
     'Coração vermelho sorridente':'Smiling red heart','Lettering colorido com estrelas':'Colorful lettering with stars','Lettering branco com estrelas e cores':'White lettering with stars and colors',
     'Lettering amarelo e roxo com personagens':'Yellow and purple lettering with characters','Personagem atrás de um balão rosa':'Character behind a pink balloon',
     'Personagem de boné azul e roxo':'Character in a blue and purple cap','Três personagens lado a lado em cores fortes':'Three characters side by side in bold colors',
+    /* paleta */
+    'Cores do site':'Site colors','Roxo e amarelo':'Purple and yellow','Azul e vermelho':'Blue and red','Preto e branco':'Black and white',
     /* lowparking */
+    'Vagas':'Spots',
     'Encontro de carros':'Car meet',
     '22 nov 2026':'22 Nov 2026',
     'Cobertura fotográfica do encontro LOWPARKING: clássicos cromados, rebaixados e esportivos fotografados de perto, com tratamento no Lightroom. Algumas fotos viraram peças de design no Photoshop, com rodas em movimento, reflexos e luz.':'Photo coverage of the LOWPARKING car meet: chrome classics, lowered cars and sports cars shot up close and edited in Lightroom. Some photos became design pieces in Photoshop, with spinning wheels, reflections and light.',
